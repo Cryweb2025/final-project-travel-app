@@ -6,7 +6,7 @@ type Props ={
 };
 export const HeroVideo = ({videoSrc, title}: Props) => {
     return (
-        <div>
+        <div className={styles.hero}>
         <video className={styles.video}src={videoSrc} autoPlay loop muted playsInline/>
         <h1 className={styles.title}> {title}</h1>
         </div>
