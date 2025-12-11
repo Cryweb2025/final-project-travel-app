@@ -1,29 +1,13 @@
 import React from "react";
+import type {
+  RegisterFormValues,
+  LoginFormValues,
+  StoredUser,
+} from "../../types/auth";
+
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { Eye, EyeOff } from "lucide-react";
-
-interface RegisterFormValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  password: string;
-  confirmPassword: string;
-}
-
-interface LoginFormValues {
-  email: string;
-  password: string;
-}
-
-interface StoredUser {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  password: string;
-}
 
 const USERS_KEY = "travel_users";
 
