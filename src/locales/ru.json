@@ -1,8 +1,8 @@
 {
   "welcome": "Добро пожаловать в Travel App",
-  "home": "Главная",
-  "destinations": "Направления",
-  "about": "О нас",
+  "home": "ГЛАВНАЯ",
+  "destinations": "НАПРАВЛЕНИЯ",
+  "about": "О НАС",
   "login": "Войти",
   "logout": "Выйти",
   "username": "Имя пользователя",

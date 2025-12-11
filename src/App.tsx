@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
 import About from "./pages/About";
@@ -14,12 +15,16 @@ function App() {
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        {/* Fallback für nicht existierende Seiten */}
+        <Route path="*" element={<h1>Page Not Found</h1>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
 
 export default App;
+
 
 
 

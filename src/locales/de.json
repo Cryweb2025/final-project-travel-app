@@ -1,8 +1,8 @@
 {
   "welcome": "Willkommen in der Travel App",
-  "home": "Startseite",
-  "destinations": "Reiseziele",
-  "about": "Über uns",
+  "home": "STARTSEITE",
+  "destinations": "REISEZIELE",
+  "about": "ÜBER UNS",
   "login": "Anmelden",
   "logout": "Abmelden",
   "username": "Benutzername",

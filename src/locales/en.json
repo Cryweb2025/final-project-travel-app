@@ -1,8 +1,8 @@
 {
   "welcome": "Welcome to the Travel App",
-  "home": "Home",
-  "destinations": "Destinations",
-  "about": "About us",
+  "home": "HOME",
+  "destinations": "DESTINATIONS",
+  "about": "ABOUT US",
   "login": "Login",
   "logout": "Logout",
   "username": "Username",
