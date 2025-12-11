@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { CountryInfoPage } from "./features/countryInfo";
+import { CountryInfoPage } from "./components/countryInfoPage";
 
 function App() {
   return (

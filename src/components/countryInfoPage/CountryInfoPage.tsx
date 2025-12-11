@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { countryInfoData } from "./data/CountryInfoData";
-import { HeroVideo } from "./components/HeroVideo";
+import { HeroVideo } from "./countryComponents/HeroVideo/HeroVideo";
 
 export const CountryInfoPage = () => {
   const { id } = useParams<{ id: string }>();
