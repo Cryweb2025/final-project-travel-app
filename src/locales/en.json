@@ -1,0 +1,26 @@
+{
+  "welcome": "Welcome to the Travel App",
+  "home": "Home",
+  "destinations": "Destinations",
+  "about": "About us",
+  "login": "Login",
+  "logout": "Logout",
+  "username": "Username",
+  "password": "Password",
+  "submit": "Submit",
+  "slogan": "Welcome to our Travel Agency — your journey starts here.",
+  "hero_text": "While everyone else is dreaming — we are traveling!",
+  "search_placeholder": "Where do you want to go?",
+  "search_button": "Search",
+  "destinations_list": {
+    "japan": "Japan",
+    "mexico": "Mexico",
+    "uae": "United Arab Emirates",
+    "turkey": "Turkey",
+    "maldives": "Maldives",
+    "spain": "Spain",
+    "greece": "Greece",
+    "italy": "Italy",
+    "france": "France"
+  }
+}

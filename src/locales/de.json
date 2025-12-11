@@ -1,0 +1,27 @@
+{
+  "welcome": "Willkommen in der Travel App",
+  "home": "Startseite",
+  "destinations": "Reiseziele",
+  "about": "Über uns",
+  "login": "Anmelden",
+  "logout": "Abmelden",
+  "username": "Benutzername",
+  "password": "Passwort",
+  "submit": "Absenden",
+  "slogan": "Willkommen in unserem Reisebüro — hier beginnt Ihre Reise.",
+  "hero_text": "Während alle anderen träumen — reisen wir!",
+  "search_placeholder": "Wohin soll die Reise gehen?",
+  "search_button": "Suchen",
+  "destinations_list": {
+    "japan": "Japan",
+    "mexico": "Mexiko",
+    "uae": "Vereinigte Arabische Emirate",
+    "turkey": "Türkei",
+    "maldives": "Malediven",
+    "spain": "Spanien",
+    "greece": "Griechenland",
+    "italy": "Italien",
+    "france": "Frankreich"
+}
+
+}
