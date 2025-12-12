@@ -1,42 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Twitter, Facebook, Instagram } from "lucide-react"; // → реальные соц. иконки
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
-
   return (
-    <footer
-      style={{
-        background: "#0077b6",
-        color: "white",
-        padding: "1rem",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      {/* Link unten links */}
-      <div>
-        <Link to="/about" style={{ margin: "0 1rem", color: "white" }}>
-          {t("about")}
-        </Link>
-      </div>
+    <footer className="bg-sky-700 text-white py-6 mt-auto">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-4">
+        {/* Social Icons */}
+        <div className="flex items-center gap-6 text-2xl">
+          <a
+            href="https://twitter.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-300 transition"
+          >
+            <Twitter size={24} />
+          </a>
 
-      {/* Social Media Icons + Copyright rechts */}
-      <div style={{ textAlign: "right" }}>
-        <div style={{ marginBottom: "0.5rem" }}>
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" style={{ margin: "0 0.5rem", color: "white", fontSize: "1.5rem" }}>
-            🐦
+          <a
+            href="https://facebook.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-300 transition"
+          >
+            <Facebook size={24} />
           </a>
-          <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" style={{ margin: "0 0.5rem", color: "white", fontSize: "1.5rem" }}>
-            📘
-          </a>
-          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" style={{ margin: "0 0.5rem", color: "white", fontSize: "1.5rem" }}>
-            📸
+
+          <a
+            href="https://instagram.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-300 transition"
+          >
+            <Instagram size={24} />
           </a>
         </div>
-        <div>© {new Date().getFullYear()} Travel App – All rights reserved</div>
+
+        {/* Copyright — по центру */}
+        <div className="text-xs text-center opacity-80">
+          © {new Date().getFullYear()} Travel App — All rights reserved
+        </div>
       </div>
     </footer>
   );
