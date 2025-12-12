@@ -41,6 +41,24 @@ const saveUsersToStorage = (users: StoredUser[]) => {
   localStorage.setItem(USERS_KEY, JSON.stringify(users));
 };
 
+const getPasswordStrength = (
+  password: string
+): "weak" | "medium" | "strong" | null => {
+  if (!password) return null;
+
+  let score = 0;
+
+  if (password.length >= 6) score++;
+  if (password.length >= 10) score++;
+  if (/[A-Z]/.test(password)) score++;
+  if (/[0-9]/.test(password)) score++;
+  if (/[^A-Za-z0-9]/.test(password)) score++;
+
+  if (score <= 2) return "weak";
+  if (score <= 4) return "medium";
+  return "strong";
+};
+
 const AuthTravel: React.FC = () => {
   const [mode, setMode] = React.useState<"register" | "login">("register");
   const [message, setMessage] = React.useState<string | null>(null);
@@ -48,8 +66,11 @@ const AuthTravel: React.FC = () => {
 
   const [showPassword, setShowPassword] = React.useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
-
   const [showLoginPassword, setShowLoginPassword] = React.useState(false);
+
+  const [passwordStrength, setPasswordStrength] = React.useState<
+    "weak" | "medium" | "strong" | null
+  >(null);
 
   const handleRegister = async (
     values: RegisterFormValues,
@@ -80,6 +101,7 @@ const AuthTravel: React.FC = () => {
 
     setMessage("Registration successful! You can now log in.");
     resetForm();
+    setPasswordStrength(null);
     setSubmitting(false);
     setMode("login");
   };
@@ -128,7 +150,10 @@ const AuthTravel: React.FC = () => {
           <div className="mt-4 inline-flex items-center gap-2 text-xs text-slate-500">
             <button
               type="button"
-              onClick={() => setMode("register")}
+              onClick={() => {
+                setMode("register");
+                setPasswordStrength(null);
+              }}
               className={`px-3 py-1 rounded-full border text-xs ${
                 mode === "register"
                   ? "bg-sky-500 text-white border-sky-500"
@@ -139,7 +164,10 @@ const AuthTravel: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => setMode("login")}
+              onClick={() => {
+                setMode("login");
+                setPasswordStrength(null);
+              }}
               className={`px-3 py-1 rounded-full border text-xs ${
                 mode === "login"
                   ? "bg-sky-500 text-white border-sky-500"
@@ -266,6 +294,7 @@ const AuthTravel: React.FC = () => {
 
                 {/* Password + Confirm */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Password with strength indicator */}
                   <div>
                     <label
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
@@ -274,33 +303,62 @@ const AuthTravel: React.FC = () => {
                       Password
                     </label>
 
-                    <div className="relative">
-                      <Field
-                        id="password"
-                        name="password"
-                        type={showPassword ? "text" : "password"}
-                        className="w-full rounded-lg border border-slate-200 px-3 pr-16 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword((prev) => !prev)}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center text-slate-600 hover:text-slate-800 px-3"
-                      >
-                        {showPassword ? (
-                          <EyeOff size={18} strokeWidth={2} />
-                        ) : (
-                          <Eye size={18} strokeWidth={2} />
-                        )}
-                      </button>
-                    </div>
+                    <Field name="password">
+                      {({ field }: any) => (
+                        <div className="relative">
+                          <input
+                            {...field}
+                            id="password"
+                            type={showPassword ? "text" : "password"}
+                            className="w-full rounded-lg border border-slate-200 px-3 pr-16 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
+                            onChange={(e) => {
+                              field.onChange(e);
+                              setPasswordStrength(
+                                getPasswordStrength(e.target.value)
+                              );
+                            }}
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowPassword((prev) => !prev)}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center text-slate-600 hover:text-slate-800 px-3"
+                          >
+                            {showPassword ? (
+                              <EyeOff size={18} strokeWidth={2} />
+                            ) : (
+                              <Eye size={18} strokeWidth={2} />
+                            )}
+                          </button>
+                        </div>
+                      )}
+                    </Field>
 
                     <ErrorMessage
                       name="password"
                       component="div"
                       className="mt-1 text-xs text-red-600"
                     />
+
+                    {passwordStrength && (
+                      <div className="mt-1 text-xs font-semibold">
+                        {passwordStrength === "weak" && (
+                          <span className="text-red-600">Weak password</span>
+                        )}
+                        {passwordStrength === "medium" && (
+                          <span className="text-yellow-600">
+                            Medium strength
+                          </span>
+                        )}
+                        {passwordStrength === "strong" && (
+                          <span className="text-emerald-600">
+                            Strong password
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
 
+                  {/* Confirm Password */}
                   <div>
                     <label
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
