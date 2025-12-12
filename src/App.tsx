@@ -6,11 +6,13 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import Account from "./pages/Account";
+import DestinationDetails from "./pages/DestinationDetails";
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route path="/destination/:key" element={<DestinationDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/about" element={<About />} />

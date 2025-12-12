@@ -39,11 +39,12 @@ const Navbar: React.FC = () => {
         <Link to="/destinations" style={{ margin: "0 1rem", color: "white" }}>
           {t("destinations")}
         </Link>
-      
       </div>
 
       {/* Rechts: Sprache + Login/Logout */}
-      <div style={{ display: "flex", alignItems: "center", position: "relative" }}>
+      <div
+        style={{ display: "flex", alignItems: "center", position: "relative" }}
+      >
         {/* Sprachmenü Button */}
         <button
           onClick={() => setOpen(!open)}
@@ -74,10 +75,10 @@ const Navbar: React.FC = () => {
               zIndex: 1000,
             }}
           >
-            <button onClick={() => changeLanguage("de")}>🇩🇪</button>
-            <button onClick={() => changeLanguage("en")}>🇬🇧</button>
-            <button onClick={() => changeLanguage("ru")}>🇷🇺</button>
-            <button onClick={() => changeLanguage("uk")}>🇺🇦</button>
+            <button onClick={() => changeLanguage("de")}>DE</button>
+            <button onClick={() => changeLanguage("en")}>EN</button>
+            <button onClick={() => changeLanguage("ru")}>RU</button>
+            <button onClick={() => changeLanguage("uk")}>UA</button>
           </div>
         )}
 
@@ -116,9 +117,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
