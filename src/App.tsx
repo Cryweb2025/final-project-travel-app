@@ -67,7 +67,7 @@ function App() {
                 </div>
               }
             />
-                  <Route path="/country/:id" element={<CountryInfoPage />} />
+              <Route path="/country/:id" element={<CountryInfoPage />} />
 
           </Routes>
         </div>

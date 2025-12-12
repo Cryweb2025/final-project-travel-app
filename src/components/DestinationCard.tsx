@@ -1,4 +1,5 @@
 import { useGetWeatherQuery } from "../services/weaterApi";
+import { Link } from "react-router-dom";
 
 interface DestinationCardProps {
   name: string;
