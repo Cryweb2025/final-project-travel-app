@@ -1,4 +1,4 @@
-
+import styles from "./CountryInfoData.module.css"
 
 export interface CountryInfo {
     id: string;
