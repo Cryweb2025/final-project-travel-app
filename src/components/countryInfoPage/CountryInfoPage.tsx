@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { countryInfoData } from "./data/CountryInfoData";
 import { HeroVideo } from "./countryComponents/HeroVideo/HeroVideo";
 import WeatherSection from "./countryComponents/WeatherSection/WeatherSection";
+import CurrencySection from "./countryComponents/CurrencySection/CurrencySection";
+import styles from "./CountryInfoPage.module.css";
 
 export const CountryInfoPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +19,11 @@ export const CountryInfoPage = () => {
         <HeroVideo videoSrc={country.heroVideo} title={country.name}/>
       <h1>{country.name}</h1>
       <p>{country.description}</p>
-      <WeatherSection city={country.capital} />
+      <div className={styles.weatherCurrencyCard}>
+         <WeatherSection city={country.capital} />
+      <CurrencySection currency={country.currency} />
+      </div>
+     
 
     </div>
   );
