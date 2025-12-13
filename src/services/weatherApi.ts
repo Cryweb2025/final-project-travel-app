@@ -10,7 +10,7 @@ export const weatherApi = createApi({
   }),
   endpoints: (builder) => ({
     getWeather: builder.query<WeatherResponse, string>({
-      query: (city) => `weather?q=${city}&appid=${apiKey}&units=metric&lang=de`,
+      query: (city) => `weather?q=${city}&appid=${apiKey}&units=metric&lang=en`,
     }),
   }),
 });
