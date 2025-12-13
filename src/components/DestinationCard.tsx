@@ -1,4 +1,4 @@
-import { useGetWeatherQuery } from "../services/weaterApi";
+import { useGetWeatherQuery } from "../services/weatherApi";
 import { Link } from "react-router-dom";
 
 interface DestinationCardProps {
@@ -7,7 +7,11 @@ interface DestinationCardProps {
   city: string;
 }
 
-const DestinationCard: React.FC<DestinationCardProps> = ({ name, image, city }) => {
+const DestinationCard: React.FC<DestinationCardProps> = ({
+  name,
+  image,
+  city,
+}) => {
   const { data, isLoading, error } = useGetWeatherQuery(city);
 
   return (
@@ -19,7 +23,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ name, image, city }) 
           width: "100%",
           borderRadius: "8px",
           height: "150px",
-          objectFit: "cover"
+          objectFit: "cover",
         }}
       />
       <h3>{name}</h3>
@@ -43,9 +47,3 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ name, image, city }) 
 };
 
 export default DestinationCard;
-
-
-
-
-
-
