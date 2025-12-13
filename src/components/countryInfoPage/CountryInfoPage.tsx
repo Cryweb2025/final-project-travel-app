@@ -15,16 +15,38 @@ export const CountryInfoPage = () => {
   }
 
   return (
-    <div>
-        <HeroVideo videoSrc={country.heroVideo} title={country.name}/>
-      <h1>{country.name}</h1>
-      <p>{country.description}</p>
-      <div className={styles.weatherCurrencyCard}>
-         <WeatherSection city={country.capital} />
-      <CurrencySection currency={country.currency} />
-      </div>
-     
+    <div className={styles.page}>
+      <HeroVideo videoSrc={country.heroVideo} title={country.name} />
 
+      <section className={styles.textIntro}>
+        <h1 className={styles.countryTitle}>{country.name}</h1>
+
+        <p className={styles.subtitle}>{country.subtitle}</p>
+
+        <p className={styles.countryDescription}>{country.description}</p>
+      </section>
+
+      <section className={styles.introSection}>
+        <img
+          src={country.image}
+          alt={country.name}
+          className={styles.introImage}
+        />
+
+        <div className={styles.introText}>
+          <p>{country.imageText}</p>
+        </div>
+      </section>
+
+      <div className={styles.weatherCurrencyCard}>
+        <WeatherSection city={country.capital} />
+        <CurrencySection currency={country.currency} />
+      </div>
+
+      <section className={styles.foodSection}>
+        <h2>Food</h2>
+        <p>{country.food}</p>
+      </section>
     </div>
   );
 };
