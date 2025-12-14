@@ -5,13 +5,23 @@ import Destinations from "./pages/Destinations";
 import About from "./pages/About";
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import Account from "./pages/Account";
-import Footer from "./components/Footer";
-import ContactForm from "./components/ContactForm/ContactForm";
-
+import DestinationDetails from "./pages/DestinationDetails";
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <Routes>
+        <Route path="/destination/:key" element={<DestinationDetails />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        {/* Страница регистрации / логина */}
+        <Route path="/login" element={<AuthTravel />} />
+        {/* Профиль пользователя */}
+        <Route path="/account" element={<Account />} />
+      </Routes>
+    </>
 
       {/* Средняя зона между Navbar и Footer */}
       <main className="flex-grow flex">
