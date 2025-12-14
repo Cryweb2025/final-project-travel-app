@@ -7,7 +7,6 @@ import Footer from "./components/Footer/Footer";
 // Страницы приложения
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
-import About from "./pages/About";
 import Account from "./pages/Account";
 import DestinationDetails from "./pages/DestinationDetails";
 
