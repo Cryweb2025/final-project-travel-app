@@ -1,0 +1,216 @@
+{
+  "welcome": "Welcome to the Travel App",
+  "home": "Home",
+  "destinations": "Destinations",
+  "about": "Team",
+  "login": "Login",
+  "logout": "Logout",
+  "contact": "Contact",
+  "profile": "Profile",
+  "username": "Username",
+  "password": "Password",
+  "submit": "Submit",
+  "slogan": "Welcome to our Travel Agency — your journey starts here.",
+  "hero_text": "While everyone else is dreaming — we are traveling!",
+  "search_placeholder": "Where do you want to go?",
+  "search_button": "Search",
+  "destinations_list": {
+    "japan": "Japan",
+    "mexico": "Mexico",
+    "uae": "United Arab Emirates",
+    "turkey": "Turkey",
+    "maldives": "Maldives",
+    "spain": "Spain",
+    "greece": "Greece",
+    "italy": "Italy",
+    "france": "France"
+  },
+  "contact_form": {
+    "title": "Contact us",
+    "subtitle": "Have questions about travel? Write to us and we’ll get back to you soon!",
+    "success": "✓ Thank you! Your message has been sent successfully. We will contact you soon.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Enter your name",
+      "email": "example@email.com",
+      "phone": "+49 156 123 4567",
+      "message": "Write your message..."
+    },
+    "subjects": {
+      "placeholder": "Select a subject",
+      "booking": "Tour booking",
+      "info": "Tour information",
+      "support": "Support",
+      "partnership": "Partnership",
+      "other": "Other"
+    },
+    "errors": {
+      "name_required": "Name is required",
+      "email_required": "Email is required",
+      "email_invalid": "Please enter a valid email address",
+      "message_required": "Message is required"
+    },
+    "sending": "Sending...",
+    "submit": "Send message"
+  },
+  "auth": {
+    "brand": "Travel Agency",
+    "title_register": "Client Registration",
+    "title_login": "Client Login",
+    "subtitle_register": "Create a test profile stored in your browser.",
+    "subtitle_login": "Log in using a previously registered test account.",
+    "switch_register": "Register",
+    "switch_login": "Login",
+    "fields": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "password": "Password",
+      "confirm_password": "Confirm Password"
+    },
+    "placeholders": {
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "example@mail.com",
+      "phone": "+49 156 123 4567",
+      "password": "Enter password",
+      "confirm_password": "Repeat password"
+    },
+    "password_strength": {
+      "weak": "Weak password",
+      "medium": "Medium strength",
+      "strong": "Strong password"
+    },
+    "validation": {
+      "required": "Required",
+      "min2": "Minimum 2 characters",
+      "min6": "Minimum 6 characters",
+      "too_short": "Too short",
+      "invalid_email": "Invalid email",
+      "passwords_no_match": "Passwords do not match"
+    },
+    "messages": {
+      "user_exists": "User with this email already exists.",
+      "register_success": "Registration successful! You can now log in.",
+      "invalid_credentials": "Invalid email or password."
+    },
+    "submitting": "Submitting...",
+    "logging_in": "Logging in...",
+    "register_button": "Register",
+    "login_button": "Login"
+  },
+  "account": {
+    "loading": "Loading profile...",
+    "access_denied": "Access denied. Please log in.",
+    "title": "My Account",
+    "subtitle": "Manage your profile, trips and security settings.",
+    "logout": "Logout",
+    "travel_client": "Travel Client",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "rewards": {
+      "title": "Travel Rewards",
+      "trips": "Trips",
+      "completed": "Completed",
+      "tier": "Tier",
+      "points_title": "Reward Points",
+      "points_suffix": "pts",
+      "points_hint": "Collect more points by booking new trips."
+    },
+    "tabs": {
+      "profile": "Profile",
+      "trips": "My Trips",
+      "security": "Security",
+      "settings": "Settings"
+    },
+    "profile": {
+      "title": "Profile Details",
+      "edit": "Edit Profile",
+      "full_name": "Full Name"
+    },
+    "edit": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "cancel": "Cancel",
+      "save": "Save Changes"
+    },
+    "demo_note": "This is a demo profile stored only in your browser using localStorage. No real bookings or payments are processed.",
+    "trips": {
+      "title": "My Trips",
+      "subtitle": "Example overview of your upcoming and past trips.",
+      "status": {
+        "booked": "Booked",
+        "completed": "Completed"
+      }
+    },
+    "security": {
+      "title": "Security",
+      "subtitle": "Change your password and manage basic security settings.",
+      "current_password": "Current Password",
+      "new_password": "New Password",
+      "confirm_new_password": "Confirm New Password",
+      "update_password": "Update Password",
+      "success": "Password was successfully updated.",
+      "errors": {
+        "not_available": "Password change is not available in this demo.",
+        "fill_all": "Please fill in all password fields.",
+        "current_incorrect": "Current password is incorrect.",
+        "new_min6": "New password must be at least 6 characters.",
+        "new_no_match": "New passwords do not match."
+      }
+    },
+    "settings": {
+      "title": "Settings & Preferences",
+      "subtitle": "Manage travel newsletter and account options."
+    },
+    "newsletter": {
+      "title": "Newsletter subscriptions",
+      "deals": "Receive travel deals and promotions",
+      "flights": "Receive flight alerts and price drops",
+      "hotels": "Receive hotel recommendations and offers"
+    },
+    "delete": {
+      "title": "Danger zone",
+      "text": "Delete your demo account and all stored data from localStorage for this browser.",
+      "button": "Delete account",
+      "confirm": "Are you sure you want to delete your account? This cannot be undone (demo)."
+    }
+  },
+  "weather": {
+    "loading": "Loading weather...",
+    "failed": "Failed to load weather"
+  },
+  "hotels": {
+    "title": "Hotels in {{country}}",
+    "more": "More about country",
+    "more_alert": "More about country: {{country}}",
+    "price": "Price",
+    "sort_by_stars": "Sort by stars",
+    "sort_high": "Highest first",
+    "sort_low": "Lowest first",
+    "view_photos": "View photos",
+    "book": "Book",
+    "no_results": "No hotels found"
+  },
+  "common": {
+    "reset": "Reset"
+  },
+  "reviews": {
+    "title": "What our travelers say",
+    "prev": "Previous review",
+    "next": "Next review",
+    "anna": "Amazing service! Everything was perfectly organized.",
+    "marco": "Best travel experience I’ve had so far.",
+    "emily": "Great destinations and very friendly support."
+  }
+
+}
