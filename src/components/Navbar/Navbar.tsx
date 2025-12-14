@@ -107,7 +107,10 @@ const Navbar: React.FC = () => {
             <img
               src={Logo}
               alt="Travel App Logo"
-              className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+              className="
+    h-10 w-10 sm:h-12 sm:w-12 object-contain
+    travel-logo-float
+  "
               draggable={false}
             />
           </Link>

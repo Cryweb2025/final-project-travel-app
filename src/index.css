@@ -48,6 +48,19 @@ a:hover {
   color: #0369a1; /* sky-700 */
 }
 
+/* Мягкая “периодическая прокрутка” / float */
+.travel-logo-float {
+  animation: logoFloat 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes logoFloat {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-3px) rotate(-2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+
 /* Кнопки по умолчанию (если где-то используешь без Tailwind) */
 button {
   border-radius: 8px;
