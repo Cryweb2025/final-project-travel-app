@@ -61,7 +61,7 @@ export const countryInfoData: CountryInfo[] = [
     name: "United Arab Emirates",
     description: "Everything here feels planned and confident. Cities rise from the desert with scale and intention, and comfort is part of everyday life.",
     foodAndLifeStyle: "Food is international and easy to find. Middle Eastern dishes mix naturally with cuisines from around the world, often served in carefully designed spaces.",
-    heroVideo: "",
+    heroVideo: "./videos/public/videos/5077164-hd_1920_1080_25fps.mp4",
     capital: "Dubai",
     currency: "AED",
     image: "",
