@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useGetWeatherQuery } from "../../services/api/weaterApi";
+import { useGetWeatherQuery } from "../../services/api/weatherApi";
 
 /*
   Пропсы карточки направления.

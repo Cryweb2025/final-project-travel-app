@@ -10,7 +10,7 @@ import searchReducer from "./slices/searchSlice";
 import { destinationsApi } from "./services/api/destinationsApi";
 
 // RTK Query API для получения данных о погоде
-import { weatherApi } from "./services/api/weaterApi";
+import { weatherApi } from "./services/api/weatherApi";
 
 // Создание Redux-хранилища приложения
 export const store = configureStore({
