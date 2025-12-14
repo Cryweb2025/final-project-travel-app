@@ -13,6 +13,7 @@ import type {
 // Компонент использует тот же ключ, что и AuthTravel, чтобы работать с общей базой пользователей в localStorage.
 const USERS_KEY = "travel_users";
 
+
 // Компонент использует мок-данные поездок для демо-отображения.
 const mockTrips: Trip[] = [
   {
