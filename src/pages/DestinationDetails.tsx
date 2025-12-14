@@ -103,7 +103,21 @@ const DestinationDetails: React.FC = () => {
           onClick={() =>
             alert(t("hotels.more_alert", { country: key?.toUpperCase() }))
           }
-          className="px-4 py-2 bg-[#ffb59e] text-white rounded-lg font-medium shadow hover:bg-[#ffa48a] transition"
+          className="
+    inline-flex items-center justify-center
+    px-5 py-2
+    rounded-lg
+    text-sm font-semibold
+    text-white
+    bg-gradient-to-r from-sky-500 to-emerald-500
+    shadow-md shadow-sky-200
+    transition-all duration-200
+    hover:from-sky-600 hover:to-emerald-600
+    hover:shadow-lg
+    active:scale-95
+    focus:outline-none
+    focus:ring-2 focus:ring-sky-300 focus:ring-offset-1
+  "
         >
           {t("hotels.more")}
         </button>
@@ -190,7 +204,24 @@ const DestinationDetails: React.FC = () => {
               setMinPrice("");
               setMaxPrice("");
             }}
-            className="ml-3 px-3 py-2 rounded bg-gray-100 text-sm"
+            className="
+    ml-3
+    inline-flex items-center justify-center
+    px-4 py-2
+    text-sm font-semibold
+    rounded-lg
+    border border-sky-200
+    bg-white/70 backdrop-blur
+    text-sky-700
+    shadow-sm
+    transition-all duration-200
+    hover:bg-sky-50
+    hover:border-sky-300
+    hover:shadow
+    active:scale-95
+    focus:outline-none
+    focus:ring-2 focus:ring-sky-300 focus:ring-offset-1
+  "
           >
             {t("common.reset")}
           </button>

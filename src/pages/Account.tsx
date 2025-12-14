@@ -271,7 +271,7 @@ const Account: React.FC = () => {
     (user.lastName?.[0] || "").toUpperCase();
 
   return (
-    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-white">
+    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-transparent">
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl border border-sky-50 p-6 sm:p-8">
         {/* Верхняя панель: заголовок + logout */}
         <div className="flex items-center justify-between gap-4 mb-6">

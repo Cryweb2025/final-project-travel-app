@@ -88,20 +88,23 @@ const Home: React.FC = () => {
           {/* Кнопка запуска поиска */}
           <button
             onClick={handleSearch}
-            style={{
-              marginLeft: "1rem",
-              padding: "0.8rem 1.5rem",
-              background: "#0077b6",
-              color: "white",
-              borderRadius: "8px",
-              border: "none",
-              cursor: "pointer",
-              fontSize: "1rem",
-              fontWeight: "bold",
-              transition: "all 0.25s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#005f8f")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#0077b6")}
+            className="
+    ml-4
+    inline-flex items-center justify-center
+    px-6 py-3
+    rounded-lg
+    bg-gradient-to-r from-sky-500 to-blue-600
+    text-white
+    text-sm sm:text-base
+    font-semibold
+    shadow-md shadow-sky-200
+    transition-all duration-200
+    hover:from-sky-600 hover:to-blue-700
+    hover:shadow-lg
+    active:scale-95
+    focus:outline-none
+    focus:ring-2 focus:ring-sky-400 focus:ring-offset-2
+  "
           >
             {t("search_button")}
           </button>

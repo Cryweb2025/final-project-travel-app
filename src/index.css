@@ -27,6 +27,11 @@ body,
 
 body {
   margin: 0;
+  background: linear-gradient(
+    to bottom,
+    #0399c7 15%,   /* светло-серый */
+    #ffffff 70%  /* белый */
+  );
   min-width: 320px;
   min-height: 100vh;
   /* ВАЖНО: убираем flex-центрирование, чтобы контент занимал всю ширину */

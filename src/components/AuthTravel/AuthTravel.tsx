@@ -159,7 +159,7 @@ const AuthTravel: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-white">
+    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-transparent">
       <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl border border-sky-100 p-6 sm:p-8">
         {/* Header + mode switch */}
         <div className="mb-6 text-center">
