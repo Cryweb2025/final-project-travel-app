@@ -27,11 +27,13 @@ export const CountryInfoPage = () => {
       </section>
 
       <section className={styles.introSection}>
-        <img
-          src={country.image}
-          alt={country.name}
-          className={styles.introImage}
-        />
+        <div className={styles.introImageWrapper}>
+          <img
+            src={country.image}
+            alt={country.name}
+            className={styles.introImage}
+          />
+        </div>
 
         <div className={styles.introText}>
           <p>{country.imageText}</p>
@@ -43,10 +45,11 @@ export const CountryInfoPage = () => {
         <CurrencySection currency={country.currency} />
       </div>
 
-      <section className={styles.foodSection}>
-        <h2 className={styles.sectionTitle}>Food</h2>
-        <p className={styles.foodText}>{country.food}</p>
+      <section className={styles.foodLifestyleSection}>
+        <h2 className={styles.foodTitle}>Food & Lifestyle</h2>
+        <p className={styles.foodLifestyleText}>{country.foodAndLifeStyle}</p>
       </section>
+
       <section className={styles.placesSection}>
         <h2 className={styles.sectionTitle}>Highlights</h2>
 
