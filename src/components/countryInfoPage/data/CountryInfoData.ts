@@ -9,6 +9,10 @@ export interface CountryInfo {
   capital: string;
   currency: string;
   image: string;
+  places: {
+  name: string;
+  image: string;
+}[];
 }
 
 export const countryInfoData: CountryInfo[] = [
@@ -23,6 +27,34 @@ export const countryInfoData: CountryInfo[] = [
     currency: "JPY",
     image: "https://www.agoda.com/wp-content/uploads/2024/03/Featured-image-Hirano-jinja-Shrine-in-Kyoto-Japan-during-full-bloom-cherry-blossom-season.jpg",
     imageText: "When is the best time to travel to Japan? Perhaps in spring, when the Japanese flock outdoors to immerse themselves in a pale pink sea of ​​cherry blossoms. Perhaps it's summer, when only the tip of Mount Fuji's iconic volcanic cone is still snow-capped and beachgoers plunge into the sea in Okinawa Prefecture. Or it's autumn, when the fiery red foliage of the maple forests accompanies trekking tours in the historic Kiso Valley. Perhaps it's even winter, when people especially enjoy soaking in hot onsen baths, snow monkeys bask in the hot springs of Hokkaido, and the entire country is enveloped in a unique stillness. We don't know. Because we believe Japan is worth a visit any time of year. ",
+    places: [{
+    name: "Kyoto",
+    image: "https://i.pinimg.com/1200x/a6/d8/c6/a6d8c698649394fdb5f2d533a21d3066.jpg"
+  },
+  {
+    name: "Mount Fuji",
+    image: "https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    name: "Tokyo Streets",
+    image: "https://plus.unsplash.com/premium_photo-1661902398022-762e88ff3f82?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+  },
+{
+    name: "Geisha Culture",
+    image: "https://i.pinimg.com/736x/5f/91/a2/5f91a298cd0468291087693ebfcae1bd.jpg"
+    
+  },
+{
+    name: "Tea Ceremony",
+    image: "https://i.pinimg.com/1200x/00/6b/30/006b3028b6e39977aa5a0606894ae6eb.jpg"
+    
+  },
+{
+    name: "Onsen Experience",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/8b/6a/da/takaragawa-onsen.jpg?w=1200&h=1200&s=1"
+    
+  }]
   },
   {
     id: "uae",
@@ -34,7 +66,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "AED",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
   {
     id: "maldives",
@@ -46,7 +79,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "MVR",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
   {
     id: "spain",
@@ -58,7 +92,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "EUR",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
 
   {
@@ -71,7 +106,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "EUR",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
 
   {
@@ -84,7 +120,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "EUR",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
 
   {
@@ -97,7 +134,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "EUR",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
   {
     id: "turkey",
@@ -109,7 +147,8 @@ export const countryInfoData: CountryInfo[] = [
     currency: "TRY",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
   {
     id: "mexico",
@@ -121,6 +160,7 @@ export const countryInfoData: CountryInfo[] = [
     currency: "MXN",
     image: "",
     subtitle: "",
-    imageText: ""
+    imageText: "",
+    places: []
   },
 ];

@@ -44,8 +44,20 @@ export const CountryInfoPage = () => {
       </div>
 
       <section className={styles.foodSection}>
-        <h2>Food</h2>
-        <p>{country.food}</p>
+        <h2 className={styles.sectionTitle}>Food</h2>
+        <p className={styles.foodText}>{country.food}</p>
+      </section>
+      <section className={styles.placesSection}>
+        <h2 className={styles.sectionTitle}>Highlights</h2>
+
+        <div className={styles.placesGrid}>
+          {country.places.map((place) => (
+            <div key={place.name} className={styles.placeCard}>
+              <img src={place.image} alt={place.name} />
+              <p className={styles.placeName}>{place.name}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

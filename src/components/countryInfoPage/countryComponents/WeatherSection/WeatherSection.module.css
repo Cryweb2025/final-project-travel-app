@@ -18,11 +18,15 @@
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #888;
+  color: #992828;
   margin-bottom: 0.5rem;
 }
 
 .text {
   font-size: 1rem;
   color: #222;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
