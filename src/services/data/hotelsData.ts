@@ -12,7 +12,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 180,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe0GS_YfKyQ_FLpF8Tm6z1VMEFZdJ8dGwWXg&s",
+        "https://www.hilton.com/im/en/TYOTBTW/18387646/exe-room-11-.jpg?impolicy=crop&cw=4498&ch=2998&gravity=NorthWest&xposition=0&yposition=0&rw=1280&rh=854",
         "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
       ],
@@ -32,7 +32,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       stars: 3,
       images: [
         "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?auto=format&fit=crop&w=1600&q=80",
+        "https://hyatt-regency-osaka.hotels-in-osaka.com/data/Photos/OriginalPhoto/14555/1455584/1455584323/osaka-grand-prince-hotel-osaka-bay-photo-76.JPEG",
       ],
     },
     {
@@ -41,7 +41,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       stars: 4,
       images: [
         "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1600047509807-976f06af6571?auto=format&fit=crop&w=1600&q=80",
+        "https://media-cdn.holidaycheck.com/w_768,h_432,c_fill,q_auto,f_auto/ugc/images/af04c1b2-a37f-4b8c-b7e4-6d95585f8238",
       ],
     },
     {
@@ -58,8 +58,8 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 200,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwk9q3sc8OAbs5OAv-0xGsYG51r1zIquo3nQ&s",
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80",
+        "https://www.datocms-assets.com/101439/1739103917-highland-resort-hotel-spa.jpg?auto=format&h=1000&w=2000",
+        "https://cdn.jumeirah.com/api/public/content/79da328fb1394fe1a4e9fdd3c5726301?v=edf1e992",
       ],
     },
     {
@@ -67,8 +67,8 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 110,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTidHDhXqpBEu9mIDqsGxKKgL962wXYApcOjQ&s",
-        "https://images.unsplash.com/photo-1542317854-9ca45a0088b6",
+        "https://osaka-bay-tower.hotels-in-osaka.com/data/Pics/OriginalPhoto/16065/1606598/1606598253/art-hotel-osaka-bay-tower-osaka-pic-1.JPEG",
+        "https://hyatt-regency-osaka.hotels-in-osaka.com/data/Photos/OriginalPhoto/14555/1455584/1455584323/osaka-grand-prince-hotel-osaka-bay-photo-76.JPEG",
       ],
     },
     {
@@ -76,7 +76,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 100,
       stars: 3,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjJB6Ji0jqCv2EFeU5cTOlqF2I9JMwzcs5lw&s",
+        "https://www.hilton.com/im/en/TYOTBTW/18387646/exe-room-11-.jpg?impolicy=crop&cw=4498&ch=2998&gravity=NorthWest&xposition=0&yposition=0&rw=1280&rh=854",
         "https://images.unsplash.com/photo-1484154218962-a197022b5858",
       ],
     },
@@ -88,8 +88,8 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 220,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnmQXA1bggpuNJ5v4KTU68ngpYg6LIK1hQ5g&s",
-        "https://images.unsplash.com/photo-1498503188670-890fa89f2d3c?auto=format&fit=crop&w=1600&q=80",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/484892426.jpg?k=180f0627afa884090150863ba592ed2857c6580b2ca0f0fc28dd5d11fe8d5ca1&o=&hp=1",
+        "https://www.hilton.com/im/en/TYOTBTW/18387646/exe-room-11-.jpg?impolicy=crop&cw=4498&ch=2998&gravity=NorthWest&xposition=0&yposition=0&rw=1280&rh=854",
       ],
     },
     {
@@ -98,7 +98,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       stars: 4,
       images: [
         "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=80",
-        "https://images.unsplash.com/photo-1578898888179-e7d33d8c6dba?auto=format&fit=crop&w=1600&q=80",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/316159544.jpg?k=b2d56282a9167f456845e8fda134146052e3c5e768782aa4083a270dc19c2fd7&o=",
       ],
     },
     {
@@ -106,8 +106,8 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 250,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ0E1ajL5mFJK4zMcDaugA7QsfBK5TJCSSzw&s",
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
+        "https://images.squarespace-cdn.com/content/v1/5ef989171950e30ec632f2f1/3dad690b-e1a1-47f9-ae72-a256ca68e9aa/olas-tulum-mexico-hotel-oceanfront-junior-suite.jpg",
+        "https://cdn.jumeirah.com/api/public/content/79da328fb1394fe1a4e9fdd3c5726301?v=edf1e992",
       ],
     },
     {
@@ -123,7 +123,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 140,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdzeSkrPEc0wmp8d5Fe9rvWg6-quqeX7yWyA&s",
+        "https://royal-palace.hotelsnicosia.com/data/Pics/OriginalPhoto/16093/1609367/1609367072/royal-palace-hotel-nicosia-pic-1.JPEG",
       ],
     },
     {
@@ -131,7 +131,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 260,
       stars: 5,
       images: [
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
+        "https://images.squarespace-cdn.com/content/6250a8d257a6e83aaad50c8e/1725157964442-0QS1NKEY5D96T3XBADI9/best-hotels-baja-california.jpg?content-type=image%2Fjpeg",
       ],
     },
     {
@@ -154,23 +154,21 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 500,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKy6c4acjh-eOmXSJwXDxCWHPiG5NASeG3sw&s",
+        "https://www.sonikstour.ru/upload/resize_cache/webp/iblock/66a/66ab595f77c758d0f769190911d2835f.webp",
       ],
     },
     {
       name: "Dubai Marina Hotel",
       price: 240,
       stars: 4,
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYY_1ULsNWti1sfSi5ZdkX1O7J8W5HJ-LbnA&s",
-      ],
+      images: ["https://hotels.sletat.ru/i/f/85087_0.jpg"],
     },
     {
       name: "Palm Jumeirah Luxury Suites",
       price: 420,
       stars: 5,
       images: [
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
+        "https://www.exoticadubai.tajhotels.com/wp-content/uploads/sites/470/2025/08/Luxury-Suite-Sea-View-4-2000x1000.jpg",
       ],
     },
     {
@@ -178,7 +176,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 210,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9lYtEb4n304g9AJ4UgXfAstNvIxsXKuEfng&s",
+        "https://static21.com-hotel.com/uploads/hotel/78902/photo/the-st-regis-abu-dhabi_155074475910.jpg",
       ],
     },
     {
@@ -186,23 +184,21 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 190,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZSYHBSruD6H6xwjYVvvzM2UQH9sDxAkQPtw&s",
+        "https://sheraton-desert-oasis.hotels-scottsdale.com/data/Imgs/OriginalPhoto/3115/311590/311590605/img-sheraton-desert-oasis-villas-scottsdale-scottsdale-31.JPEG",
       ],
     },
     {
       name: "Dubai Crown Plaza",
       price: 150,
       stars: 3,
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR36g1oDYdHI_lgJfMkR0qhyVUygJJcI4HtDg&s",
-      ],
+      images: ["https://www.intrust-tour.ru/images/hotel_img/hotel_11131.jpg"],
     },
     {
       name: "Golden Sand Palace",
       price: 250,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtljk-YGmuJHvM1iVuIwltUBzq5v9YuPu1vA&s",
+        "https://files.anextour.ru/hotel/uae/hotel/golden-sands-hotel-apartment-5-dubai/o249069?&hotelCode=17591",
       ],
     },
     {
@@ -210,7 +206,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 210,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqlfByEHx9rcx2UEkyY7kSyyFo660KhbNRrQ&s",
+        "https://media.architonic.com/p-on/20268141/content/sumei-skyline-coast-boutique-hotel_content_c6083a9d.jpeg",
       ],
     },
   ],
@@ -221,7 +217,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 130,
       stars: 4,
       images: [
-        "https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=1600&q=80",
+        "https://www.clickistanbulhotels.com/data/Photos/OriginalPhoto/12748/1274872/1274872306.JPEG",
       ],
     },
     {
@@ -237,23 +233,21 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 160,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzB04RnKXF7O75QvGk2-b7fwVId2DWdhdfA&s",
+        "https://www.sultancavesuites.com/uploads/2020/06/308-01-2_op.jpg",
       ],
     },
     {
       name: "Izmir Marina Suites",
       price: 120,
       stars: 3,
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6zlEOxpRGRoORyUgwwL9ogD7tFQGe5DWQQ&s",
-      ],
+      images: ["https://hotelephesus.com/wp-content/uploads/2025/07/6-1-1.jpg"],
     },
     {
       name: "Bodrum Luxury Villa",
       price: 230,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlMDvcehdgcUmdZkvCj6qtJKfkwgL1O2EmWA&s",
+        "https://lujohotel.com/assets/rooms/maki-villa-two-bedroom-partly/1.jpg",
       ],
     },
     {
@@ -261,22 +255,22 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 100,
       stars: 3,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn5AdF6YaAM73HeUY10LrAhkL3j32xNoZaig&s",
+        "https://hyatt-regency-osaka.hotels-in-osaka.com/data/Photos/OriginalPhoto/14555/1455584/1455584323/osaka-grand-prince-hotel-osaka-bay-photo-76.JPEG",
       ],
     },
     {
       name: "Ephesus Grand Resort",
       price: 160,
       stars: 4,
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj_cr38fbj9ua8gdlIzZw-Ke5O7f0Qer7yuQ&s",
-      ],
+      images: ["https://hotelephesus.com/wp-content/uploads/2025/07/6-1-1.jpg"],
     },
     {
       name: "Bosphorus Palace",
       price: 180,
       stars: 5,
-      images: ["https://images.unsplash.com/photo-1506744038136-46273834b3fb"],
+      images: [
+        "https://images.trvl-media.com/lodging/1000000/530000/528600/528546/d5fc7394.jpg?impolicy=fcrop&w=1200&h=800&quality=medium",
+      ],
     },
   ],
 
@@ -351,7 +345,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 160,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-LsWHkffZu2oiRbEiLvHpFRAnhbaf2G2djA&s",
+        "https://static.independent.co.uk/2025/07/21/12/23/wh-bcnwh-w-barcelona-24004.jpeg",
       ],
     },
     {
@@ -359,7 +353,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 190,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH8dlAthCiqNaDR1GBdHRYL5cV_V2NnQP8Ng&s",
+        "https://sharetribe.imgix.net/6623df02-4af4-48a8-a977-c25cf75728b7/662666cd-8127-4118-87ea-1da3a9d73e49?auto=format&fit=clip&h=2400&w=2400&s=b3a7679abf37d5894e4a654329f377c2",
       ],
     },
     {
@@ -367,23 +361,21 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 140,
       stars: 4,
       images: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
+        "https://themediterraneaninsider.com/wp-content/uploads/2025/04/TMI_HotelAlfonsoXIII_Seville_Andalusia_Spain_03_.jpg",
       ],
     },
     {
       name: "Valencia Sun Hotel",
       price: 120,
       stars: 3,
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9sFTDLj8xyikPFuWBPteNUaLJvVOKiy68og&s",
-      ],
+      images: ["https://cdn2.paraty.es/seayou-valencia/images/196b8efcf33d55b"],
     },
     {
       name: "Ibiza Paradise Club",
       price: 260,
       stars: 5,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR-vcxBFCryBxndzdawceQMjnwTZCMxSlHfg&s",
+        "https://bynder.onthebeach.co.uk/cdn-cgi/image/width=1400,quality=70,fit=cover,format=auto/m/1eeaac274a178f8e/original/Crown-Paradise-Cancun.jpg",
       ],
     },
     {
@@ -479,7 +471,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 190,
       stars: 4,
       images: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80",
+        "https://images.squarespace-cdn.com/content/v1/63d83cafb5d75a62ec607e07/ef7377df-585d-4bc9-be1a-6e087e4c2428/Best+Hotels+in+Rome+with+a+View+-+NH+Collection+Roma+Fori+Imperiali.jpg",
       ],
     },
     {
@@ -493,7 +485,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 180,
       stars: 4,
       images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr4jxUE3u46u2V7ayeIlFM9CI49j7ukeCw9A&s",
+        "https://www.hotel-florence.net/data/Photos/OriginalPhoto/8053/805394/805394283.JPEG",
       ],
     },
     {
@@ -517,7 +509,7 @@ export const hotelsData: Record<string, Hotel[]> = {
       price: 210,
       stars: 4,
       images: [
-        "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=1600&q=80",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/78/6f/74/panoramica-piscina.jpg?w=900&h=500&s=1",
       ],
     },
     {

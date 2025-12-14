@@ -8,6 +8,7 @@ import photoVladimir from "../../assets/photos/vladimir.jpg";
 import photoYulia from "../../assets/photos/yulia.jpg";
 import photoYulianna from "../../assets/photos/yulianna.jpg";
 import photoIlyana from "../../assets/photos/ilyana.jpg";
+import photoAlexander from "../../assets/photos/alexander.jpg";
 
 const Team: React.FC = () => {
   // Хук переводов
@@ -36,6 +37,7 @@ const Team: React.FC = () => {
       name: "Alexander",
       role: t("team.members.alexander.role"),
       description: t("team.members.alexander.description"),
+      photo: photoAlexander,
     },
     {
       name: "Ilyana",

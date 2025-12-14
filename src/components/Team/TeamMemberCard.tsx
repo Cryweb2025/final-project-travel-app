@@ -1,12 +1,12 @@
 import React from "react";
-import { useTranslation } from "react-i18next"; // ✅ добавили
+import { useTranslation } from "react-i18next";
 
 interface TeamMemberCardProps {
   name: string;
   role: string;
   description: string;
   photo?: string;
-  badge?: "teamlead"; // ✅ добавили
+  badge?: "teamlead";
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -16,7 +16,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   photo,
   badge,
 }) => {
-  const { t } = useTranslation(); // ✅ добавили
+  const { t } = useTranslation();
   const initial = name.charAt(0).toUpperCase();
 
   return (
@@ -24,11 +24,13 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
       className="
         rounded-2xl border p-5
         bg-white border-slate-100 shadow-sm
-        transition hover:shadow-md
+        transition-all duration-300
+        hover:-translate-y-1 hover:shadow-lg
         dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/20
       "
     >
       <div className="flex items-center gap-4">
+        {/* ===== PHOTO (hover ТОЛЬКО тут) ===== */}
         <div
           className="
             w-24 h-32 rounded-xl
@@ -36,6 +38,8 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
             bg-gradient-to-tr from-sky-500 to-emerald-500
             text-white text-2xl font-bold
             overflow-hidden shrink-0
+            transition-transform duration-300
+            hover:scale-110
           "
         >
           {photo ? (
@@ -50,7 +54,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         </div>
 
         <div className="min-w-0">
-          {/* ✅ Имя + бейдж */}
+          {/* Имя + бейдж */}
           <div className="flex items-center gap-2 flex-wrap">
             <h3 className="text-base font-semibold text-slate-900 dark:text-white">
               {name}
