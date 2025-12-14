@@ -1,84 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body,
-#root {
-  height: 100%;
-}
-
-/* Базовые стили приложения */
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  /* Оставляем светлую тему по умолчанию */
-  color-scheme: light;
-  color: #0f172a; /* text-slate-900 */
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(
-    to bottom,
-    #0399c7 15%,   /* светло-серый */
-    #ffffff 70%  /* белый */
-  );
-  min-width: 320px;
-  min-height: 100vh;
-  /* ВАЖНО: убираем flex-центрирование, чтобы контент занимал всю ширину */
-  display: block;
-}
-
-/* Ссылки по умолчанию */
-a {
-  font-weight: 500;
-  color: #0ea5e9; /* sky-500 */
-  text-decoration: none;
-}
-a:hover {
-  color: #0369a1; /* sky-700 */
-}
-
-/* Мягкая “периодическая прокрутка” / float */
-.travel-logo-float {
-  animation: logoFloat 4s ease-in-out infinite;
-  will-change: transform;
-}
-
-@keyframes logoFloat {
-  0%   { transform: translateY(0) rotate(0deg); }
-  50%  { transform: translateY(-3px) rotate(-2deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-
-/* Кнопки по умолчанию (если где-то используешь без Tailwind) */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #0ea5e9;
-  color: #ffffff;
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.25s;
-}
-button:hover {
-  border-color: #0284c7;
-  background-color: #0284c7;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+{
+  "name": "final-project-travel-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.1",
+    "formik": "^2.4.9",
+    "i18next": "^25.7.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "lucide-react": "^0.556.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-i18next": "^16.4.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.10.1",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@types/yup": "^0.29.14",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  }
 }
