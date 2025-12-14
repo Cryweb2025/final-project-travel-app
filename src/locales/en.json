@@ -203,5 +203,14 @@
   },
   "common": {
     "reset": "Reset"
+  },
+  "reviews": {
+    "title": "What our travelers say",
+    "prev": "Previous review",
+    "next": "Next review",
+    "anna": "Amazing service! Everything was perfectly organized.",
+    "marco": "Best travel experience I’ve had so far.",
+    "emily": "Great destinations and very friendly support."
   }
+
 }

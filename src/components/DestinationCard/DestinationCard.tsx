@@ -20,6 +20,7 @@ interface DestinationCardProps {
 /*
   Карточка направления.
   Отображает изображение страны, название и текущую погоду.
+  Полностью адаптирована под light / dark theme.
 */
 const DestinationCard: React.FC<DestinationCardProps> = ({
   name,
@@ -55,9 +56,11 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
     >
       <div
         className="
-          bg-yellow-100 rounded-xl overflow-hidden
+          rounded-xl overflow-hidden h-full
+          bg-yellow-100 dark:bg-slate-800
+          border border-transparent dark:border-slate-700
           shadow-md hover:shadow-xl
-          h-full
+          transition-colors
         "
       >
         {/* Изображение направления */}
@@ -75,11 +78,13 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         {/* Контент карточки */}
         <div className="p-4 flex flex-col items-center text-center gap-2">
           {/* Название страны */}
-          <h3 className="text-base sm:text-lg font-semibold">{name}</h3>
+          <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">
+            {name}
+          </h3>
 
           {/* Состояние загрузки погоды */}
           {isLoading && (
-            <p className="text-xs sm:text-sm text-gray-600">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               ⏳ {t("weather.loading")}
             </p>
           )}
@@ -102,7 +107,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
               />
 
               {/* Температура и описание */}
-              <p className="text-xs sm:text-sm font-medium">
+              <p className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
                 🌡️ {Math.round(data.main.temp)}°C •{" "}
                 {data.weather[0].description}
               </p>

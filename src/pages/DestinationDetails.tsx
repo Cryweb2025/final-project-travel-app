@@ -38,18 +38,12 @@ const DestinationDetails: React.FC = () => {
 
   /* ================= ВСПОМОГАТЕЛЬНЫЕ ДАННЫЕ ================= */
 
-  // Получение всех цен для расчёта диапазона
   const prices = rawHotels.map((h) => h.price);
-
-  // Минимальная доступная цена
   const globalMin = prices.length ? Math.min(...prices) : 0;
-
-  // Максимальная доступная цена
   const globalMax = prices.length ? Math.max(...prices) : 1000;
 
   /* ================= ЭФФЕКТЫ ================= */
 
-  // Автоматическое переключение изображений в верхнем каруселе
   useEffect(() => {
     const timer = setInterval(() => {
       setCarouselIndex(
@@ -62,17 +56,11 @@ const DestinationDetails: React.FC = () => {
 
   /* ================= ФИЛЬТРАЦИЯ И СОРТИРОВКА ================= */
 
-  // Отфильтрованный и отсортированный список отелей
   const hotels = useMemo(() => {
     let list = rawHotels.slice();
 
-    if (minPrice !== "") {
-      list = list.filter((h) => h.price >= Number(minPrice));
-    }
-
-    if (maxPrice !== "") {
-      list = list.filter((h) => h.price <= Number(maxPrice));
-    }
+    if (minPrice !== "") list = list.filter((h) => h.price >= Number(minPrice));
+    if (maxPrice !== "") list = list.filter((h) => h.price <= Number(maxPrice));
 
     list.sort((a, b) =>
       sort === "stars_desc" ? b.stars - a.stars : a.stars - b.stars
@@ -81,7 +69,6 @@ const DestinationDetails: React.FC = () => {
     return list;
   }, [rawHotels, minPrice, maxPrice, sort]);
 
-  // Открытие модального окна с галереей отеля
   const openModal = (hotel: Hotel, index = 0) => {
     setModalHotel(hotel);
     setModalImageIndex(index);
@@ -91,7 +78,7 @@ const DestinationDetails: React.FC = () => {
   /* ================= РЕНДЕР ================= */
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto text-slate-900 dark:text-slate-100">
       {/* Заголовок страницы */}
       <h1 className="text-3xl font-bold mb-4">
         {t("hotels.title", { country: key?.toUpperCase() })}
@@ -104,20 +91,15 @@ const DestinationDetails: React.FC = () => {
             alert(t("hotels.more_alert", { country: key?.toUpperCase() }))
           }
           className="
-    inline-flex items-center justify-center
-    px-5 py-2
-    rounded-lg
-    text-sm font-semibold
-    text-white
-    bg-gradient-to-r from-sky-500 to-emerald-500
-    shadow-md shadow-sky-200
-    transition-all duration-200
-    hover:from-sky-600 hover:to-emerald-600
-    hover:shadow-lg
-    active:scale-95
-    focus:outline-none
-    focus:ring-2 focus:ring-sky-300 focus:ring-offset-1
-  "
+            inline-flex items-center justify-center
+            px-5 py-2 rounded-lg
+            text-sm font-semibold text-white
+            bg-gradient-to-r from-sky-500 to-emerald-500
+            shadow-md transition-all
+            hover:from-sky-600 hover:to-emerald-600
+            active:scale-95
+            focus:outline-none focus:ring-2 focus:ring-sky-300
+          "
         >
           {t("hotels.more")}
         </button>
@@ -139,14 +121,15 @@ const DestinationDetails: React.FC = () => {
             ))}
 
             {rawHotels.length === 0 && (
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-600">{t("hotels.no_images")}</span>
+              <div className="w-full h-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+                <span className="text-slate-600 dark:text-slate-300">
+                  {t("hotels.no_images")}
+                </span>
               </div>
             )}
           </div>
         </div>
 
-        {/* Кнопки управления каруселью */}
         <button
           onClick={() =>
             setCarouselIndex(
@@ -155,7 +138,7 @@ const DestinationDetails: React.FC = () => {
                 Math.max(1, Math.min(5, rawHotels.length))
             )
           }
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-2 rounded-full shadow"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-slate-800/80 px-3 py-2 rounded-full shadow"
         >
           ◀
         </button>
@@ -166,62 +149,56 @@ const DestinationDetails: React.FC = () => {
               (i) => (i + 1) % Math.max(1, Math.min(5, rawHotels.length))
             )
           }
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-2 rounded-full shadow"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-slate-800/80 px-3 py-2 rounded-full shadow"
         >
           ▶
         </button>
       </div>
 
-      {/* Блок фильтров и сортировки */}
-      <div className="p-4 rounded-lg mb-6 flex flex-wrap gap-4 items-center">
-        <div className="flex items-center gap-2">
-          <label className="text-sm">{t("hotels.price")}</label>
+      {/* Фильтры */}
+      <div className="p-4 rounded-lg mb-6 flex flex-wrap gap-4 items-center bg-white dark:bg-slate-800 border dark:border-slate-700">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 w-full">
+          <label className="text-sm sm:whitespace-nowrap">
+            {t("hotels.price")}
+          </label>
 
-          <input
-            type="number"
-            placeholder={`${globalMin}`}
-            value={minPrice === "" ? "" : minPrice}
-            onChange={(e) =>
-              setMinPrice(e.target.value === "" ? "" : Number(e.target.value))
-            }
-            className="w-24 p-2 rounded border"
-          />
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <input
+              type="number"
+              placeholder={`${globalMin}`}
+              value={minPrice === "" ? "" : minPrice}
+              onChange={(e) =>
+                setMinPrice(e.target.value === "" ? "" : Number(e.target.value))
+              }
+              className="w-full sm:w-24 p-2 rounded border dark:bg-slate-900 dark:border-slate-700"
+            />
 
-          <span>—</span>
+            <span className="text-slate-500">—</span>
 
-          <input
-            type="number"
-            placeholder={`${globalMax}`}
-            value={maxPrice === "" ? "" : maxPrice}
-            onChange={(e) =>
-              setMaxPrice(e.target.value === "" ? "" : Number(e.target.value))
-            }
-            className="w-24 p-2 rounded border"
-          />
+            <input
+              type="number"
+              placeholder={`${globalMax}`}
+              value={maxPrice === "" ? "" : maxPrice}
+              onChange={(e) =>
+                setMaxPrice(e.target.value === "" ? "" : Number(e.target.value))
+              }
+              className="w-full sm:w-24 p-2 rounded border dark:bg-slate-900 dark:border-slate-700"
+            />
+          </div>
 
           <button
+            type="button"
             onClick={() => {
               setMinPrice("");
               setMaxPrice("");
             }}
             className="
-    ml-3
-    inline-flex items-center justify-center
-    px-4 py-2
-    text-sm font-semibold
-    rounded-lg
-    border border-sky-200
-    bg-white/70 backdrop-blur
-    text-sky-700
-    shadow-sm
-    transition-all duration-200
-    hover:bg-sky-50
-    hover:border-sky-300
-    hover:shadow
-    active:scale-95
-    focus:outline-none
-    focus:ring-2 focus:ring-sky-300 focus:ring-offset-1
-  "
+      w-full sm:w-auto
+      px-4 py-2 text-sm font-semibold
+      rounded-lg border
+      dark:border-slate-600
+      whitespace-nowrap
+    "
           >
             {t("common.reset")}
           </button>
@@ -232,7 +209,7 @@ const DestinationDetails: React.FC = () => {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as any)}
-            className="p-2 rounded border"
+            className="p-2 rounded border dark:bg-slate-900 dark:border-slate-700"
           >
             <option value="stars_desc">{t("hotels.sort_high")}</option>
             <option value="stars_asc">{t("hotels.sort_low")}</option>
@@ -240,10 +217,10 @@ const DestinationDetails: React.FC = () => {
         </div>
       </div>
 
-      {/* Сетка карточек отелей */}
+      {/* Карточки отелей */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {hotels.length === 0 && (
-          <div className="col-span-full text-center text-gray-500 py-12">
+          <div className="col-span-full text-center text-slate-500 py-12">
             {t("hotels.no_results")}
           </div>
         )}
@@ -251,7 +228,7 @@ const DestinationDetails: React.FC = () => {
         {hotels.map((hotel) => (
           <article
             key={hotel.name}
-            className="bg-white shadow-md rounded-lg overflow-hidden hover:scale-105 transition"
+            className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden hover:scale-105 transition"
           >
             <div
               className="h-48 cursor-pointer"
@@ -271,7 +248,7 @@ const DestinationDetails: React.FC = () => {
                 <span>💰 {hotel.price} €</span>
                 <span className="text-yellow-500">
                   {"★".repeat(hotel.stars)}
-                  <span className="text-gray-300">
+                  <span className="text-slate-300 dark:text-slate-600">
                     {"★".repeat(5 - hotel.stars)}
                   </span>
                 </span>
@@ -280,9 +257,51 @@ const DestinationDetails: React.FC = () => {
               <div className="mt-3 flex gap-2">
                 <button
                   onClick={() => openModal(hotel)}
-                  className="flex-1 px-3 py-2 bg-blue-600 text-white rounded"
+                  className="
+    group relative flex-1 inline-flex items-center justify-center
+    px-4 py-2
+    rounded-lg
+    text-sm font-semibold tracking-wide
+    transition-all duration-300 ease-out
+
+    /* LIGHT THEME */
+    bg-gradient-to-r from-sky-500 to-blue-600
+    text-white
+    shadow-md shadow-sky-500/30
+    hover:from-sky-600 hover:to-blue-700
+    hover:shadow-lg hover:shadow-sky-600/40
+
+    /* DARK THEME */
+    dark:bg-gradient-to-r dark:from-sky-400 dark:to-blue-500
+    dark:text-slate-900
+    dark:shadow-cyan-400/30
+    dark:hover:from-sky-300 dark:hover:to-blue-400
+    dark:hover:shadow-cyan-300/40
+
+    hover:-translate-y-0.5
+    active:translate-y-0 active:shadow-sm
+
+    focus:outline-none
+    focus:ring-2 focus:ring-sky-400
+    focus:ring-offset-2 focus:ring-offset-transparent
+  "
                 >
-                  {t("hotels.view_photos")}
+                  {/* Glow layer */}
+                  <span
+                    className="
+      pointer-events-none
+      absolute inset-0 rounded-lg
+      bg-white/30 dark:bg-white/20
+      opacity-0 blur-md
+      transition-opacity duration-300
+      group-hover:opacity-100
+    "
+                  />
+
+                  {/* Text */}
+                  <span className="relative z-10">
+                    {t("hotels.view_photos")}
+                  </span>
                 </button>
 
                 <button
@@ -294,9 +313,50 @@ const DestinationDetails: React.FC = () => {
                       })
                     )
                   }
-                  className="px-3 py-2 border rounded"
+                  className="
+    group relative inline-flex items-center justify-center
+    px-4 py-2
+    rounded-lg
+    text-sm font-semibold tracking-wide
+    transition-all duration-300 ease-out
+
+    /* LIGHT THEME */
+    border border-sky-400/60
+    text-sky-700
+    bg-white
+    hover:bg-sky-50
+    hover:border-sky-500
+    shadow-sm
+
+    /* DARK THEME */
+    dark:border-slate-600
+    dark:text-slate-200
+    dark:bg-slate-900/40
+    dark:hover:bg-slate-800/60
+    dark:hover:border-sky-400
+
+    hover:-translate-y-0.5
+    active:translate-y-0 active:shadow-none
+
+    focus:outline-none
+    focus:ring-2 focus:ring-sky-400
+    focus:ring-offset-2
+    focus:ring-offset-transparent
+  "
                 >
-                  {t("hotels.book")}
+                  {/* subtle glow */}
+                  <span
+                    className="
+      pointer-events-none
+      absolute inset-0 rounded-lg
+      bg-sky-400/10 dark:bg-sky-400/10
+      opacity-0
+      transition-opacity duration-300
+      group-hover:opacity-100
+    "
+                  />
+
+                  <span className="relative z-10">{t("hotels.book")}</span>
                 </button>
               </div>
             </div>
@@ -304,17 +364,16 @@ const DestinationDetails: React.FC = () => {
         ))}
       </div>
 
-      {/* Модальное окно с галереей изображений */}
+      {/* Модальное окно */}
       {modalOpen && modalHotel && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-white rounded-lg max-w-4xl w-full mx-4 overflow-hidden"
+            className="bg-white dark:bg-slate-900 rounded-lg max-w-4xl w-full mx-4 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Основное изображение */}
             <div className="relative">
               <img
                 src={modalHotel.images[modalImageIndex]}
@@ -322,7 +381,6 @@ const DestinationDetails: React.FC = () => {
                 className="w-full h-96 object-cover"
               />
 
-              {/* Предыдущее изображение */}
               <button
                 onClick={() =>
                   setModalImageIndex(
@@ -331,31 +389,28 @@ const DestinationDetails: React.FC = () => {
                       modalHotel.images.length
                   )
                 }
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-2 rounded-full shadow"
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-slate-800/80 px-3 py-2 rounded-full"
               >
                 ◀
               </button>
 
-              {/* Следующее изображение */}
               <button
                 onClick={() =>
                   setModalImageIndex((i) => (i + 1) % modalHotel.images.length)
                 }
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 px-3 py-2 rounded-full shadow"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-slate-800/80 px-3 py-2 rounded-full"
               >
                 ▶
               </button>
 
-              {/* Закрытие модального окна */}
               <button
                 onClick={() => setModalOpen(false)}
-                className="absolute right-3 top-3 bg-white/80 px-2 py-1 rounded"
+                className="absolute right-3 top-3 bg-white/80 dark:bg-slate-800/80 px-2 py-1 rounded"
               >
                 ✕
               </button>
             </div>
 
-            {/* Миниатюры изображений */}
             <div className="p-4 flex gap-2 overflow-x-auto">
               {modalHotel.images.map((src, idx) => (
                 <img
@@ -365,7 +420,7 @@ const DestinationDetails: React.FC = () => {
                   onClick={() => setModalImageIndex(idx)}
                   className={`w-24 h-16 object-cover rounded cursor-pointer border ${
                     idx === modalImageIndex
-                      ? "ring-2 ring-blue-500"
+                      ? "ring-2 ring-sky-500"
                       : "opacity-70"
                   }`}
                 />

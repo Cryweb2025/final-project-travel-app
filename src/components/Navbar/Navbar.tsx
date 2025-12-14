@@ -7,13 +7,19 @@ import {
   logout as logoutAction,
 } from "../../slices/authSlice";
 import { useTranslation } from "react-i18next";
-import { Globe2, Menu, X } from "lucide-react";
+import { Globe2, Menu, X, Sun, Moon } from "lucide-react";
 
 // Логотип приложения
 import Logo from "../../assets/images/logo.png";
 
+// Контекст темы
+import { useTheme } from "../../context/ThemeContext";
+
 const Navbar: React.FC = () => {
-  // Получение пользователя из Redux (null если не авторизован)
+  /* ------------------------------------------------------------------
+     Получение состояния авторизации из Redux
+     user === null → пользователь не авторизован
+  ------------------------------------------------------------------ */
   const user = useSelector((state: RootState) => state.auth.user);
 
   // Redux dispatch
@@ -24,6 +30,9 @@ const Navbar: React.FC = () => {
 
   // i18n
   const { t, i18n } = useTranslation();
+
+  // Тема приложения (light / dark)
+  const { theme, toggleTheme } = useTheme();
 
   // Состояние выпадающего списка языков
   const [langOpen, setLangOpen] = useState(false);
@@ -45,7 +54,7 @@ const Navbar: React.FC = () => {
         }
       }
     } catch {
-      // игнор ошибок парсинга
+      // Ошибки парсинга игнорируются
     }
   }, [dispatch, user]);
 
@@ -57,18 +66,18 @@ const Navbar: React.FC = () => {
     setLangOpen(false);
   };
 
-  // Общие стили ссылок
+  // Базовые стили навигационных ссылок
   const linkBase =
     "px-3 py-2 text-sm font-medium rounded-md hover:bg-sky-600 hover:text-sky-50";
 
   const activeLink = "bg-sky-800 text-white";
 
   /* ------------------------------------------------------------------
-     Обработчик выхода из аккаунта
+     Выход из аккаунта:
      - очищает Redux
      - очищает localStorage
      - закрывает меню
-     - перенаправляет на главную
+     - SPA-переход на главную
   ------------------------------------------------------------------ */
   const handleLogout = () => {
     dispatch(logoutAction());
@@ -81,7 +90,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-sky-700 text-white shadow-md relative">
+    <nav className="bg-sky-700 dark:bg-slate-900 text-white shadow-md relative">
       <div className="px-3 sm:px-4">
         {/* Сетка: логотип | навигация | действия */}
         <div className="h-14 grid grid-cols-[auto,1fr,auto] items-center">
@@ -159,6 +168,28 @@ const Navbar: React.FC = () => {
 
           {/* ============ RIGHT BLOCK ============ */}
           <div className="flex items-center justify-end gap-2">
+            {/* -------- Theme switcher -------- */}
+            <button
+              onClick={toggleTheme}
+              className="
+                inline-flex items-center justify-center
+                rounded-md
+                bg-white/90 dark:bg-slate-800
+                text-sky-700 dark:text-slate-200
+                p-2
+                shadow-sm
+                hover:bg-white dark:hover:bg-slate-700
+                transition
+              "
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
+
             {/* -------- Language switcher -------- */}
             <div className="relative">
               <button
@@ -166,10 +197,18 @@ const Navbar: React.FC = () => {
                   setLangOpen((v) => !v);
                   setMobileOpen(false);
                 }}
-                className="inline-flex items-center gap-1 rounded-md bg-white/90 text-sky-700 px-2.5 py-1.5 text-sm font-medium shadow-sm hover:bg-white"
+                className="
+                  inline-flex items-center gap-1
+                  rounded-md
+                  bg-white/90 dark:bg-slate-800
+                  text-sky-700 dark:text-slate-200
+                  px-2.5 py-1.5
+                  text-sm font-medium
+                  shadow-sm
+                  hover:bg-white dark:hover:bg-slate-700
+                "
               >
                 <Globe2 className="w-4 h-4" />
-                {/* Показывается только базовый код языка */}
                 <span className="hidden sm:inline">
                   {i18n.language.split("-")[0].toUpperCase()}
                 </span>
@@ -186,7 +225,15 @@ const Navbar: React.FC = () => {
                     <button
                       key={l.code}
                       onClick={() => changeLanguage(l.code)}
-                      className="w-full text-left px-3 py-2 text-sm flex items-center gap-2 rounded-md bg-sky-700/95 text-white hover:bg-sky-500 shadow-sm transition"
+                      className="
+                        w-full text-left px-3 py-2 text-sm
+                        flex items-center gap-2
+                        rounded-md
+                        bg-sky-700 dark:bg-slate-800
+                        text-white
+                        hover:bg-sky-500 dark:hover:bg-slate-700
+                        shadow-sm transition
+                      "
                     >
                       <img
                         src={`https://flagcdn.com/w20/${l.flag}.png`}
@@ -204,14 +251,30 @@ const Navbar: React.FC = () => {
             {user ? (
               <button
                 onClick={handleLogout}
-                className="hidden md:inline-flex rounded-md bg-white text-sky-700 px-3 py-1.5 text-sm font-semibold hover:bg-sky-50"
+                className="
+                  hidden md:inline-flex
+                  rounded-md
+                  bg-white dark:bg-slate-800
+                  text-sky-700 dark:text-slate-200
+                  px-3 py-1.5
+                  text-sm font-semibold
+                  hover:bg-sky-50 dark:hover:bg-slate-700
+                "
               >
                 {t("logout")}
               </button>
             ) : (
               <Link
                 to="/login"
-                className="hidden md:inline-flex rounded-md bg-white text-sky-700 px-4 py-1.5 text-sm font-semibold hover:bg-sky-50"
+                className="
+                  hidden md:inline-flex
+                  rounded-md
+                  bg-white dark:bg-slate-800
+                  text-sky-700 dark:text-slate-200
+                  px-4 py-1.5
+                  text-sm font-semibold
+                  hover:bg-sky-50 dark:hover:bg-slate-700
+                "
               >
                 {t("login")}
               </Link>
@@ -219,7 +282,7 @@ const Navbar: React.FC = () => {
 
             {/* -------- Burger (mobile) -------- */}
             <button
-              className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-sky-600"
+              className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-sky-600 dark:hover:bg-slate-700"
               onClick={() => {
                 setMobileOpen((v) => !v);
                 setLangOpen(false);
@@ -233,7 +296,7 @@ const Navbar: React.FC = () => {
 
       {/* ================= MOBILE MENU ================= */}
       {mobileOpen && (
-        <div className="md:hidden absolute left-0 right-0 top-full bg-sky-700 border-t border-sky-600 shadow-md z-20">
+        <div className="md:hidden absolute left-0 right-0 top-full bg-sky-700 dark:bg-slate-900 border-t border-sky-600 dark:border-slate-700 shadow-md z-20">
           <div className="px-3 py-2 flex flex-col gap-1">
             <NavLink
               to="/"

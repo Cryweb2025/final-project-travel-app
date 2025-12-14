@@ -18,75 +18,77 @@ import ContactForm from "./components/ContactForm/ContactForm";
 // Корневой компонент приложения
 function App() {
   return (
-    // Основной контейнер страницы с вертикальной компоновкой
-    <div className="flex flex-col min-h-screen">
-      {/* Верхняя навигационная панель */}
+    /**
+     * Компонент фиксирует высоту приложения в пределах экрана
+     * и распределяет её между Navbar, main и Footer.
+     * overflow-hidden убирает случайную прокрутку из-за субпикселей/теней.
+     */
+    <div className="flex h-screen flex-col overflow-hidden">
+      {/* Компонент рендерит верхнюю навигацию. */}
       <Navbar />
 
-      {/* Основная зона контента между Navbar и Footer */}
-      <main className="flex-grow flex">
-        <div className="flex-grow">
-          <Routes>
-            {/* Главная страница — занимает всю доступную ширину и высоту */}
-            <Route path="/" element={<Home />} />
+      {/* Компонент занимает всё пространство между Navbar и Footer. */}
+      <main className="flex-1 overflow-auto">
+        <Routes>
+          {/* Компонент показывает главную страницу. */}
+          <Route path="/" element={<Home />} />
 
-            {/* Страница с подробной информацией о выбранном направлении */}
-            <Route path="/destination/:key" element={<DestinationDetails />} />
+          {/* Компонент показывает страницу деталей направления. */}
+          <Route path="/destination/:key" element={<DestinationDetails />} />
 
-            {/* Страница со списком направлений (центрированный контейнер) */}
-            <Route
-              path="/destinations"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <Destinations />
-                </div>
-              }
-            />
+          {/* Компонент оборачивает страницу направлений в центрированный контейнер. */}
+          <Route
+            path="/destinations"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <Destinations />
+              </div>
+            }
+          />
 
-            {/* Страница "О проекте" */}
-            <Route
-              path="/about"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <About />
-                </div>
-              }
-            />
+          {/* Компонент оборачивает страницу "О проекте" в центрированный контейнер. */}
+          <Route
+            path="/about"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <About />
+              </div>
+            }
+          />
 
-            {/* Страница формы обратной связи */}
-            <Route
-              path="/contact"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <ContactForm />
-                </div>
-              }
-            />
+          {/* Компонент оборачивает контактную форму в центрированный контейнер. */}
+          <Route
+            path="/contact"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <ContactForm />
+              </div>
+            }
+          />
 
-            {/* Страница авторизации / регистрации */}
-            <Route
-              path="/login"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <AuthTravel />
-                </div>
-              }
-            />
+          {/* Компонент оборачивает страницу логина в центрированный контейнер. */}
+          <Route
+            path="/login"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <AuthTravel />
+              </div>
+            }
+          />
 
-            {/* Личный кабинет пользователя */}
-            <Route
-              path="/account"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <Account />
-                </div>
-              }
-            />
-          </Routes>
-        </div>
+          {/* Компонент оборачивает личный кабинет в центрированный контейнер. */}
+          <Route
+            path="/account"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <Account />
+              </div>
+            }
+          />
+        </Routes>
       </main>
 
-      {/* Нижний футер сайта */}
+      {/* Компонент рендерит нижний футер. */}
       <Footer />
     </div>
   );

@@ -204,5 +204,13 @@
   },
   "common": {
     "reset": "Zurücksetzen"
+  },
+  "reviews": {
+    "title": "Was unsere Kunden sagen",
+    "prev": "Vorherige Bewertung",
+    "next": "Nächste Bewertung",
+    "anna": "Fantastischer Service! Alles war perfekt organisiert.",
+    "marco": "Die beste Reiseerfahrung, die ich bisher hatte.",
+    "emily": "Tolle Reiseziele und sehr freundlicher Support."
   }
 }
