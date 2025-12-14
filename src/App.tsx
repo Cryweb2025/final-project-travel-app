@@ -1,19 +1,28 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+
+// Основные layout-компоненты
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
+// Страницы приложения
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
 import About from "./pages/About";
-
-import { CountryInfoPage } from "./components/countryInfoPage";
-
 import AuthTravel from "./components/AuthTravel/AuthTravel";
-import Account from "./pages/Account";
-import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm/ContactForm";
+import DestinationDetails from "./pages/DestinationDetails";
+import Account from "./pages/Account";
 
+// Корневой компонент приложения
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    /**
+     * Компонент фиксирует высоту приложения в пределах экрана
+     * и распределяет её между Navbar, main и Footer.
+     * overflow-hidden убирает случайную прокрутку из-за субпикселей/теней.
+     */
+    <div className="flex h-screen flex-col overflow-hidden">
+      {/* Компонент рендерит верхнюю навигацию. */}
       <Navbar />
 
       {/* Средняя зона между Navbar и Footer */}
@@ -22,34 +31,40 @@ function App() {
         <div className="flex-grow">
           <Routes>
             {/* Home на всю доступную ширину/высоту */}
-            <Route path="/" element={<h1>Home page</h1>} />
+            <Route path="/" element={<Home />} />
 
-            {/* Остальные страницы — в центре с max-width */}
-            <Route
-              path="/destinations"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <Destinations />
-                </div>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <About />
-                </div>
-              }
-            />
+          {/* Компонент показывает страницу деталей направления. */}
+          <Route path="/destination/:key" element={<DestinationDetails />} />
 
-            <Route
-              path="/contact"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <ContactForm />
-                </div>
-              }
-            />
+          {/* Компонент оборачивает страницу направлений в центрированный контейнер. */}
+          <Route
+            path="/destinations"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <Destinations />
+              </div>
+            }
+          />
+
+          {/* Компонент оборачивает страницу "О проекте" в центрированный контейнер. */}
+          <Route
+            path="/about"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <About />
+              </div>
+            }
+          />
+
+          {/* Компонент оборачивает контактную форму в центрированный контейнер. */}
+          <Route
+            path="/contact"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <ContactForm />
+              </div>
+            }
+          />
 
             <Route
               path="/login"
@@ -67,12 +82,11 @@ function App() {
                 </div>
               }
             />
-              <Route path="/country/:id" element={<CountryInfoPage />} />
-
           </Routes>
         </div>
       </main>
 
+      {/* Компонент рендерит нижний футер. */}
       <Footer />
     </div>
   );
