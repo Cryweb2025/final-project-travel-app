@@ -3,10 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
+  // Хук для работы с переводами
   const { t } = useTranslation();
+
+  // Состояние поискового запроса
   const [query, setQuery] = useState("");
+
+  // Навигация между страницами
   const navigate = useNavigate();
 
+  // Обработчик поиска по введённому запросу
   const handleSearch = () => {
     if (query.trim() !== "") {
       navigate(`/destinations?search=${encodeURIComponent(query)}`);
@@ -22,7 +28,7 @@ const Home: React.FC = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%",
-        height: "100%", // занимаем всю высоту зоны контента
+        height: "100%", // Занимает всю доступную высоту контентной области
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -31,22 +37,28 @@ const Home: React.FC = () => {
         overflow: "hidden",
       }}
     >
-      {/* затемнение */}
+      {/* Затемняющий слой поверх фонового изображения */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(0,0,0,0.5)",
+          backgroundColor: "rgba(0,0,0,0.25)",
         }}
       />
 
-      {/* контент */}
+      {/* Основной контент hero-секции */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "800px" }}>
-        <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>{t("slogan")}</h1>
-        <p style={{ fontSize: "1.5rem", marginTop: "1rem" }}>
+        {/* Заголовок / слоган */}
+        <h1 style={{ fontSize: "1.8rem", fontWeight: "bold" }}>
+          {t("slogan")}
+        </h1>
+
+        {/* Описательный текст */}
+        <p style={{ fontSize: "1.2rem", marginTop: "1rem" }}>
           {t("hero_text")}
         </p>
 
+        {/* Блок поиска направлений */}
         <div
           style={{
             marginTop: "2rem",
@@ -54,6 +66,7 @@ const Home: React.FC = () => {
             justifyContent: "center",
           }}
         >
+          {/* Поле ввода поискового запроса */}
           <input
             type="text"
             placeholder={t("search_placeholder")}
@@ -63,11 +76,16 @@ const Home: React.FC = () => {
               padding: "0.8rem",
               width: "60%",
               borderRadius: "8px",
-              border: "none",
+              border: "1px solid rgba(255,255,255,0.3)",
               outline: "none",
               fontSize: "1rem",
+              background: "rgba(255,255,255,0.12)", // Полупрозрачный фон
+              color: "#003049",
+              backdropFilter: "blur(6px)", // Эффект стекла (glassmorphism)
             }}
           />
+
+          {/* Кнопка запуска поиска */}
           <button
             onClick={handleSearch}
             style={{
@@ -80,7 +98,10 @@ const Home: React.FC = () => {
               cursor: "pointer",
               fontSize: "1rem",
               fontWeight: "bold",
+              transition: "all 0.25s ease",
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#005f8f")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#0077b6")}
           >
             {t("search_button")}
           </button>

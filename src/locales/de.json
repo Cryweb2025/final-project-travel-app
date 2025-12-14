@@ -3,8 +3,10 @@
   "home": "Startseite",
   "destinations": "Reiseziele",
   "about": "Unser Team",
+  "contact": "Kontakt",
   "login": "Anmelden",
   "logout": "Abmelden",
+  "profile": "Profil",
   "username": "Benutzername",
   "password": "Passwort",
   "submit": "Absenden",
@@ -22,6 +24,185 @@
     "greece": "Griechenland",
     "italy": "Italien",
     "france": "Frankreich"
-}
+  },
+  "contact_form": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Haben Sie Fragen zu Reisen? Schreiben Sie uns, und wir antworten so schnell wie möglich!",
+    "success": "✓ Danke! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.",
+    "fields": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "subject": "Betreff",
+      "message": "Nachricht"
+    },
+    "placeholders": {
+      "name": "Geben Sie Ihren Namen ein",
+      "email": "beispiel@email.com",
+      "phone": "+49 156 123 4567",
+      "message": "Schreiben Sie Ihre Nachricht..."
+    },
+    "subjects": {
+      "placeholder": "Thema auswählen",
+      "booking": "Reise buchen",
+      "info": "Informationen zu Reisen",
+      "support": "Support",
+      "partnership": "Partnerschaft",
+      "other": "Sonstiges"
+    },
+    "errors": {
+      "name_required": "Name ist erforderlich",
+      "email_required": "E-Mail ist erforderlich",
+      "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "message_required": "Nachricht ist erforderlich"
+    },
+    "sending": "Senden...",
+    "submit": "Nachricht senden"
+  },
 
+  "auth": {
+    "brand": "Reisebüro",
+    "title_register": "Kundenregistrierung",
+    "title_login": "Kunden-Login",
+    "subtitle_register": "Erstellen Sie ein Testprofil, das im Browser gespeichert wird.",
+    "subtitle_login": "Melden Sie sich mit einem zuvor registrierten Testkonto an.",
+    "switch_register": "Registrieren",
+    "switch_login": "Anmelden",
+    "fields": {
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "password": "Passwort",
+      "confirm_password": "Passwort bestätigen"
+    },
+    "placeholders": {
+      "first_name": "Max",
+      "last_name": "Mustermann",
+      "email": "beispiel@mail.com",
+      "phone": "+49 156 123 4567",
+      "password": "Passwort eingeben",
+      "confirm_password": "Passwort wiederholen"
+    },
+    "password_strength": {
+      "weak": "Schwaches Passwort",
+      "medium": "Mittlere Stärke",
+      "strong": "Starkes Passwort"
+    },
+    "validation": {
+      "required": "Pflichtfeld",
+      "min2": "Mindestens 2 Zeichen",
+      "min6": "Mindestens 6 Zeichen",
+      "too_short": "Zu kurz",
+      "invalid_email": "Ungültige E-Mail",
+      "passwords_no_match": "Passwörter stimmen nicht überein"
+    },
+    "messages": {
+      "user_exists": "Ein Benutzer mit dieser E-Mail existiert bereits.",
+      "register_success": "Registrierung erfolgreich! Sie können sich jetzt anmelden.",
+      "invalid_credentials": "Ungültige E-Mail oder Passwort."
+    },
+    "submitting": "Wird gesendet...",
+    "logging_in": "Anmeldung...",
+    "register_button": "Registrieren",
+    "login_button": "Anmelden"
+  },
+  "account": {
+    "loading": "Profil wird geladen...",
+    "access_denied": "Zugriff verweigert. Bitte anmelden.",
+    "title": "Mein Konto",
+    "subtitle": "Verwalten Sie Ihr Profil, Reisen und Sicherheitseinstellungen.",
+    "logout": "Abmelden",
+    "travel_client": "Reisekunde",
+    "labels": {
+      "email": "E-Mail",
+      "phone": "Telefon"
+    },
+    "rewards": {
+      "title": "Reise-Belohnungen",
+      "trips": "Reisen",
+      "completed": "Abgeschlossen",
+      "tier": "Stufe",
+      "points_title": "Punkte",
+      "points_suffix": "Pkt.",
+      "points_hint": "Sammeln Sie mehr Punkte, indem Sie neue Reisen buchen."
+    },
+    "tabs": {
+      "profile": "Profil",
+      "trips": "Meine Reisen",
+      "security": "Sicherheit",
+      "settings": "Einstellungen"
+    },
+    "profile": {
+      "title": "Profildetails",
+      "edit": "Profil bearbeiten",
+      "full_name": "Vollständiger Name"
+    },
+    "edit": {
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "cancel": "Abbrechen",
+      "save": "Änderungen speichern"
+    },
+    "demo_note": "Dies ist ein Demo-Profil, das nur im Browser (localStorage) gespeichert wird. Keine echten Buchungen oder Zahlungen werden verarbeitet.",
+    "trips": {
+      "title": "Meine Reisen",
+      "subtitle": "Beispielübersicht über kommende und vergangene Reisen.",
+      "status": {
+        "booked": "Gebucht",
+        "completed": "Abgeschlossen"
+      }
+    },
+    "security": {
+      "title": "Sicherheit",
+      "subtitle": "Ändern Sie Ihr Passwort und verwalten Sie grundlegende Sicherheitseinstellungen.",
+      "current_password": "Aktuelles Passwort",
+      "new_password": "Neues Passwort",
+      "confirm_new_password": "Neues Passwort bestätigen",
+      "update_password": "Passwort aktualisieren",
+      "success": "Passwort wurde erfolgreich aktualisiert.",
+      "errors": {
+        "not_available": "Passwortänderung ist in dieser Demo nicht verfügbar.",
+        "fill_all": "Bitte füllen Sie alle Passwortfelder aus.",
+        "current_incorrect": "Aktuelles Passwort ist falsch.",
+        "new_min6": "Das neue Passwort muss mindestens 6 Zeichen haben.",
+        "new_no_match": "Die neuen Passwörter stimmen nicht überein."
+      }
+    },
+    "settings": {
+      "title": "Einstellungen & Präferenzen",
+      "subtitle": "Verwalten Sie Newsletter und Kontooptionen."
+    },
+    "newsletter": {
+      "title": "Newsletter-Abonnements",
+      "deals": "Reiseangebote und Aktionen erhalten",
+      "flights": "Flugbenachrichtigungen und Preisänderungen erhalten",
+      "hotels": "Hotel-Empfehlungen und Angebote erhalten"
+    },
+    "delete": {
+      "title": "Gefahrenbereich",
+      "text": "Löschen Sie Ihr Demo-Konto und alle gespeicherten Daten aus localStorage in diesem Browser.",
+      "button": "Konto löschen",
+      "confirm": "Möchten Sie Ihr Konto wirklich löschen? Das kann nicht rückgängig gemacht werden (Demo)."
+    }
+  },
+  "weather": {
+    "loading": "Wetter wird geladen...",
+    "failed": "Wetter konnte nicht geladen werden"
+  },
+  "hotels": {
+    "title": "Hotels in {{country}}",
+    "more": "Mehr über das Land",
+    "more_alert": "Mehr über das Land: {{country}}",
+    "price": "Preis",
+    "sort_by_stars": "Nach Sternen sortieren",
+    "sort_high": "Höchste zuerst",
+    "sort_low": "Niedrigste zuerst",
+    "view_photos": "Fotos ansehen",
+    "book": "Buchen",
+    "no_results": "Keine Hotels gefunden"
+  },
+  "common": {
+    "reset": "Zurücksetzen"
+  }
 }

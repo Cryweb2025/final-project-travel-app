@@ -1,10 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../slices/authSlice";
 import type {
   AccountUser,
   Trip,
   NewsletterPrefs,
   TabKey,
-} from "../types/account";
+} from "../services/types/account";
 
 // ключ такой же, как в AuthTravel
 const USERS_KEY = "travel_users";
@@ -38,6 +42,10 @@ const getTierFromTrips = (tripCount: number): "Bronze" | "Silver" | "Gold" => {
 };
 
 const Account: React.FC = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [user, setUser] = React.useState<AccountUser | null>(null);
   const [isReady, setIsReady] = React.useState(false);
 
@@ -72,7 +80,7 @@ const Account: React.FC = () => {
     (t) => t.status === "Completed"
   ).length;
   const tier = getTierFromTrips(tripCount);
-  const rewardPoints = tripCount * 500 + 200; // просто для красоты
+  const rewardPoints = tripCount * 500 + 200;
 
   // инициализация: читаем пользователя и настройки из localStorage
   React.useEffect(() => {
@@ -96,9 +104,12 @@ const Account: React.FC = () => {
           const parsedPrefs = JSON.parse(prefsRaw) as NewsletterPrefs;
           setNewsletter(parsedPrefs);
         }
+      } else {
+        setUser(null);
       }
     } catch (e) {
       console.error("Failed to parse logged_user", e);
+      setUser(null);
     } finally {
       setIsReady(true);
     }
@@ -110,11 +121,14 @@ const Account: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("logged_user");
-    window.location.href = "/";
+    dispatch(logout()); // ✅ сбрасываем Redux user
+    setUser(null); // ✅ сбрасываем локальный state
+    navigate("/", { replace: true }); // ✅ SPA redirect (без перезагрузки)
   };
 
   const handleProfileSave = () => {
     if (!user) return;
+
     const updatedUser: AccountUser = {
       ...user,
       firstName: editFirstName.trim(),
@@ -158,35 +172,32 @@ const Account: React.FC = () => {
     setSecurityError(null);
 
     if (!user.password) {
-      setSecurityError("Password change is not available in this demo.");
+      setSecurityError(t("account.security.errors.not_available"));
       return;
     }
 
     if (!currentPassword || !newPassword || !confirmNewPassword) {
-      setSecurityError("Please fill in all password fields.");
+      setSecurityError(t("account.security.errors.fill_all"));
       return;
     }
 
     if (currentPassword !== user.password) {
-      setSecurityError("Current password is incorrect.");
+      setSecurityError(t("account.security.errors.current_incorrect"));
       return;
     }
 
     if (newPassword.length < 6) {
-      setSecurityError("New password must be at least 6 characters.");
+      setSecurityError(t("account.security.errors.new_min6"));
       return;
     }
 
     if (newPassword !== confirmNewPassword) {
-      setSecurityError("New passwords do not match.");
+      setSecurityError(t("account.security.errors.new_no_match"));
       return;
     }
 
     // Обновляем пароль в logged_user
-    const updatedUser: AccountUser = {
-      ...user,
-      password: newPassword,
-    };
+    const updatedUser: AccountUser = { ...user, password: newPassword };
     localStorage.setItem("logged_user", JSON.stringify(updatedUser));
 
     // Обновляем пароль в общем списке пользователей
@@ -207,14 +218,13 @@ const Account: React.FC = () => {
     setCurrentPassword("");
     setNewPassword("");
     setConfirmNewPassword("");
-    setSecurityMessage("Password was successfully updated.");
+    setSecurityMessage(t("account.security.success"));
   };
 
   const handleDeleteAccount = () => {
     if (!user) return;
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete your account? This cannot be undone (demo)."
-    );
+
+    const confirmDelete = window.confirm(t("account.delete.confirm"));
     if (!confirmDelete) return;
 
     // удалить из общего списка
@@ -233,13 +243,15 @@ const Account: React.FC = () => {
     localStorage.removeItem("logged_user");
     localStorage.removeItem(`travel_newsletter_${user.email}`);
 
-    window.location.href = "/";
+    dispatch(logout());
+    setUser(null);
+    navigate("/", { replace: true });
   };
 
   if (!isReady) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <p className="text-sm text-slate-500">Loading profile...</p>
+        <p className="text-sm text-slate-500">{t("account.loading")}</p>
       </div>
     );
   }
@@ -248,7 +260,7 @@ const Account: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <p className="text-xl text-red-500 font-semibold">
-          Access denied. Please log in.
+          {t("account.access_denied")}
         </p>
       </div>
     );
@@ -259,31 +271,28 @@ const Account: React.FC = () => {
     (user.lastName?.[0] || "").toUpperCase();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-4">
+    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-white">
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl border border-sky-50 p-6 sm:p-8">
         {/* Верхняя панель: заголовок + logout */}
         <div className="flex items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
-              My Account
+              {t("account.title")}
             </h1>
-            <p className="text-sm text-slate-500">
-              Manage your profile, trips and security settings.
-            </p>
+            <p className="text-sm text-slate-500">{t("account.subtitle")}</p>
           </div>
           <button
             onClick={handleLogout}
             className="inline-flex items-center justify-center rounded-lg border border-red-100 bg-red-50 px-3 py-1.5 text-xs sm:text-sm font-semibold text-red-600 hover:bg-red-100 transition"
           >
-            Logout
+            {t("account.logout")}
           </button>
         </div>
 
         {/* Основной layout: слева профиль, справа вкладки */}
         <div className="grid grid-cols-1 md:grid-cols-[260px,1fr] gap-6">
-          {/* Левая колонка: профиль + статистика */}
+          {/* Левая колонка */}
           <div className="border border-slate-100 rounded-xl p-4 bg-slate-50/40">
-            {/* Аватар */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-sky-500 to-emerald-500 flex items-center justify-center text-white text-2xl font-bold shadow-md mb-3">
                 {initials || "U"}
@@ -291,40 +300,53 @@ const Account: React.FC = () => {
               <h2 className="text-lg font-semibold text-slate-900">
                 {user.firstName} {user.lastName}
               </h2>
-              <p className="text-xs text-slate-500 mt-0.5">Travel Client</p>
+              <p className="text-xs text-slate-500 mt-0.5">
+                {t("account.travel_client")}
+              </p>
 
               <div className="mt-3 text-xs text-slate-500 space-y-1">
                 <p>
-                  <span className="font-semibold text-slate-600">Email:</span>{" "}
+                  <span className="font-semibold text-slate-600">
+                    {t("account.labels.email")}:
+                  </span>{" "}
                   {user.email}
                 </p>
                 <p>
-                  <span className="font-semibold text-slate-600">Phone:</span>{" "}
+                  <span className="font-semibold text-slate-600">
+                    {t("account.labels.phone")}:
+                  </span>{" "}
                   {user.phone}
                 </p>
               </div>
             </div>
 
-            {/* Статистика / Rewards */}
+            {/* Rewards */}
             <div className="mt-5 border-t border-slate-100 pt-4">
               <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
-                Travel Rewards
+                {t("account.rewards.title")}
               </p>
+
               <div className="grid grid-cols-3 gap-2 text-center text-xs">
                 <div className="rounded-lg bg-white border border-slate-100 py-2 px-1">
-                  <div className="text-[10px] text-slate-500">Trips</div>
+                  <div className="text-[10px] text-slate-500">
+                    {t("account.rewards.trips")}
+                  </div>
                   <div className="text-sm font-semibold text-slate-900">
                     {tripCount}
                   </div>
                 </div>
                 <div className="rounded-lg bg-white border border-slate-100 py-2 px-1">
-                  <div className="text-[10px] text-slate-500">Completed</div>
+                  <div className="text-[10px] text-slate-500">
+                    {t("account.rewards.completed")}
+                  </div>
                   <div className="text-sm font-semibold text-slate-900">
                     {completedTrips}
                   </div>
                 </div>
                 <div className="rounded-lg bg-white border border-slate-100 py-2 px-1">
-                  <div className="text-[10px] text-slate-500">Tier</div>
+                  <div className="text-[10px] text-slate-500">
+                    {t("account.rewards.tier")}
+                  </div>
                   <div className="text-sm font-semibold text-slate-900">
                     {tier}
                   </div>
@@ -333,21 +355,21 @@ const Account: React.FC = () => {
 
               <div className="mt-3 rounded-lg bg-gradient-to-r from-sky-50 to-emerald-50 border border-sky-100 px-3 py-2 text-xs">
                 <p className="text-[10px] text-slate-500 uppercase tracking-wide">
-                  Reward Points
+                  {t("account.rewards.points_title")}
                 </p>
                 <p className="text-base font-semibold text-slate-900">
-                  {rewardPoints.toLocaleString()} pts
+                  {rewardPoints.toLocaleString()}{" "}
+                  {t("account.rewards.points_suffix")}
                 </p>
                 <p className="text-[11px] text-slate-500 mt-0.5">
-                  Collect more points by booking new trips.
+                  {t("account.rewards.points_hint")}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Правая колонка: вкладки */}
+          {/* Правая колонка */}
           <div className="flex flex-col">
-            {/* Навигация по вкладкам (1–8 пункт) */}
             <div className="flex flex-wrap gap-2 border-b border-slate-100 mb-4 pb-2 text-xs sm:text-sm">
               <button
                 className={`px-3 py-1.5 rounded-full border transition ${
@@ -357,8 +379,9 @@ const Account: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("overview")}
               >
-                Profile
+                {t("account.tabs.profile")}
               </button>
+
               <button
                 className={`px-3 py-1.5 rounded-full border transition ${
                   activeTab === "trips"
@@ -367,8 +390,9 @@ const Account: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("trips")}
               >
-                My Trips
+                {t("account.tabs.trips")}
               </button>
+
               <button
                 className={`px-3 py-1.5 rounded-full border transition ${
                   activeTab === "security"
@@ -377,8 +401,9 @@ const Account: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("security")}
               >
-                Security
+                {t("account.tabs.security")}
               </button>
+
               <button
                 className={`px-3 py-1.5 rounded-full border transition ${
                   activeTab === "settings"
@@ -387,24 +412,23 @@ const Account: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("settings")}
               >
-                Settings
+                {t("account.tabs.settings")}
               </button>
             </div>
 
-            {/* Контент вкладок */}
             <div className="flex-1">
               {activeTab === "overview" && (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <h2 className="text-sm sm:text-base font-semibold text-slate-900">
-                      Profile Details
+                      {t("account.profile.title")}
                     </h2>
                     {!isEditingProfile ? (
                       <button
                         onClick={() => setIsEditingProfile(true)}
                         className="text-xs font-semibold text-sky-600 hover:text-sky-700"
                       >
-                        Edit Profile
+                        {t("account.profile.edit")}
                       </button>
                     ) : null}
                   </div>
@@ -413,19 +437,19 @@ const Account: React.FC = () => {
                     <div className="text-sm text-slate-600 space-y-1">
                       <p>
                         <span className="font-semibold text-slate-700">
-                          Full Name:
+                          {t("account.profile.full_name")}:
                         </span>{" "}
                         {user.firstName} {user.lastName}
                       </p>
                       <p>
                         <span className="font-semibold text-slate-700">
-                          Email:
+                          {t("account.labels.email")}:
                         </span>{" "}
                         {user.email}
                       </p>
                       <p>
                         <span className="font-semibold text-slate-700">
-                          Phone:
+                          {t("account.labels.phone")}:
                         </span>{" "}
                         {user.phone}
                       </p>
@@ -434,7 +458,7 @@ const Account: React.FC = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                       <div>
                         <label className="block text-xs font-semibold text-slate-600 mb-1">
-                          First Name
+                          {t("account.edit.first_name")}
                         </label>
                         <input
                           className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
@@ -444,7 +468,7 @@ const Account: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-600 mb-1">
-                          Last Name
+                          {t("account.edit.last_name")}
                         </label>
                         <input
                           className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
@@ -454,7 +478,7 @@ const Account: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-600 mb-1">
-                          Email
+                          {t("account.labels.email")}
                         </label>
                         <input
                           className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
@@ -464,7 +488,7 @@ const Account: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-600 mb-1">
-                          Phone
+                          {t("account.labels.phone")}
                         </label>
                         <input
                           className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
@@ -484,22 +508,20 @@ const Account: React.FC = () => {
                             setIsEditingProfile(false);
                           }}
                         >
-                          Cancel
+                          {t("account.edit.cancel")}
                         </button>
                         <button
                           className="px-3 py-1.5 text-xs rounded-lg bg-sky-500 text-white font-semibold hover:bg-sky-600"
                           onClick={handleProfileSave}
                         >
-                          Save Changes
+                          {t("account.edit.save")}
                         </button>
                       </div>
                     </div>
                   )}
 
-                  {/* Простое текстовое описание */}
                   <div className="mt-4 rounded-lg bg-slate-50 border border-slate-100 px-3 py-2 text-xs text-slate-500">
-                    This is a demo profile stored only in your browser using
-                    localStorage. No real bookings or payments are processed.
+                    {t("account.demo_note")}
                   </div>
                 </div>
               )}
@@ -507,10 +529,10 @@ const Account: React.FC = () => {
               {activeTab === "trips" && (
                 <div className="space-y-3">
                   <h2 className="text-sm sm:text-base font-semibold text-slate-900 mb-1">
-                    My Trips
+                    {t("account.trips.title")}
                   </h2>
                   <p className="text-xs text-slate-500 mb-2">
-                    Example overview of your upcoming and past trips.
+                    {t("account.trips.subtitle")}
                   </p>
                   <div className="space-y-2">
                     {mockTrips.map((trip) => (
@@ -535,7 +557,11 @@ const Account: React.FC = () => {
                               : "bg-red-50 text-red-600 border border-red-100"
                           }`}
                         >
-                          {trip.status}
+                          {trip.status === "Booked"
+                            ? t("account.trips.status.booked")
+                            : trip.status === "Completed"
+                            ? t("account.trips.status.completed")
+                            : trip.status}
                         </span>
                       </div>
                     ))}
@@ -547,10 +573,10 @@ const Account: React.FC = () => {
                 <div className="space-y-4">
                   <div>
                     <h2 className="text-sm sm:text-base font-semibold text-slate-900">
-                      Security
+                      {t("account.security.title")}
                     </h2>
                     <p className="text-xs text-slate-500">
-                      Change your password and manage basic security settings.
+                      {t("account.security.subtitle")}
                     </p>
                   </div>
 
@@ -569,7 +595,7 @@ const Account: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
                       <label className="block text-xs font-semibold text-slate-600 mb-1">
-                        Current Password
+                        {t("account.security.current_password")}
                       </label>
                       <input
                         type="password"
@@ -580,7 +606,7 @@ const Account: React.FC = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-slate-600 mb-1">
-                        New Password
+                        {t("account.security.new_password")}
                       </label>
                       <input
                         type="password"
@@ -591,7 +617,7 @@ const Account: React.FC = () => {
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-slate-600 mb-1">
-                        Confirm New Password
+                        {t("account.security.confirm_new_password")}
                       </label>
                       <input
                         type="password"
@@ -606,7 +632,7 @@ const Account: React.FC = () => {
                     onClick={handleChangePassword}
                     className="inline-flex items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-sky-600 transition"
                   >
-                    Update Password
+                    {t("account.security.update_password")}
                   </button>
                 </div>
               )}
@@ -615,16 +641,16 @@ const Account: React.FC = () => {
                 <div className="space-y-4">
                   <div>
                     <h2 className="text-sm sm:text-base font-semibold text-slate-900">
-                      Settings & Preferences
+                      {t("account.settings.title")}
                     </h2>
                     <p className="text-xs text-slate-500">
-                      Manage travel newsletter and account options.
+                      {t("account.settings.subtitle")}
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3 text-xs sm:text-sm">
                     <p className="font-semibold text-slate-800 mb-2">
-                      Newsletter subscriptions
+                      {t("account.newsletter.title")}
                     </p>
 
                     <div className="space-y-2">
@@ -635,11 +661,7 @@ const Account: React.FC = () => {
                           checked={newsletter.deals}
                           onChange={() => handleNewsletterChange("deals")}
                         />
-                        <span>
-                          Receive{" "}
-                          <span className="font-semibold">travel deals</span>{" "}
-                          and promotions
-                        </span>
+                        <span>{t("account.newsletter.deals")}</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -648,11 +670,7 @@ const Account: React.FC = () => {
                           checked={newsletter.flights}
                           onChange={() => handleNewsletterChange("flights")}
                         />
-                        <span>
-                          Receive{" "}
-                          <span className="font-semibold">flight alerts</span>{" "}
-                          and price drops
-                        </span>
+                        <span>{t("account.newsletter.flights")}</span>
                       </label>
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -661,30 +679,23 @@ const Account: React.FC = () => {
                           checked={newsletter.hotels}
                           onChange={() => handleNewsletterChange("hotels")}
                         />
-                        <span>
-                          Receive{" "}
-                          <span className="font-semibold">
-                            hotel recommendations
-                          </span>{" "}
-                          and offers
-                        </span>
+                        <span>{t("account.newsletter.hotels")}</span>
                       </label>
                     </div>
                   </div>
 
                   <div className="rounded-lg border border-red-100 bg-red-50 px-4 py-3 text-xs sm:text-sm">
                     <p className="font-semibold text-red-700 mb-1">
-                      Danger zone
+                      {t("account.delete.title")}
                     </p>
                     <p className="text-slate-600 text-xs mb-2">
-                      Delete your demo account and all stored data from
-                      localStorage for this browser.
+                      {t("account.delete.text")}
                     </p>
                     <button
                       onClick={handleDeleteAccount}
                       className="inline-flex items-center justify-center rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-50 transition"
                     >
-                      Delete account
+                      {t("account.delete.button")}
                     </button>
                   </div>
                 </div>

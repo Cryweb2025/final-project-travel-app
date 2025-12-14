@@ -1,31 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../slices/authSlice";
 import type {
   RegisterFormValues,
   LoginFormValues,
   StoredUser,
-} from "../../types/auth";
+} from "../../services/types/auth";
 
 import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { Eye, EyeOff } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const USERS_KEY = "travel_users";
-
-const registerValidationSchema = Yup.object({
-  firstName: Yup.string().min(2, "Minimum 2 characters").required("Required"),
-  lastName: Yup.string().min(2, "Minimum 2 characters").required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  phone: Yup.string().min(5, "Too short").required("Required"),
-  password: Yup.string().min(6, "Minimum 6 characters").required("Required"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], "Passwords do not match")
-    .required("Required"),
-});
-
-const loginValidationSchema = Yup.object({
-  email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().required("Required"),
-});
 
 const getUsersFromStorage = (): StoredUser[] => {
   const raw = localStorage.getItem(USERS_KEY);
@@ -60,6 +47,9 @@ const getPasswordStrength = (
 };
 
 const AuthTravel: React.FC = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+
   const [mode, setMode] = React.useState<"register" | "login">("register");
   const [message, setMessage] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -72,6 +62,43 @@ const AuthTravel: React.FC = () => {
     "weak" | "medium" | "strong" | null
   >(null);
 
+  // i18n schemas (нужно для локализации Yup ошибок)
+  const registerValidationSchema = React.useMemo(
+    () =>
+      Yup.object({
+        firstName: Yup.string()
+          .min(2, t("auth.validation.min2"))
+          .required(t("auth.validation.required")),
+        lastName: Yup.string()
+          .min(2, t("auth.validation.min2"))
+          .required(t("auth.validation.required")),
+        email: Yup.string()
+          .email(t("auth.validation.invalid_email"))
+          .required(t("auth.validation.required")),
+        phone: Yup.string()
+          .min(5, t("auth.validation.too_short"))
+          .required(t("auth.validation.required")),
+        password: Yup.string()
+          .min(6, t("auth.validation.min6"))
+          .required(t("auth.validation.required")),
+        confirmPassword: Yup.string()
+          .oneOf([Yup.ref("password")], t("auth.validation.passwords_no_match"))
+          .required(t("auth.validation.required")),
+      }),
+    [t]
+  );
+
+  const loginValidationSchema = React.useMemo(
+    () =>
+      Yup.object({
+        email: Yup.string()
+          .email(t("auth.validation.invalid_email"))
+          .required(t("auth.validation.required")),
+        password: Yup.string().required(t("auth.validation.required")),
+      }),
+    [t]
+  );
+
   const handleRegister = async (
     values: RegisterFormValues,
     { setSubmitting, resetForm }: FormikHelpers<RegisterFormValues>
@@ -83,7 +110,7 @@ const AuthTravel: React.FC = () => {
     const exists = users.find((u) => u.email === values.email);
 
     if (exists) {
-      setError("User with this email already exists.");
+      setError(t("auth.messages.user_exists"));
       setSubmitting(false);
       return;
     }
@@ -99,7 +126,7 @@ const AuthTravel: React.FC = () => {
     users.push(newUser);
     saveUsersToStorage(users);
 
-    setMessage("Registration successful! You can now log in.");
+    setMessage(t("auth.messages.register_success"));
     resetForm();
     setPasswordStrength(null);
     setSubmitting(false);
@@ -119,32 +146,35 @@ const AuthTravel: React.FC = () => {
     );
 
     if (!user) {
-      setError("Invalid email or password.");
+      setError(t("auth.messages.invalid_credentials"));
       setSubmitting(false);
       return;
     }
 
     localStorage.setItem("logged_user", JSON.stringify(user));
+    dispatch(login(user.email));
 
     setSubmitting(false);
     window.location.href = "/account";
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center px-4 bg-white">
+    <div className="w-full flex items-center mt-20 justify-center px-4 py-8 bg-white">
       <div className="w-full max-w-xl bg-white shadow-xl rounded-2xl border border-sky-100 p-6 sm:p-8">
         {/* Header + mode switch */}
         <div className="mb-6 text-center">
           <p className="text-[10px] uppercase tracking-[0.25em] text-sky-500 font-semibold">
-            Travel Agency
+            {t("auth.brand")}
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold mt-2 text-slate-900">
-            {mode === "register" ? "Client Registration" : "Client Login"}
+            {mode === "register"
+              ? t("auth.title_register")
+              : t("auth.title_login")}
           </h2>
           <p className="text-sm text-slate-500 mt-1">
             {mode === "register"
-              ? "Create a test profile stored in your browser."
-              : "Log in using a previously registered test account."}
+              ? t("auth.subtitle_register")
+              : t("auth.subtitle_login")}
           </p>
 
           <div className="mt-4 inline-flex items-center gap-2 text-xs text-slate-500">
@@ -160,7 +190,7 @@ const AuthTravel: React.FC = () => {
                   : "border-slate-200 hover:border-sky-400"
               }`}
             >
-              Register
+              {t("auth.switch_register")}
             </button>
             <button
               type="button"
@@ -174,7 +204,7 @@ const AuthTravel: React.FC = () => {
                   : "border-slate-200 hover:border-sky-400"
               }`}
             >
-              Login
+              {t("auth.switch_login")}
             </button>
           </div>
         </div>
@@ -213,13 +243,13 @@ const AuthTravel: React.FC = () => {
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
                       htmlFor="firstName"
                     >
-                      First Name
+                      {t("auth.fields.first_name")}
                     </label>
                     <Field
                       id="firstName"
                       name="firstName"
                       className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                      placeholder="John"
+                      placeholder={t("auth.placeholders.first_name")}
                     />
                     <ErrorMessage
                       name="firstName"
@@ -233,13 +263,13 @@ const AuthTravel: React.FC = () => {
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
                       htmlFor="lastName"
                     >
-                      Last Name
+                      {t("auth.fields.last_name")}
                     </label>
                     <Field
                       id="lastName"
                       name="lastName"
                       className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                      placeholder="Smith"
+                      placeholder={t("auth.placeholders.last_name")}
                     />
                     <ErrorMessage
                       name="lastName"
@@ -255,14 +285,14 @@ const AuthTravel: React.FC = () => {
                     className="block text-xs font-semibold text-slate-600 mb-1.5"
                     htmlFor="email"
                   >
-                    Email Address
+                    {t("auth.fields.email")}
                   </label>
                   <Field
                     id="email"
                     name="email"
                     type="email"
                     className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                    placeholder="example@mail.com"
+                    placeholder={t("auth.placeholders.email")}
                   />
                   <ErrorMessage
                     name="email"
@@ -277,13 +307,13 @@ const AuthTravel: React.FC = () => {
                     className="block text-xs font-semibold text-slate-600 mb-1.5"
                     htmlFor="phone"
                   >
-                    Phone Number
+                    {t("auth.fields.phone")}
                   </label>
                   <Field
                     id="phone"
                     name="phone"
                     className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                    placeholder="+49 156 123 4567"
+                    placeholder={t("auth.placeholders.phone")}
                   />
                   <ErrorMessage
                     name="phone"
@@ -300,7 +330,7 @@ const AuthTravel: React.FC = () => {
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
                       htmlFor="password"
                     >
-                      Password
+                      {t("auth.fields.password")}
                     </label>
 
                     <Field name="password">
@@ -311,6 +341,7 @@ const AuthTravel: React.FC = () => {
                             id="password"
                             type={showPassword ? "text" : "password"}
                             className="w-full rounded-lg border border-slate-200 px-3 pr-16 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
+                            placeholder={t("auth.placeholders.password")}
                             onChange={(e) => {
                               field.onChange(e);
                               setPasswordStrength(
@@ -342,16 +373,18 @@ const AuthTravel: React.FC = () => {
                     {passwordStrength && (
                       <div className="mt-1 text-xs font-semibold">
                         {passwordStrength === "weak" && (
-                          <span className="text-red-600">Weak password</span>
+                          <span className="text-red-600">
+                            {t("auth.password_strength.weak")}
+                          </span>
                         )}
                         {passwordStrength === "medium" && (
                           <span className="text-yellow-600">
-                            Medium strength
+                            {t("auth.password_strength.medium")}
                           </span>
                         )}
                         {passwordStrength === "strong" && (
                           <span className="text-emerald-600">
-                            Strong password
+                            {t("auth.password_strength.strong")}
                           </span>
                         )}
                       </div>
@@ -364,7 +397,7 @@ const AuthTravel: React.FC = () => {
                       className="block text-xs font-semibold text-slate-600 mb-1.5"
                       htmlFor="confirmPassword"
                     >
-                      Confirm Password
+                      {t("auth.fields.confirm_password")}
                     </label>
 
                     <div className="relative">
@@ -373,6 +406,7 @@ const AuthTravel: React.FC = () => {
                         name="confirmPassword"
                         type={showConfirmPassword ? "text" : "password"}
                         className="w-full rounded-lg border border-slate-200 px-3 pr-16 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
+                        placeholder={t("auth.placeholders.confirm_password")}
                       />
                       <button
                         type="button"
@@ -400,7 +434,9 @@ const AuthTravel: React.FC = () => {
                   disabled={isSubmitting}
                   className="mt-2 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-sky-200 hover:from-sky-600 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-400 disabled:opacity-60 disabled:cursor-not-allowed transition"
                 >
-                  {isSubmitting ? "Submitting..." : "Register"}
+                  {isSubmitting
+                    ? t("auth.submitting")
+                    : t("auth.register_button")}
                 </button>
               </Form>
             )}
@@ -419,14 +455,14 @@ const AuthTravel: React.FC = () => {
                     className="block text-xs font-semibold text-slate-600 mb-1.5"
                     htmlFor="loginEmail"
                   >
-                    Email Address
+                    {t("auth.fields.email")}
                   </label>
                   <Field
                     id="loginEmail"
                     name="email"
                     type="email"
                     className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
-                    placeholder="example@mail.com"
+                    placeholder={t("auth.placeholders.email")}
                   />
                   <ErrorMessage
                     name="email"
@@ -440,7 +476,7 @@ const AuthTravel: React.FC = () => {
                     className="block text-xs font-semibold text-slate-600 mb-1.5"
                     htmlFor="loginPassword"
                   >
-                    Password
+                    {t("auth.fields.password")}
                   </label>
 
                   <div className="relative">
@@ -449,6 +485,7 @@ const AuthTravel: React.FC = () => {
                       name="password"
                       type={showLoginPassword ? "text" : "password"}
                       className="w-full rounded-lg border border-slate-200 px-3 pr-16 py-2.5 text-sm outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 transition"
+                      placeholder={t("auth.placeholders.password")}
                     />
                     <button
                       type="button"
@@ -475,7 +512,7 @@ const AuthTravel: React.FC = () => {
                   disabled={isSubmitting}
                   className="mt-2 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-sky-200 hover:from-sky-600 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-400 disabled:opacity-60 disabled:cursor-not-allowed transition"
                 >
-                  {isSubmitting ? "Logging in..." : "Login"}
+                  {isSubmitting ? t("auth.logging_in") : t("auth.login_button")}
                 </button>
               </Form>
             )}

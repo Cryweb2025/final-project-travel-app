@@ -1,37 +1,39 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+
+// Основные layout-компоненты
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
+// Страницы приложения
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
 import About from "./pages/About";
-import AuthTravel from "./components/AuthTravel/AuthTravel";
 import Account from "./pages/Account";
 import DestinationDetails from "./pages/DestinationDetails";
+
+// Компоненты
+import AuthTravel from "./components/AuthTravel/AuthTravel";
+import ContactForm from "./components/ContactForm/ContactForm";
+
+// Корневой компонент приложения
 function App() {
   return (
+    // Основной контейнер страницы с вертикальной компоновкой
     <div className="flex flex-col min-h-screen">
+      {/* Верхняя навигационная панель */}
       <Navbar />
-      <Routes>
-        <Route path="/destination/:key" element={<DestinationDetails />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/destinations" element={<Destinations />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        {/* Страница регистрации / логина */}
-        <Route path="/login" element={<AuthTravel />} />
-        {/* Профиль пользователя */}
-        <Route path="/account" element={<Account />} />
-      </Routes>
-    </>
 
-      {/* Средняя зона между Navbar и Footer */}
+      {/* Основная зона контента между Navbar и Footer */}
       <main className="flex-grow flex">
-        {/* ВАЖНО: эта обёртка получает всю оставшуюся высоту */}
         <div className="flex-grow">
           <Routes>
-            {/* Home на всю доступную ширину/высоту */}
+            {/* Главная страница — занимает всю доступную ширину и высоту */}
             <Route path="/" element={<Home />} />
 
-            {/* Остальные страницы — в центре с max-width */}
+            {/* Страница с подробной информацией о выбранном направлении */}
+            <Route path="/destination/:key" element={<DestinationDetails />} />
+
+            {/* Страница со списком направлений (центрированный контейнер) */}
             <Route
               path="/destinations"
               element={
@@ -40,6 +42,8 @@ function App() {
                 </div>
               }
             />
+
+            {/* Страница "О проекте" */}
             <Route
               path="/about"
               element={
@@ -49,6 +53,7 @@ function App() {
               }
             />
 
+            {/* Страница формы обратной связи */}
             <Route
               path="/contact"
               element={
@@ -58,6 +63,7 @@ function App() {
               }
             />
 
+            {/* Страница авторизации / регистрации */}
             <Route
               path="/login"
               element={
@@ -66,6 +72,8 @@ function App() {
                 </div>
               }
             />
+
+            {/* Личный кабинет пользователя */}
             <Route
               path="/account"
               element={
@@ -78,6 +86,7 @@ function App() {
         </div>
       </main>
 
+      {/* Нижний футер сайта */}
       <Footer />
     </div>
   );
