@@ -1,77 +1,192 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# 🌍 Travel App — React + Redux Travel Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🇬🇧 English
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📌 Project Overview
 
-## React Compiler
+**Travel App** is a modern multi-language travel platform built with **React**, **TypeScript**, and **Redux Toolkit**.
+The application enables users to explore travel destinations, view hotels, check real-time weather, and manage their user accounts through authentication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The project demonstrates clean architecture, scalable state management, and real-world front-end practices.
 
-## Expanding the ESLint configuration
+### 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🌐 Multi-language support (EN / DE / RU / UA)
+- 🔐 User authentication (register / login/logout)
+- 🧭 Destination browsing with search
+- 🏨 Hotel listings with filters and sorting
+- 🌦️ Real-time weather (OpenWeather API)
+- 📱 Fully responsive design
+- 🧠 State management with Redux Toolkit
+- ⚡ API handling via RTK Query
+- 💾 LocalStorage persistence
+- 🎨 Modern UI with Tailwind CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React 18
+- TypeScript
+- Redux Toolkit
+- RTK Query
+- React Router DOM
+- Formik + Yup
+- i18next
+- Tailwind CSS
+- OpenWeather API
+- Lucide Icons
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📂 Project Structure
+
+```text
+
+final-project-travel-app/
+│
+├── public/
+│   └── favicon.svg
+│
+├── src/
+│   │
+│   ├── assets/
+│   │   └── images/
+│   │       └── logo.png
+│   │
+│   ├── components/
+│   │   ├── AuthTravel/
+│   │   │   └── AuthTravel.tsx
+│   │   │
+│   │   ├── ContactForm/
+│   │   │   └── ContactForm.tsx
+│   │   │
+│   │   ├── DestinationCard/
+│   │   │   └── DestinationCard.tsx
+│   │   │
+│   │   ├── Footer/
+│   │   │   └── Footer.tsx
+│   │   │
+│   │   └── Navbar/
+│   │       └── Navbar.tsx
+│   │
+│   ├── locales/
+│   │   ├── de.json
+│   │   ├── en.json
+│   │   ├── ru.json
+│   │   └── uk.json
+│   │
+│   ├── pages/
+│   │   ├── About.tsx
+│   │   ├── Account.tsx
+│   │   ├── DestinationDetails.tsx
+│   │   ├── Destinations.tsx
+│   │   └── Home.tsx
+│   │
+│   ├── services/
+│   │   ├── api/
+│   │   │   ├── destinationsApi.ts
+│   │   │   └── weatherApi.ts
+│   │   │
+│   │   ├── data/
+│   │   │   ├── destinationsData.ts
+│   │   │   └── hotelsData.ts
+│   │   │
+│   │   └── types/
+│   │       ├── auth.ts
+│   │       └── types.ts
+│   │
+│   ├── slices/
+│   │   ├── authSlice.ts
+│   │   └── searchSlice.ts
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── i18n.ts
+│   ├── store.ts
+│   └── index.css
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+└── README.md
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### ▶️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install  
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-=======
-# final-project-travel-app
->>>>>>> f967c56c90995436282337b1373f8aa4aed4b86b
+---
+
+## 🇩🇪 Deutsch
+
+### 📌 Projektübersicht
+
+**Travel App** ist eine moderne mehrsprachige Reiseplattform auf Basis von React, TypeScript und Redux Toolkit.
+
+### 🚀 Funktionen
+
+- Mehrsprachigkeit (EN / DE / RU / UA)
+- Benutzer-Authentifizierung
+- Reiseziele und Hotels
+- Wetterdaten in Echtzeit
+- Responsive Design
+
+### ▶️ Starten
+
+npm install  
+npm run dev
+
+---
+
+## 🇷🇺 Русский
+
+### 📌 Описание проекта
+
+**Travel App** — современное многоязычное веб-приложение для путешествий, созданное на React, TypeScript и Redux Toolkit.
+
+### 🚀 Возможности
+
+- 4 языка
+- Регистрация и вход
+- Поиск направлений
+- Отели и погода
+- Адаптивный интерфейс
+
+### ▶️ Запуск
+
+npm install  
+npm run dev
+
+---
+
+## 🇺🇦 Українська
+
+### 📌 Опис проєкту
+
+**Travel App** — сучасна багатомовна платформа для подорожей, створена з використанням React та Redux Toolkit.
+
+### 🚀 Можливості
+
+- 4 мови
+- Авторизація
+- Напрямки та готелі
+- Погода
+- Адаптивний дизайн
+
+### ▶️ Запуск
+
+npm install  
+npm run dev
+
+---
+
+## 📌 License
+
+Educational & portfolio project.
