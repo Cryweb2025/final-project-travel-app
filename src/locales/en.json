@@ -211,6 +211,46 @@
     "anna": "Amazing service! Everything was perfectly organized.",
     "marco": "Best travel experience I’ve had so far.",
     "emily": "Great destinations and very friendly support."
-  }
+  },
 
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Our advisor team is a tight-knit group with one goal: making travelers happy! No matter how unusual your travel wishes are or how tight your schedule is, we work out the perfect solution for you.",
+    "description": "Each of our advisors visits their destinations 2–3 times a year, as well as other interesting travel countries, to explore new regions and check the quality of hotels offered there for you.",
+
+    "badges": {
+      "teamlead": "Team Lead"
+    },
+
+    "members": {
+      "yuriy": {
+        "role": "Contact Form",
+        "description": "Responsible for developing the contact form."
+      },
+      "vladimir": {
+        "role": "Login & Registration",
+        "description": "Responsible for login, registration, and account panel."
+      },
+      "ilyana": {
+        "role": "Weather & Routes",
+        "description": "Responsible for weather and route features."
+      },
+      "yulianna": {
+        "role": "Team Section",
+        "description": "Responsible for the team section of the website."
+      },
+      "alexander": {
+        "role": "Homepage & Languages",
+        "description": "Responsible for the homepage and language switching."
+      },
+      "yulia": {
+        "role": "Hot Tours",
+        "description": "Responsible for hot tours, descriptions, prices, and countries."
+      },
+      "andrey": {
+        "role": "Reviews",
+        "description": "Responsible for the reviews section."
+      }
+    }
+  }
 }

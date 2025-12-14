@@ -13,6 +13,7 @@ import type {
 // Компонент использует тот же ключ, что и AuthTravel, чтобы работать с общей базой пользователей в localStorage.
 const USERS_KEY = "travel_users";
 
+
 // Компонент использует мок-данные поездок для демо-отображения.
 const mockTrips: Trip[] = [
   {
@@ -299,6 +300,24 @@ const Account: React.FC = () => {
                    bg-white border-sky-50
                    dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/30"
       >
+        {/* ✅ Hero image над аккаунтом */}
+        <div className="-mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6">
+          <div className="relative h-40 sm:h-44 w-full overflow-hidden rounded-t-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"
+              alt="Travel"
+              className="h-full w-full object-cover"
+              draggable={false}
+            />
+
+            {/* затемнение */}
+            <div className="absolute inset-0 bg-black/35 dark:bg-black/55" />
+
+            {/* плавный переход к карточке */}
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent dark:from-slate-900/95" />
+          </div>
+        </div>
+
         {/* Верхняя панель: заголовок + logout */}
         <div className="flex items-center justify-between gap-4 mb-6">
           <div>

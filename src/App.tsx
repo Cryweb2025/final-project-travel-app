@@ -7,11 +7,11 @@ import Footer from "./components/Footer/Footer";
 // Страницы приложения
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
-import About from "./pages/About";
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import ContactForm from "./components/ContactForm/ContactForm";
-import DestinationDetails from "./pages/DestinationDetails";
-import Account from "./pages/Account";
+import Team from "./components/Team/Team";
+
+
 import { CountryInfoPage } from "./components/CountryInfoPage/CountryInfoPage";
 
 // Корневой компонент приложения
@@ -52,7 +52,7 @@ function App() {
             path="/about"
             element={
               <div className="max-w-5xl mx-auto w-full py-8">
-                <About />
+                <Team />
               </div>
             }
           />
