@@ -13,6 +13,8 @@ import Team from "./components/Team/Team";
 
 
 import { CountryInfoPage } from "./components/CountryInfoPage/CountryInfoPage";
+import Account from "./pages/Account";
+import DestinationDetails from "./pages/DestinationDetails";
 
 // Корневой компонент приложения
 function App() {
