@@ -212,5 +212,43 @@
     "anna": "Fantastischer Service! Alles war perfekt organisiert.",
     "marco": "Die beste Reiseerfahrung, die ich bisher hatte.",
     "emily": "Tolle Reiseziele und sehr freundlicher Support."
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "Unser Beratungsteam ist eng verbunden und hat ein Ziel: Reisende glücklich zu machen! Egal wie ungewöhnlich deine Reisewünsche sind oder wie eng dein Zeitplan ist – wir finden die perfekte Lösung für dich.",
+    "description": "Jeder unserer Berater besucht seine Destinationen 2–3 Mal pro Jahr sowie weitere spannende Reiseländer, um neue Regionen zu entdecken und die Qualität der angebotenen Hotels für dich zu prüfen.",
+    "badges": {
+      "teamlead": "Teamleiter"
+    },
+    "members": {
+      "yuriy": {
+        "role": "Kontaktformular",
+        "description": "Verantwortlich für die Entwicklung des Kontaktformulars."
+      },
+      "vladimir": {
+        "role": "Login & Registrierung",
+        "description": "Verantwortlich für Login, Registrierung und das Account-Panel."
+      },
+      "ilyana": {
+        "role": "Wetter & Routen",
+        "description": "Verantwortlich für Wetter- und Routen-Funktionen."
+      },
+      "yulianna": {
+        "role": "Team-Bereich",
+        "description": "Verantwortlich für den Team-Bereich der Website."
+      },
+      "alexander": {
+        "role": "Startseite & Sprachen",
+        "description": "Verantwortlich für die Startseite und den Sprachwechsel."
+      },
+      "yulia": {
+        "role": "Hot Tours",
+        "description": "Verantwortlich für Hot Tours, Beschreibungen, Preise und Länder."
+      },
+      "andrey": {
+        "role": "Bewertungen",
+        "description": "Verantwortlich für den Bewertungsbereich."
+      }
+    }
   }
 }

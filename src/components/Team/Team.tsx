@@ -1,76 +1,95 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import TeamMemberCard from "./TeamMemberCard";
-import "./Team.css";
+import type { TeamMember } from "../../services/types/teamMember";
 
-const teamMembers = [
-  {
-    name: "Yuriy",
-    role: "Contact Form",
-    description: "Responsible for developing the contact form.",
-  },
-  {
-    name: "Vladimir",
-    role: "Login & Registration",
-    description: "Responsible for login, registration, and account panel.",
-    photo: "/images/vladimir.jpg",
-  },
-  {
-    name: "Ilyana",
-    role: "Weather & Routes",
-    description: "Responsible for weather and route features.",
-  },
-  {
-    name: "Yulianna",
-    role: "Team Section",
-    description: "Responsible for the team section of the website.",
-    photo: "/images/yulianna.jpg",
-  },
-  {
-    name: "Alexander",
-    role: "Homepage & Languages",
-    description: "Responsible for the homepage and language switching.",
-  },
-  {
-    name: "Yulia",
-    role: "Hot Tours",
-    description: "Responsible for hot tours, descriptions, prices, and countries.",
-    photo: "/images/yulia.jpg",
-  },
-  {
-    name: "Andrey",
-    role: "Reviews",
-    description: "Responsible for the reviews section.",
-  },
-];
+// Импорт фотографий команды
+import photoVladimir from "../../assets/photos/vladimir.jpg";
+import photoYulia from "../../assets/photos/yulia.jpg";
+import photoYulianna from "../../assets/photos/yulianna.jpg";
+import photoIlyana from "../../assets/photos/ilyana.jpg";
 
 const Team: React.FC = () => {
-  return (
-    <div className="team-container">
-      <div className="team-intro">
-        <h2 className="team-title">Our Team</h2>
-        <p className="team-subtitle">
-          Our advisor team is a tight-knit group with one goal: making travelers happy!  
-          No matter how unusual your travel wishes are or how tight your schedule is,  
-          we work out the perfect solution for you.
-        </p>
-        <p className="team-description">
-          Each of our advisors visits their destinations 2–3 times a year, as well as other interesting travel countries,  
-          to explore new regions and check the quality of hotels offered there for you.
-        </p>
-      </div>
+  // Хук переводов
+  const { t } = useTranslation();
 
-      <div className="team-cards">
-        {teamMembers.map((member) => (
-          <TeamMemberCard
-            key={member.name}
-            name={member.name}
-            role={member.role}
-            description={member.description}
-            photo={member.photo}
-          />
-        ))}
+  /**
+   * Данные команды
+   * - name → отображаемое имя (НЕ переводится)
+   * - role / description → i18n
+   * - badge → опционально (например Team Lead)
+   */
+  const teamMembers: TeamMember[] = [
+    {
+      name: "Vladimir",
+      badge: "teamlead",
+      role: t("team.members.vladimir.role"),
+      description: t("team.members.vladimir.description"),
+      photo: photoVladimir,
+    },
+    {
+      name: "Yuriy",
+      role: t("team.members.yuriy.role"),
+      description: t("team.members.yuriy.description"),
+    },
+    {
+      name: "Alexander",
+      role: t("team.members.alexander.role"),
+      description: t("team.members.alexander.description"),
+    },
+    {
+      name: "Ilyana",
+      role: t("team.members.ilyana.role"),
+      description: t("team.members.ilyana.description"),
+      photo: photoIlyana,
+    },
+    {
+      name: "Yulianna",
+      role: t("team.members.yulianna.role"),
+      description: t("team.members.yulianna.description"),
+      photo: photoYulianna,
+    },
+    {
+      name: "Yulia",
+      role: t("team.members.yulia.role"),
+      description: t("team.members.yulia.description"),
+      photo: photoYulia,
+    },
+  ];
+
+  return (
+    <section className="w-full">
+      <div className="max-w-6xl mx-auto px-4 py-10">
+        {/* ================= INTRO ================= */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            {t("team.title")}
+          </h2>
+
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            {t("team.subtitle")}
+          </p>
+
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            {t("team.description")}
+          </p>
+        </div>
+
+        {/* ================= TEAM CARDS ================= */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {teamMembers.map((member) => (
+            <TeamMemberCard
+              key={member.name}
+              name={member.name}
+              role={member.role}
+              description={member.description}
+              photo={member.photo}
+              badge={member.badge}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

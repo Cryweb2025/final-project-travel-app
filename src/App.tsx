@@ -14,6 +14,7 @@ import DestinationDetails from "./pages/DestinationDetails";
 // Компоненты
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import ContactForm from "./components/ContactForm/ContactForm";
+import Team from "./components/Team/Team";
 
 // Корневой компонент приложения
 function App() {
@@ -51,7 +52,7 @@ function App() {
             path="/about"
             element={
               <div className="max-w-5xl mx-auto w-full py-8">
-                <About />
+                <Team />
               </div>
             }
           />

@@ -1,11 +1,12 @@
 import React from "react";
-import "./Team.css";
+import { useTranslation } from "react-i18next"; // ✅ добавили
 
 interface TeamMemberCardProps {
   name: string;
   role: string;
   description: string;
   photo?: string;
+  badge?: "teamlead"; // ✅ добавили
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -13,23 +14,71 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   role,
   description,
   photo,
+  badge,
 }) => {
-  const initial = name.charAt(0);
+  const { t } = useTranslation(); // ✅ добавили
+  const initial = name.charAt(0).toUpperCase();
 
   return (
-    <div className="team-card">
-      <div className="team-avatar">
-        {photo ? (
-          <img src={photo} alt={name} />
-        ) : (
-          <span>{initial}</span>
-        )}
+    <div
+      className="
+        rounded-2xl border p-5
+        bg-white border-slate-100 shadow-sm
+        transition hover:shadow-md
+        dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/20
+      "
+    >
+      <div className="flex items-center gap-4">
+        <div
+          className="
+            w-24 h-32 rounded-xl
+            flex items-center justify-center
+            bg-gradient-to-tr from-sky-500 to-emerald-500
+            text-white text-2xl font-bold
+            overflow-hidden shrink-0
+          "
+        >
+          {photo ? (
+            <img
+              src={photo}
+              alt={name}
+              className="w-full h-full object-cover object-center"
+            />
+          ) : (
+            <span>{initial}</span>
+          )}
+        </div>
+
+        <div className="min-w-0">
+          {/* ✅ Имя + бейдж */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">
+              {name}
+            </h3>
+
+            {badge === "teamlead" && (
+              <span
+                className="
+                  inline-flex items-center
+                  rounded-full px-2 py-0.5 text-[11px] font-semibold
+                  bg-amber-100 text-amber-800
+                  dark:bg-amber-900/30 dark:text-amber-200
+                "
+              >
+                {t("team.badges.teamlead")}
+              </span>
+            )}
+          </div>
+
+          <p className="text-sm font-medium text-sky-600 dark:text-sky-400">
+            {role}
+          </p>
+        </div>
       </div>
-      <div className="team-info">
-        <h3 className="team-name">{name}</h3>
-        <p className="team-role">{role}</p>
-        <p className="team-description">{description}</p>
-      </div>
+
+      <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+        {description}
+      </p>
     </div>
   );
 };
