@@ -14,6 +14,7 @@ import DestinationDetails from "./pages/DestinationDetails";
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Team from "./components/Team/Team";
+import { CountryInfoPage } from "./components/CountryInfoPage/CountryInfoPage";
 
 // Корневой компонент приложения
 function App() {
@@ -85,6 +86,9 @@ function App() {
               </div>
             }
           />
+
+          <Route path="/countries/:key" element={<CountryInfoPage />} />
+
         </Routes>
       </main>
 
