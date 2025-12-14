@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { countryInfoData } from "../../services/data/CountryInfoData";
+import { countryInfoData } from "../../services/data/countryInfoData";
 import { HeroVideo } from "./countryComponents/HeroVideo/HeroVideo";
 import WeatherSection from "./countryComponents/WeatherSection/WeatherSection";
 import CurrencySection from "./countryComponents/CurrencySection/CurrencySection";
@@ -7,9 +7,15 @@ import CurrencySection from "./countryComponents/CurrencySection/CurrencySection
 import styles from "./CountryInfoPage.module.css";
 
 export const CountryInfoPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { key } = useParams<{ key: string }>();
 
-  const country = countryInfoData.find((c) => c.id === id);
+  //  Нормализуем ключ (защита от Japan vs japan)
+  const normalizedKey = (key || "").toLowerCase();
+
+  //  Ищем по нормализованному id
+  const country = countryInfoData.find(
+    (c) => (c.id || "").toLowerCase() === normalizedKey
+  );
 
   if (!country) {
     return <h1>Country not found</h1>;

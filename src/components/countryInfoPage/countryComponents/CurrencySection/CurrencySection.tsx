@@ -1,4 +1,4 @@
-import { useGetCurrencyQuery } from "../../../../services/currencyApi";
+import { useGetCurrencyQuery } from "../../../../services/api/currencyApi";
 import styles from "./CurrencySection.module.css"
  
 
