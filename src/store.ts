@@ -6,8 +6,9 @@ import authReducer from "./slices/authSlice";
 // Редьюсер поискового состояния (строка поиска, фильтры и т.п.)
 import searchReducer from "./slices/searchSlice";
 import { destinationsApi } from "./services/api/destinationsApi";
-import { weatherApi } from "./services/weatherApi";
-import { currencyApi } from "./services/currencyApi";
+
+// RTK Query API для получения данных о погоде
+import { weatherApi } from "./services/api/weatherApi";
 
 // Создание Redux-хранилища приложения
 export const store = configureStore({
