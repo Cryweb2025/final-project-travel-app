@@ -1,6 +1,9 @@
 
-import { useGetWeatherQuery } from "../../../../services/weatherApi";
+import i18n from "../../../../i18n";
+import { useGetWeatherQuery } from "../../../../services/api/weatherApi";
 import styles from "./WeatherSection.module.css";
+
+
 
 type Props = {
   city: string;
@@ -8,7 +11,11 @@ type Props = {
 
 
 function WeatherSection({ city }: Props) {
-  const { data, isLoading, isError } = useGetWeatherQuery(city);
+ const { data, isLoading, isError } = useGetWeatherQuery({
+  city,
+  lang: i18n.language,
+});
+
 
   if (isLoading) {
     return <div className={styles.card}>Loading weather...</div>;

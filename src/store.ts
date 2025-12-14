@@ -9,6 +9,7 @@ import { destinationsApi } from "./services/api/destinationsApi";
 
 // RTK Query API для получения данных о погоде
 import { weatherApi } from "./services/api/weatherApi";
+import { currencyApi } from "./services/currencyApi";
 
 // Создание Redux-хранилища приложения
 export const store = configureStore({

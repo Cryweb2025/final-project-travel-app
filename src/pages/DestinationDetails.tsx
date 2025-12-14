@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { hotelsData, type Hotel } from "../services/data/hotelsData";
 import { useTranslation } from "react-i18next";
 
@@ -86,23 +86,21 @@ const DestinationDetails: React.FC = () => {
 
       {/* Кнопка "Подробнее о стране" */}
       <div className="mb-4">
-        <button
-          onClick={() =>
-            alert(t("hotels.more_alert", { country: key?.toUpperCase() }))
-          }
+        <Link
+          to={`/countries/${key}`}
           className="
-            inline-flex items-center justify-center
-            px-5 py-2 rounded-lg
-            text-sm font-semibold text-white
-            bg-gradient-to-r from-sky-500 to-emerald-500
-            shadow-md transition-all
-            hover:from-sky-600 hover:to-emerald-600
-            active:scale-95
-            focus:outline-none focus:ring-2 focus:ring-sky-300
-          "
+      inline-flex items-center justify-center
+      px-5 py-2 rounded-lg
+      text-sm font-semibold text-white
+      bg-gradient-to-r from-sky-500 to-emerald-500
+      shadow-md transition-all
+      hover:from-sky-600 hover:to-emerald-600
+      active:scale-95
+      focus:outline-none focus:ring-2 focus:ring-sky-300
+    "
         >
           {t("hotels.more")}
-        </button>
+        </Link>
       </div>
 
       {/* Верхний карусель изображений */}

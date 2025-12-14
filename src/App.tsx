@@ -12,6 +12,7 @@ import AuthTravel from "./components/AuthTravel/AuthTravel";
 import ContactForm from "./components/ContactForm/ContactForm";
 import DestinationDetails from "./pages/DestinationDetails";
 import Account from "./pages/Account";
+import { CountryInfoPage } from "./components/CountryInfoPage/CountryInfoPage";
 
 // Корневой компонент приложения
 function App() {
@@ -81,6 +82,16 @@ function App() {
                   <Account />
                 </div>
               }
+                
+            />
+            <Route
+              path="/countries/:id"
+              element={
+                <div className="max-w-5xl mx-auto w-full py-8">
+                  <CountryInfoPage />
+                </div>
+              }
+      
             />
           </Routes>
         </div>

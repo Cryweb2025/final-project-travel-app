@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { countryInfoData } from "./data/CountryInfoData";
+import { countryInfoData } from "../../services/data/CountryInfoData";
 import { HeroVideo } from "./countryComponents/HeroVideo/HeroVideo";
 import WeatherSection from "./countryComponents/WeatherSection/WeatherSection";
 import CurrencySection from "./countryComponents/CurrencySection/CurrencySection";
