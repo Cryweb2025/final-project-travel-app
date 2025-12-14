@@ -21,35 +21,39 @@ const Home: React.FC = () => {
           "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "80vh",
+        width: "100%",
+        height: "100%", // занимаем всю высоту зоны контента
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         color: "white",
         textAlign: "center",
+        overflow: "hidden",
       }}
     >
-      {/* Overlay für bessere Lesbarkeit */}
+      {/* затемнение */}
       <div
         style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
+          inset: 0,
           backgroundColor: "rgba(0,0,0,0.5)",
         }}
-      ></div>
+      />
 
-      {/* Inhalt */}
+      {/* контент */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "800px" }}>
         <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>{t("slogan")}</h1>
         <p style={{ fontSize: "1.5rem", marginTop: "1rem" }}>
           {t("hero_text")}
         </p>
 
-        {/* Suchfeld */}
-        <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            marginTop: "2rem",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <input
             type="text"
             placeholder={t("search_placeholder")}
