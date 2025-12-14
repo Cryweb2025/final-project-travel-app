@@ -3,6 +3,7 @@ import { countryInfoData } from "../../services/data/CountryInfoData";
 import { HeroVideo } from "./countryComponents/HeroVideo/HeroVideo";
 import WeatherSection from "./countryComponents/WeatherSection/WeatherSection";
 import CurrencySection from "./countryComponents/CurrencySection/CurrencySection";
+
 import styles from "./CountryInfoPage.module.css";
 
 export const CountryInfoPage = () => {
