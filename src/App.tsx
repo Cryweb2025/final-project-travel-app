@@ -29,7 +29,7 @@ function App() {
       <Navbar />
 
       {/* Средняя зона между Navbar и Footer */}
-      <main className="flex-grow flex">
+      <main className="flex-grow flex overflow-y-auto">
         {/* ВАЖНО: эта обёртка получает всю оставшуюся высоту */}
         <div className="flex-grow">
           <Routes>
@@ -69,34 +69,30 @@ function App() {
             }
           />
 
-            <Route
-              path="/login"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <AuthTravel />
-                </div>
-              }
-            />
-            <Route
-              path="/account"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <Account />
-                </div>
-              }
-                
-            />
-            <Route
-              path="/countries/:id"
-              element={
-                <div className="max-w-5xl mx-auto w-full py-8">
-                  <CountryInfoPage />
-                </div>
-              }
-      
-            />
-          </Routes>
-        </div>
+          {/* Компонент оборачивает страницу логина в центрированный контейнер. */}
+          <Route
+            path="/login"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <AuthTravel />
+              </div>
+            }
+          />
+
+          {/* Компонент оборачивает личный кабинет в центрированный контейнер. */}
+          <Route
+            path="/account"
+            element={
+              <div className="max-w-5xl mx-auto w-full py-8">
+                <Account />
+              </div>
+            }
+          />
+
+          <Route path="/countries/:id" element={<CountryInfoPage />} />
+
+        </Routes>
+         </div> 
       </main>
 
       {/* Компонент рендерит нижний футер. */}
