@@ -1,5 +1,8 @@
 # 🌍 Travel App — React + Redux Travel Platform
 
+![logo-head-git](https://github.com/user-attachments/assets/8785c60d-8a15-4b9a-982b-e803a9e023c0)
+
+
 ---
 
 ## 🇬🇧 English
