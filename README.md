@@ -39,81 +39,76 @@ The project demonstrates clean architecture, scalable state management, and real
 
 ### 📂 Project Structure
 
-```text
-
+```txt
 final-project-travel-app/
+├─ src/
+│  ├─ components/
+│  │  ├─ AuthTravel/
+│  │  │  └─ AuthTravel.tsx
+│  │  ├─ ContactForm/
+│  │  │  └─ ContactForm.tsx
+│  │  ├─ DestinationCard/
+│  │  │  └─ DestinationCard.tsx
+│  │  ├─ Footer/
+│  │  │  └─ Footer.tsx
+│  │  ├─ Navbar/
+│  │  │  └─ Navbar.tsx
+│  │  └─ ReviewsCarousel/
+│  │     └─ ReviewsCarousel.tsx
+│  │
+│  ├─ context/
+│  │  └─ ThemeContext.tsx
+│  │
+│  ├─ locales/
+│  │  ├─ de.json
+│  │  ├─ en.json
+│  │  ├─ ru.json
+│  │  └─ uk.json
+│  │
+│  ├─ pages/
+│  │  ├─ About.tsx
+│  │  ├─ Account.tsx
+│  │  ├─ DestinationDetails.tsx
+│  │  ├─ Destinations.tsx
+│  │  └─ Home.tsx
+│  │
+│  ├─ services/
+│  │  ├─ api/
+│  │  │  ├─ destinationsApi.ts
+│  │  │  └─ weatherApi.ts
+│  │  └─ data/
+│  │     ├─ destinationData.ts
+│  │     ├─ hotelsData.ts
+│  │     └─ reviews.ts
+│  │
+│  ├─ types/
+│  │  ├─ account.ts
+│  │  ├─ auth.ts
+│  │  └─ types.ts
+│  │
+│  ├─ slices/
+│  │  ├─ authSlice.ts
+│  │  └─ searchSlice.ts
+│  │
+│  ├─ App.tsx
+│  ├─ i18n.ts
+│  ├─ index.css
+│  ├─ main.tsx
+│  └─ store.ts
 │
-├── public/
-│   └── favicon.svg
-│
-├── src/
-│   │
-│   ├── assets/
-│   │   └── images/
-│   │       └── logo.png
-│   │
-│   ├── components/
-│   │   ├── AuthTravel/
-│   │   │   └── AuthTravel.tsx
-│   │   │
-│   │   ├── ContactForm/
-│   │   │   └── ContactForm.tsx
-│   │   │
-│   │   ├── DestinationCard/
-│   │   │   └── DestinationCard.tsx
-│   │   │
-│   │   ├── Footer/
-│   │   │   └── Footer.tsx
-│   │   │
-│   │   └── Navbar/
-│   │       └── Navbar.tsx
-│   │
-│   ├── locales/
-│   │   ├── de.json
-│   │   ├── en.json
-│   │   ├── ru.json
-│   │   └── uk.json
-│   │
-│   ├── pages/
-│   │   ├── About.tsx
-│   │   ├── Account.tsx
-│   │   ├── DestinationDetails.tsx
-│   │   ├── Destinations.tsx
-│   │   └── Home.tsx
-│   │
-│   ├── services/
-│   │   ├── api/
-│   │   │   ├── destinationsApi.ts
-│   │   │   └── weatherApi.ts
-│   │   │
-│   │   ├── data/
-│   │   │   ├── destinationsData.ts
-│   │   │   └── hotelsData.ts
-│   │   │
-│   │   └── types/
-│   │       ├── auth.ts
-│   │       └── types.ts
-│   │
-│   ├── slices/
-│   │   ├── authSlice.ts
-│   │   └── searchSlice.ts
-│   │
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── i18n.ts
-│   ├── store.ts
-│   └── index.css
-│
-├── .gitignore
-├── index.html
-├── package.json
-├── package-lock.json
-├── postcss.config.js
-├── tailwind.config.js
-├── tsconfig.json
-├── tsconfig.node.json
-├── vite.config.ts
-└── README.md
+├─ .gitignore
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.cjs
+├─ postcss.config.js
+├─ README.md
+├─ tailwind.config.js
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts
 
 ```
 
