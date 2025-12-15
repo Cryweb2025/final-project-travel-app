@@ -4,6 +4,9 @@
 
 
 ---
+## [Vercel](https://final-project-travel-app.vercel.app/)
+## [Figma](https://www.figma.com/design/7q1wHPuiwNSCkuieGebqBD/Travel-App-Main-Design?node-id=0-1&p=f&t=2sYhPLmcWASjbTRE-0)
+---
 
 ## 🇬🇧 English
 
@@ -37,81 +40,112 @@ The project demonstrates clean architecture, scalable state management, and real
 - Formik + Yup
 - i18next
 - Tailwind CSS
+- CSS modules
 - OpenWeather API
+- Currency API
 - Lucide Icons
 
 ### 📂 Project Structure
 
 ```txt
 final-project-travel-app/
-├─ src/
-│  ├─ components/
-│  │  ├─ AuthTravel/
-│  │  │  └─ AuthTravel.tsx
-│  │  ├─ ContactForm/
-│  │  │  └─ ContactForm.tsx
-│  │  ├─ DestinationCard/
-│  │  │  └─ DestinationCard.tsx
-│  │  ├─ Footer/
-│  │  │  └─ Footer.tsx
-│  │  ├─ Navbar/
-│  │  │  └─ Navbar.tsx
-│  │  └─ ReviewsCarousel/
-│  │     └─ ReviewsCarousel.tsx
-│  │
-│  ├─ context/
-│  │  └─ ThemeContext.tsx
-│  │
-│  ├─ locales/
-│  │  ├─ de.json
-│  │  ├─ en.json
-│  │  ├─ ru.json
-│  │  └─ uk.json
-│  │
-│  ├─ pages/
-│  │  ├─ About.tsx
-│  │  ├─ Account.tsx
-│  │  ├─ DestinationDetails.tsx
-│  │  ├─ Destinations.tsx
-│  │  └─ Home.tsx
-│  │
-│  ├─ services/
-│  │  ├─ api/
-│  │  │  ├─ destinationsApi.ts
-│  │  │  └─ weatherApi.ts
-│  │  └─ data/
-│  │     ├─ destinationData.ts
-│  │     ├─ hotelsData.ts
-│  │     └─ reviews.ts
-│  │
-│  ├─ types/
-│  │  ├─ account.ts
-│  │  ├─ auth.ts
-│  │  └─ types.ts
-│  │
-│  ├─ slices/
-│  │  ├─ authSlice.ts
-│  │  └─ searchSlice.ts
-│  │
-│  ├─ App.tsx
-│  ├─ i18n.ts
-│  ├─ index.css
-│  ├─ main.tsx
-│  └─ store.ts
+├── node_modules/
+├── public/
+│   ├── videos/
+│   │   ├── France.mp4
+│   │   ├── Greece.mp4
+│   │   ├── Italy.mp4
+│   │   ├── Japan.mp4
+│   │   ├── Maldives.mp4
+│   │   ├── Mexico.mp4
+│   │   ├── Spain.mp4
+│   │   ├── Turkey.mp4
+│   │   └── uae.mp4
+│   └── favicon.svg
 │
-├─ .gitignore
-├─ eslint.config.js
-├─ index.html
-├─ package-lock.json
-├─ package.json
-├─ postcss.config.cjs
-├─ postcss.config.js
-├─ README.md
-├─ tailwind.config.js
-├─ tsconfig.app.json
-├─ tsconfig.json
-├─ tsconfig.node.json
-└─ vite.config.ts
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       ├── contact.jpg
+│   │       └── logo.png
+│
+│   ├── components/
+│   │   ├── AuthTravel/
+│   │   │   └── AuthTravel.tsx
+│   │   ├── ContactForm/
+│   │   │   └── ContactForm.tsx
+│   │   ├── CountryInfoPage/
+│   │   │   ├── countryComponents/
+│   │   │   └── CountryInfoPage.module.css
+│   │   ├── DestinationCard/
+│   │   │   └── DestinationCard.tsx
+│   │   ├── Footer/
+│   │   │   └── Footer.tsx
+│   │   ├── Navbar/
+│   │   │   └── Navbar.tsx
+│   │   ├── ReviewsCarousel/
+│   │   │   └── ReviewsCarousel.tsx
+│   │   └── Team/
+│   │       ├── Team.tsx
+│   │       └── TeamMemberCard.tsx
+│
+│   ├── context/
+│   │   └── ThemeContext.tsx
+│
+│   ├── locales/
+│   │   ├── en.json
+│   │   ├── de.json
+│   │   ├── ru.json
+│   │   └── uk.json
+│
+│   ├── pages/
+│   │   ├── About.tsx
+│   │   ├── Account.tsx
+│   │   ├── DestinationDetails.tsx
+│   │   ├── Destinations.tsx
+│   │   └── Home.tsx
+│
+│   ├── services/
+│   │   └── api/
+│   │       ├── currencyApi.ts
+│   │       ├── destinationsApi.ts
+│   │       └── weatherApi.ts
+│
+│   ├── data/
+│   │   ├── countryInfoData.ts
+│   │   ├── destinationData.ts
+│   │   ├── hotelsData.ts
+│   │   └── reviews.ts
+│
+│   ├── types/
+│   │   ├── account.ts
+│   │   ├── auth.ts
+│   │   ├── teamMember.ts
+│   │   └── types.ts
+│
+│   ├── slices/
+│   │   ├── authSlice.ts
+│   │   └── searchSlice.ts
+│
+│   ├── App.css
+│   ├── App.tsx
+│   ├── i18n.ts
+│   ├── index.css
+│   ├── main.tsx
+│   └── store.ts
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 
 ```
 
@@ -136,6 +170,21 @@ npm run dev
 - Wetterdaten in Echtzeit
 - Responsive Design
 
+### 🛠️ Verwendete Technologien
+
+- React 18
+- TypeScript
+- Redux Toolkit
+- RTK Query
+- React Router DOM
+- Formik + Yup
+- i18next
+- Tailwind CSS
+- CSS-Module
+- OpenWeather API
+- Currency API
+- Lucide Icons
+
 ### ▶️ Starten
 
 npm install  
@@ -157,6 +206,19 @@ npm run dev
 - Отели и погода
 - Адаптивный интерфейс
 
+### 🛠️ Используемые технологии
+
+- React 18
+- TypeScript
+- Redux Toolkit
+- RTK Query
+- React Router DOM
+- Formik + Yup
+- i18next
+- Tailwind CSS
+- CSS Modules
+- OpenWeather API
+
 ### ▶️ Запуск
 
 npm install  
@@ -177,6 +239,21 @@ npm run dev
 - Напрямки та готелі
 - Погода
 - Адаптивний дизайн
+
+### 🛠️ Використані технології
+
+- React 18
+- TypeScript
+- Redux Toolkit
+- RTK Query
+- React Router DOM
+- Formik + Yup
+- i18next
+- Tailwind CSS
+- CSS Modules
+- OpenWeather API
+- Currency API
+- Lucide Icons
 
 ### ▶️ Запуск
 
