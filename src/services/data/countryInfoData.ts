@@ -71,37 +71,37 @@ export const countryInfoData: CountryInfo[] = [
       "Everything here feels planned and confident. Cities rise from the desert with scale and intention, and comfort is part of everyday life.",
     foodAndLifeStyle:
       "Food is international and easy to find. Middle Eastern dishes mix naturally with cuisines from around the world, often served in carefully designed spaces.",
-    heroVideo: "./videos/public/videos/5077164-hd_1920_1080_25fps.mp4",
+    heroVideo: "/videos/uae.mp4",
     capital: "Dubai",
     currency: "AED",
-    image: "",
+    image: "https://www.harpersbazaararabia.com/wp-content/uploads/sites/7/cloud/2021/09/09/hba-uae-croqned-best-travel-destination-1.jpg",
     subtitle: "",
     imageText:
       "The United Arab Emirates feels deliberately constructed, as if every detail has been carefully considered before it appeared. Cities emerge from the desert with confidence, defined by clean lines, glass surfaces and open spaces designed for comfort rather than chaos. The heat shapes daily rhythms — mornings start early, afternoons slow down, evenings come alive again.Beyond the skyline, the desert stretches endlessly, quiet and still, offering a striking contrast to the polished cities. Life here moves between innovation and tradition: futuristic architecture stands close to mosques, while long-standing customs quietly guide everyday interactions. The UAE isn’t about spontaneity — it’s about precision, scale and the feeling that everything is exactly where it is meant to be.",
     places: [
       {
         name: "Dubai Skyline",
-        image: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a",
+        image: "https://cdn.excelproperties.ae/media/blog/hero/Best_Spots_to_View_the_Dubai_Skyline.webp",
       },
       {
         name: "Burj Khalifa",
-        image: "https://images.unsplash.com/photo-1546412414-e1885259563a",
+        image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/98/39/39.jpg",
       },
       {
         name: "Desert Safari",
-        image: "https://images.unsplash.com/photo-1518684079-54a9dfe8f5cf",
+        image: "https://luxurydesertsafarii.com/wp-content/uploads/2025/07/07-1.webp",
       },
       {
         name: "Sheikh Zayed Mosque",
-        image: "https://images.unsplash.com/photo-1587474260584-136574528ed5",
+        image: "https://i.pinimg.com/1200x/3d/a7/e9/3da7e9ff0918ebce937058d8b07cda45.jpg",
       },
       {
         name: "Palm Jumeirah",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+        image: "https://i.pinimg.com/1200x/ef/b7/93/efb793bdeac797daceb4b8317e595d1c.jpg",
       },
       {
-        name: "Old Dubai",
-        image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59",
+        name: "Burj Al Arab",
+        image: "https://i.pinimg.com/736x/d0/90/fd/d090fd4e865de6b475bcb15d27c5d8e1.jpg",
       },
     ],
   },

@@ -1,6 +1,10 @@
 import { useGetCurrencyQuery } from "../../../../services/api/currencyApi";
 import styles from "./CurrencySection.module.css"
  
+const STATIC_CURRENCIES: Record<string, string> = {
+  EUR: "Euro (EUR)",
+  AED: "UAE Dirham (AED)",
+};
 
 type Props = {
   currency: string;
@@ -8,14 +12,14 @@ type Props = {
 
 function CurrencySection({ currency }: Props) {
 const { data: value, isLoading } = useGetCurrencyQuery(currency);
-
-  if (currency === "EUR") {
+if (STATIC_CURRENCIES[currency]) {
     return (
       <div className={styles.card}>
         <p className={styles.title}>Currency</p>
-        <p className={styles.text}>Euro (EUR)</p>
+        <p className={styles.text}>{STATIC_CURRENCIES[currency]}</p>
       </div>
     );
+  
   }
 
   if (isLoading) {
