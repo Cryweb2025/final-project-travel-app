@@ -300,7 +300,7 @@ const Account: React.FC = () => {
                    bg-white border-sky-50
                    dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/30"
       >
-        {/* ✅ Hero image над аккаунтом */}
+        {/*  Hero image над аккаунтом */}
         <div className="-mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6">
           <div className="relative h-40 sm:h-44 w-full overflow-hidden rounded-t-2xl">
             <img

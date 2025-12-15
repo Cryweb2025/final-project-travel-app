@@ -181,7 +181,7 @@ const AuthTravel: React.FC = () => {
                       bg-white border-sky-100
                       dark:bg-slate-900 dark:border-slate-800 dark:shadow-black/30"
       >
-        {/* ✅ Hero image над формой */}
+        {/*  Hero image над формой */}
         <div className="-mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6">
           <div
             className="
