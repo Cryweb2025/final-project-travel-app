@@ -74,34 +74,41 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/uae.mp4",
     capital: "Dubai",
     currency: "AED",
-    image: "https://www.harpersbazaararabia.com/wp-content/uploads/sites/7/cloud/2021/09/09/hba-uae-croqned-best-travel-destination-1.jpg",
+    image:
+      "https://www.harpersbazaararabia.com/wp-content/uploads/sites/7/cloud/2021/09/09/hba-uae-croqned-best-travel-destination-1.jpg",
     subtitle: "",
     imageText:
       "The United Arab Emirates feels deliberately constructed, as if every detail has been carefully considered before it appeared. Cities emerge from the desert with confidence, defined by clean lines, glass surfaces and open spaces designed for comfort rather than chaos. The heat shapes daily rhythms — mornings start early, afternoons slow down, evenings come alive again.Beyond the skyline, the desert stretches endlessly, quiet and still, offering a striking contrast to the polished cities. Life here moves between innovation and tradition: futuristic architecture stands close to mosques, while long-standing customs quietly guide everyday interactions. The UAE isn’t about spontaneity — it’s about precision, scale and the feeling that everything is exactly where it is meant to be.",
     places: [
       {
         name: "Dubai Skyline",
-        image: "https://cdn.excelproperties.ae/media/blog/hero/Best_Spots_to_View_the_Dubai_Skyline.webp",
+        image:
+          "https://cdn.excelproperties.ae/media/blog/hero/Best_Spots_to_View_the_Dubai_Skyline.webp",
       },
       {
         name: "Burj Khalifa",
-        image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/98/39/39.jpg",
+        image:
+          "https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/98/39/39.jpg",
       },
       {
         name: "Desert Safari",
-        image: "https://luxurydesertsafarii.com/wp-content/uploads/2025/07/07-1.webp",
+        image:
+          "https://luxurydesertsafarii.com/wp-content/uploads/2025/07/07-1.webp",
       },
       {
         name: "Sheikh Zayed Mosque",
-        image: "https://i.pinimg.com/1200x/3d/a7/e9/3da7e9ff0918ebce937058d8b07cda45.jpg",
+        image:
+          "https://i.pinimg.com/1200x/3d/a7/e9/3da7e9ff0918ebce937058d8b07cda45.jpg",
       },
       {
         name: "Palm Jumeirah",
-        image: "https://i.pinimg.com/1200x/ef/b7/93/efb793bdeac797daceb4b8317e595d1c.jpg",
+        image:
+          "https://i.pinimg.com/1200x/ef/b7/93/efb793bdeac797daceb4b8317e595d1c.jpg",
       },
       {
         name: "Burj Al Arab",
-        image: "https://i.pinimg.com/736x/d0/90/fd/d090fd4e865de6b475bcb15d27c5d8e1.jpg",
+        image:
+          "https://i.pinimg.com/736x/d0/90/fd/d090fd4e865de6b475bcb15d27c5d8e1.jpg",
       },
     ],
   },
@@ -115,7 +122,8 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/Maldives.mp4",
     capital: "Male",
     currency: "USD",
-    image: "https://i.pinimg.com/736x/f6/9f/02/f69f02fa014eb5005fb6ffedb7cb3e18.jpg",
+    image:
+      "https://i.pinimg.com/736x/f6/9f/02/f69f02fa014eb5005fb6ffedb7cb3e18.jpg",
     subtitle: "",
     imageText:
       "The Maldives doesn’t ask for attention — it removes distractions. Days unfold slowly, guided by sunlight, tides and the quiet movement of water beneath wooden walkways. The horizon remains uninterrupted, and the sound of waves replaces schedules and urgency.Life here is intentionally minimal. Spaces are open, colors are soft, and everything revolves around the ocean. Even activity feels gentle — swimming, floating, watching the sky change. The Maldives isn’t about discovery through movement, but through stillness.",
@@ -161,18 +169,21 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/Spain.mp4",
     capital: "Madrid",
     currency: "EUR",
-    image: "https://cdn.kimkim.com/files/a/content_articles/featured_photos/9fc6e563b8ba3e78eae604da7e58d983a5294d27/big-c18195b2dfe79a520e4ec9c43832057a.jpg",
+    image:
+      "https://cdn.kimkim.com/files/a/content_articles/featured_photos/9fc6e563b8ba3e78eae604da7e58d983a5294d27/big-c18195b2dfe79a520e4ec9c43832057a.jpg",
     subtitle: "",
     imageText:
       "Spain moves outward. Life spills into streets, cafés and plazas, where conversations last longer than planned and schedules adjust naturally. The day builds slowly, reaching its peak in the evening when the heat softens and cities truly wake up.Tradition here isn’t preserved behind glass — it lives in daily routines. Meals stretch, voices overlap, and social life feels effortless. Spain doesn’t rush experiences; it lets them expand.",
     places: [
       {
         name: "Park Güell",
-        image: "https://thirdeyetraveller.com/wp-content/uploads/Park-Guell-Barcelona.jpg",
+        image:
+          "https://thirdeyetraveller.com/wp-content/uploads/Park-Guell-Barcelona.jpg",
       },
       {
         name: "Sagrada Familia",
-        image: "https://cdn-imgix.headout.com/media/images/3bf1f991caf6ea560796c2a042650fd5-Sagrada%20Familia.jpeg",
+        image:
+          "https://cdn-imgix.headout.com/media/images/3bf1f991caf6ea560796c2a042650fd5-Sagrada%20Familia.jpeg",
       },
       {
         name: "Seville Old Town",
@@ -180,15 +191,18 @@ export const countryInfoData: CountryInfo[] = [
       },
       {
         name: "Costa Brava",
-        image: "https://cdn.sanity.io/images/nxpteyfv/goguides/8e0cc60a293547002ed6090f4932c235698b8bb6-1600x1066.jpg",
+        image:
+          "https://cdn.sanity.io/images/nxpteyfv/goguides/8e0cc60a293547002ed6090f4932c235698b8bb6-1600x1066.jpg",
       },
       {
         name: "Flamenco & Traditions",
-        image: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/73/d7/57.jpg",
+        image:
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/73/d7/57.jpg",
       },
       {
         name: "Ibiza & Mediterranean Coast",
-        image: "https://imagedelivery.net/UpBbDZmjrt-WGPYbM3yOCA/78-ibiza-article-489-a-long-weekend-in-ibiza-17434370165391fd0b12be3.81352355/w=469,h=313",
+        image:
+          "https://imagedelivery.net/UpBbDZmjrt-WGPYbM3yOCA/78-ibiza-article-489-a-long-weekend-in-ibiza-17434370165391fd0b12be3.81352355/w=469,h=313",
       },
     ],
   },
@@ -196,29 +210,37 @@ export const countryInfoData: CountryInfo[] = [
   {
     id: "greece",
     name: "Greece",
-    description: "Greece feels sun-worn and calm. Nothing tries to look new, and days move at an unhurried, comfortable pace.",
-    foodAndLifeStyle: "Meals are familiar and simple. Vegetables, olive oil, fish and cheese appear again and again, without unnecessary complexity.",
+    description:
+      "Greece feels sun-worn and calm. Nothing tries to look new, and days move at an unhurried, comfortable pace.",
+    foodAndLifeStyle:
+      "Meals are familiar and simple. Vegetables, olive oil, fish and cheese appear again and again, without unnecessary complexity.",
     heroVideo: "/videos/Greece.mp4",
     capital: "Athens",
     currency: "EUR",
-    image: "https://www.in2greece.com/english/wp-content/uploads/2024/07/map-1-1024x928.jpg",
-    imageText: "Greece feels shaped by sunlight and age. Surfaces are worn smooth, colors softened by time, and nothing appears rushed or polished for effect. Days follow a familiar pattern — slow mornings, warm afternoons, long evenings.Life revolves around simplicity. Food, conversation and rest hold equal importance, and time feels flexible. Greece doesn’t impress — it comforts.",
+    image:
+      "https://www.in2greece.com/english/wp-content/uploads/2024/07/map-1-1024x928.jpg",
+    imageText:
+      "Greece feels shaped by sunlight and age. Surfaces are worn smooth, colors softened by time, and nothing appears rushed or polished for effect. Days follow a familiar pattern — slow mornings, warm afternoons, long evenings.Life revolves around simplicity. Food, conversation and rest hold equal importance, and time feels flexible. Greece doesn’t impress — it comforts.",
     places: [
       {
         name: "Santorini Cliffs",
-        image: "https://i.pinimg.com/736x/ef/75/1e/ef751e5a5d81a77e9e12dd93dc66f888.jpg",
+        image:
+          "https://i.pinimg.com/736x/ef/75/1e/ef751e5a5d81a77e9e12dd93dc66f888.jpg",
       },
       {
         name: "Acropolis of Athens",
-        image: "https://i.pinimg.com/736x/21/83/ab/2183ab07ff2e0e561e0e0738705d4343.jpg",
+        image:
+          "https://i.pinimg.com/736x/21/83/ab/2183ab07ff2e0e561e0e0738705d4343.jpg",
       },
       {
         name: "Navagio Beach",
-        image: "https://i.pinimg.com/736x/e6/46/3c/e6463cda1548be01798ef0468aec23b8.jpg",
+        image:
+          "https://i.pinimg.com/736x/e6/46/3c/e6463cda1548be01798ef0468aec23b8.jpg",
       },
       {
         name: "White Villages",
-        image: "https://i.pinimg.com/1200x/bb/de/8e/bbde8edaa34a9c7bbe960234b0cbd3da.jpg",
+        image:
+          "https://i.pinimg.com/1200x/bb/de/8e/bbde8edaa34a9c7bbe960234b0cbd3da.jpg",
       },
       {
         name: "Aegean Sea",
@@ -226,10 +248,11 @@ export const countryInfoData: CountryInfo[] = [
       },
       {
         name: "Greek Cuisine",
-        image: "https://i.pinimg.com/1200x/2f/61/0a/2f610a390bb000066f3419891f92b9af.jpg",
+        image:
+          "https://i.pinimg.com/1200x/2f/61/0a/2f610a390bb000066f3419891f92b9af.jpg",
       },
     ],
-    subtitle: ""
+    subtitle: "",
   },
 
   {
@@ -242,34 +265,41 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/Italy.mp4",
     capital: "Rome",
     currency: "EUR",
-    image: "https://www.fodors.com/assets/destinations/659/boat-grand-canal-basilica-santa-maria-della-salute-venice-italy.jpg",
+    image:
+      "https://www.fodors.com/assets/destinations/659/boat-grand-canal-basilica-santa-maria-della-salute-venice-italy.jpg",
     subtitle: "",
     imageText:
       "Italy changes your sense of time. Plans loosen, meals extend, and everyday moments quietly take on importance. Beauty appears without announcement — in light on stone walls, in small gestures, in unplanned detours.Life here is expressive yet grounded. Tradition is deeply regional, personal and emotional. Italy rewards patience and attention.",
     places: [
       {
         name: "Amalfi Coast",
-        image: "https://images.squarespace-cdn.com/content/v1/5478c524e4b05b52c35cebbf/1550810720644-2QTCQV8IJCEA4FC5LHFM/Positano.jpg",
+        image:
+          "https://images.squarespace-cdn.com/content/v1/5478c524e4b05b52c35cebbf/1550810720644-2QTCQV8IJCEA4FC5LHFM/Positano.jpg",
       },
       {
         name: "Colosseum",
-        image: "https://as1.ftcdn.net/v2/jpg/02/81/20/72/1000_F_281207281_gf4iAhkUWWhUB0UGv6pSn9SQIfRtkGZH.jpg",
+        image:
+          "https://as1.ftcdn.net/v2/jpg/02/81/20/72/1000_F_281207281_gf4iAhkUWWhUB0UGv6pSn9SQIfRtkGZH.jpg",
       },
       {
         name: "Venice Canals",
-        image: "https://cdn.britannica.com/63/153463-050-06B6270D/Grand-Canal-Venice.jpg",
+        image:
+          "https://cdn.britannica.com/63/153463-050-06B6270D/Grand-Canal-Venice.jpg",
       },
       {
         name: "Tuscany Hills",
-        image: "https://d1bv4heaa2n05k.cloudfront.net/user-images/1464968940923/tuscany-italy-highlights_main_1464969002264.jpeg",
+        image:
+          "https://d1bv4heaa2n05k.cloudfront.net/user-images/1464968940923/tuscany-italy-highlights_main_1464969002264.jpeg",
       },
       {
         name: "Italian Cuisine",
-        image: "https://blog.italotreno.com/wp-content/uploads/2023/10/Cosa_mangiare_Roma_10_piatti_imperdibili.jpg",
+        image:
+          "https://blog.italotreno.com/wp-content/uploads/2023/10/Cosa_mangiare_Roma_10_piatti_imperdibili.jpg",
       },
       {
         name: "Florenz",
-        image: "https://italien.expert/wp-content/uploads/2021/05/Florenz-Toskana-Italien0.jpg",
+        image:
+          "https://italien.expert/wp-content/uploads/2021/05/Florenz-Toskana-Italien0.jpg",
       },
     ],
   },
@@ -284,7 +314,8 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/France.mp4",
     capital: "Paris",
     currency: "EUR",
-    image: "https://i.pinimg.com/1200x/34/fe/dd/34feddf8a34db6f4ed6cbfaac066bab7.jpg",
+    image:
+      "https://i.pinimg.com/1200x/34/fe/dd/34feddf8a34db6f4ed6cbfaac066bab7.jpg",
     subtitle: "",
     imageText:
       "France doesn’t offer immediate clarity. It asks for observation — of gestures, timing and atmosphere. Life unfolds with intention, shaped by routine and detail rather than spectacle.Meals are moments, not interruptions. Spaces are curated without feeling artificial. France reveals itself gradually, rewarding attention rather than speed.",
@@ -295,15 +326,18 @@ export const countryInfoData: CountryInfo[] = [
       },
       {
         name: "Provence Lavender Fields",
-        image: "https://www.onegirl-oneworld.com/wp-content/uploads/2019/11/Lavender-Tour-Provence-5.jpg",
+        image:
+          "https://www.onegirl-oneworld.com/wp-content/uploads/2019/11/Lavender-Tour-Provence-5.jpg",
       },
       {
         name: "French Riviera",
-        image: "https://cdn.britannica.com/34/244734-050-6DD3B213/Aerial-view-of-French-Riviera-coast-Villefranche-sur-Mer-Nice-region-France.jpg",
+        image:
+          "https://cdn.britannica.com/34/244734-050-6DD3B213/Aerial-view-of-French-Riviera-coast-Villefranche-sur-Mer-Nice-region-France.jpg",
       },
       {
         name: "Louvre Museum",
-        image: "https://assets.cityexperiences.com/wp-content/uploads/2022/11/louvre_museum_exterior.jpg",
+        image:
+          "https://assets.cityexperiences.com/wp-content/uploads/2022/11/louvre_museum_exterior.jpg",
       },
       {
         name: "Local Bakeries",
@@ -325,34 +359,41 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/Turkey.mp4",
     capital: "Ankara",
     currency: "TRY",
-    image: "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt289d3aab2da77bc9/6777f31f93a84b03b5a37ef2/BCC-2023-EXPLORER-Istanbul-Fun-things-to-do-in-Istanbul-HEADER_MOBILE.jpg?format=webp&quality=60&width=1440",
+    image:
+      "https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt289d3aab2da77bc9/6777f31f93a84b03b5a37ef2/BCC-2023-EXPLORER-Istanbul-Fun-things-to-do-in-Istanbul-HEADER_MOBILE.jpg?format=webp&quality=60&width=1440",
     subtitle: "",
     imageText:
       "Turkey feels lived-in. History, religion and daily routines exist side by side, without separation. Cities are busy, expressive and warm, while quieter regions offer space and calm.Hospitality is instinctive. Meals are generous, mornings are slow, and conversation feels unforced. Turkey doesn’t divide past and present — it lets them coexist.",
     places: [
       {
         name: "Istanbul Old City",
-        image: "https://kated.com/wp-content/uploads/2020/05/TUR17b-Galata-Tower-Istanbul.jpg",
+        image:
+          "https://kated.com/wp-content/uploads/2020/05/TUR17b-Galata-Tower-Istanbul.jpg",
       },
       {
         name: "Cappadocia Balloons",
-        image: "https://cdn-imgix.headout.com/media/images/40e65a8e75c76bb30f104d39f5279869-17762-cappadocia-cappadocia-goreme-sunrise-hot-air-balloon-tour-with-breakfast---transfer-001.jpg?auto=format&w=900&h=562.5&q=90&ar=16%3A10&fit=crop",
+        image:
+          "https://cdn-imgix.headout.com/media/images/40e65a8e75c76bb30f104d39f5279869-17762-cappadocia-cappadocia-goreme-sunrise-hot-air-balloon-tour-with-breakfast---transfer-001.jpg?auto=format&w=900&h=562.5&q=90&ar=16%3A10&fit=crop",
       },
       {
         name: "Blue Mosque",
-        image: "https://i.pinimg.com/1200x/fb/33/36/fb33362f5486d01585b6c6c3800afa97.jpg",
+        image:
+          "https://i.pinimg.com/1200x/fb/33/36/fb33362f5486d01585b6c6c3800afa97.jpg",
       },
       {
         name: "Turkish Coast",
-        image: "https://img.turkiyetoday.com/images/2025/03/AdobeStock_726446311.jpeg",
+        image:
+          "https://img.turkiyetoday.com/images/2025/03/AdobeStock_726446311.jpeg",
       },
       {
         name: "Bazaar Streets",
-        image: "https://entiretravel.imgix.net/getmedia/a67bcd1d-dc45-4597-a756-95de484c2468/pexels-sulav-loktam-2815242-5184645.jpg?auto=format",
+        image:
+          "https://entiretravel.imgix.net/getmedia/a67bcd1d-dc45-4597-a756-95de484c2468/pexels-sulav-loktam-2815242-5184645.jpg?auto=format",
       },
       {
         name: "Aegean Coast",
-        image: "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0f/d4/9c/bf/img-20170709-wa0017-largejpg.jpg",
+        image:
+          "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0f/d4/9c/bf/img-20170709-wa0017-largejpg.jpg",
       },
     ],
   },
@@ -366,7 +407,8 @@ export const countryInfoData: CountryInfo[] = [
     heroVideo: "/videos/Mexico.mp4",
     capital: "Mexico City",
     currency: "MXN",
-    image: "https://i.pinimg.com/736x/6a/23/67/6a23673edb4b7782b1b7d59237eec495.jpg",
+    image:
+      "https://i.pinimg.com/736x/6a/23/67/6a23673edb4b7782b1b7d59237eec495.jpg",
     subtitle: "",
     imageText:
       "Mexico feels expressive and alive. Daily life unfolds loudly, visually and emotionally. Colors dominate streets, voices overlap, and traditions appear naturally woven into the present.Food is memory, identity and connection. Movement defines the cities, while ancient structures remind you of time’s depth. Mexico doesn’t hide its energy — it shares it openly.",
@@ -377,23 +419,28 @@ export const countryInfoData: CountryInfo[] = [
       },
       {
         name: "Chichen Itza",
-        image: "https://i.pinimg.com/736x/54/78/c6/5478c6ee1e005a405720c51a45aab743.jpg",
+        image:
+          "https://i.pinimg.com/736x/54/78/c6/5478c6ee1e005a405720c51a45aab743.jpg",
       },
       {
         name: "Tulum Ruins",
-        image: "https://i.pinimg.com/1200x/4b/1c/c6/4b1cc6703c7a0252629e6d5b958226b5.jpg",
+        image:
+          "https://i.pinimg.com/1200x/4b/1c/c6/4b1cc6703c7a0252629e6d5b958226b5.jpg",
       },
       {
         name: "Cenotes of Yucatán",
-        image: "https://i.pinimg.com/736x/52/ed/3c/52ed3c02bba2641921f2d0933fa02599.jpg",
+        image:
+          "https://i.pinimg.com/736x/52/ed/3c/52ed3c02bba2641921f2d0933fa02599.jpg",
       },
       {
         name: "Día de los Muerto",
-        image: "https://i.pinimg.com/736x/07/30/23/0730231ac42703fee1e1a76b671e93cd.jpg",
+        image:
+          "https://i.pinimg.com/736x/07/30/23/0730231ac42703fee1e1a76b671e93cd.jpg",
       },
       {
         name: "Caribbean Coast, Cancún",
-        image: "https://i.pinimg.com/736x/7d/b7/d4/7db7d4eb23cdc043b5e77c3d22c741cc.jpg",
+        image:
+          "https://i.pinimg.com/736x/7d/b7/d4/7db7d4eb23cdc043b5e77c3d22c741cc.jpg",
       },
     ],
   },
