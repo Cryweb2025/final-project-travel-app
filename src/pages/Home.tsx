@@ -130,7 +130,7 @@ const Home: React.FC = () => {
       <div
         className="
           absolute
-          bottom-14 sm:bottom-16 lg:bottom-20
+          bottom-14 sm:bottom-16 lg:bottom-4
           left-1/2 -translate-x-1/2
           w-full px-4
           z-20

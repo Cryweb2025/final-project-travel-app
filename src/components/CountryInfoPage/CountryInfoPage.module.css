@@ -1,0 +1,226 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.textIntro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-right: 3rem;
+  padding-left: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.countryTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: rgb(194, 60, 60);
+}
+
+.countrySubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.countryDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #774242;
+  font-style: italic;
+}
+
+.introSection {
+  width: 100%;
+  margin: 4rem auto;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.introImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.introImage:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+.introText {
+  padding-right: 2rem;
+  font-style: italic;
+
+  display: flex;
+  align-items: center;
+}
+.introText p {
+  margin: 0;
+}
+
+.introImageWrapper {
+  height: 380px;
+}
+
+.weatherCurrencyCard {
+  max-width: 1100px;
+  margin: 5rem auto 5rem;
+  padding: 0 1.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.foodLifestyleSection {
+  width: 100%;
+  margin: 0;
+  padding: 4rem 1.5rem;
+
+  background-color: #fafafa;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.foodTitle {
+  font-size: 2.1rem;
+  color: #912b2b;
+}
+.foodLifestyleText {
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.placesSection {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 4rem 1.5rem 0;
+}
+
+.placesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.placeCard {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.placeCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+.placeCard img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.placeCard:hover img {
+  filter: brightness(0.9);
+}
+
+.placeName {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: #912b2b;
+}
+.sectionTitle {
+  margin: 0 0 2.5rem 0;
+  font-size: 2rem;
+  color: #912b2b;
+}
+.placesSection .sectionTitle {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .countryTitle {
+    font-size: 2.2rem;
+  }
+
+  .textIntro {
+    padding: 0 1.5rem;
+  }
+
+  .introSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .introImage {
+    height: 260px;
+  }
+
+  .weatherCurrencyCard {
+    grid-template-columns: 1fr;
+    margin: 3rem auto 4rem;
+  }
+
+  .foodLifestyleSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .placesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scrollTopBtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: none;
+
+  background: #069fc5;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  z-index: 9999;
+}
+
+.scrollTopBtn:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.scrollTopBtnVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .scrollTopBtn {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.scrollTopBtn {
+  z-index: 2147483647;
+}

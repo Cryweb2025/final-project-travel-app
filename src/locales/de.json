@@ -212,5 +212,193 @@
     "anna": "Fantastischer Service! Alles war perfekt organisiert.",
     "marco": "Die beste Reiseerfahrung, die ich bisher hatte.",
     "emily": "Tolle Reiseziele und sehr freundlicher Support."
+  },
+  "team": {
+    "title": "Unser Team",
+    "subtitle": "Unser Beratungsteam ist eng verbunden und hat ein Ziel: Reisende glücklich zu machen! Egal wie ungewöhnlich deine Reisewünsche sind oder wie eng dein Zeitplan ist – wir finden die perfekte Lösung für dich.",
+    "description": "Jeder unserer Berater besucht seine Destinationen 2–3 Mal pro Jahr sowie weitere spannende Reiseländer, um neue Regionen zu entdecken und die Qualität der angebotenen Hotels für dich zu prüfen.",
+    "badges": {
+      "teamlead": "Teamleiter"
+    },
+    "members": {
+      "yuriy": {
+        "role": "Kontaktformular",
+        "description": "Verantwortlich für die Entwicklung des Kontaktformulars."
+      },
+      "vladimir": {
+        "role": "Login & Registrierung",
+        "description": "Verantwortlich für Login, Registrierung und das Account-Panel."
+      },
+      "ilyana": {
+        "role": "Wetter & Routen",
+        "description": "Verantwortlich für Wetter- und Routen-Funktionen."
+      },
+      "yulianna": {
+        "role": "Team-Bereich",
+        "description": "Verantwortlich für den Team-Bereich der Website."
+      },
+      "alexander": {
+        "role": "Startseite & Sprachen",
+        "description": "Verantwortlich für die Startseite und den Sprachwechsel."
+      },
+      "yulia": {
+        "role": "Hot Tours",
+        "description": "Verantwortlich für Hot Tours, Beschreibungen, Preise und Länder."
+      },
+      "andrey": {
+        "role": "Bewertungen",
+        "description": "Verantwortlich für den Bewertungsbereich."
+      }
+    }
+  },
+  "countries": {
+    "not_found": "Land nicht gefunden",
+    "food_title": "Essen & Lebensstil",
+    "highlights_title": "Highlights",
+
+    "japan": {
+      "name": "Japan",
+      "subtitle": "Ein Land, in dem alte Traditionen auf futuristische Städte treffen",
+      "description": "Japan wirkt anfangs nicht dramatisch. Es fühlt sich ruhig, kontrolliert, fast distanziert an. Und dann — ohne zu merken, wann — entspannst du dich und hörst auf zu hetzen.",
+      "imageText": "Wann ist die beste Zeit, nach Japan zu reisen? Vielleicht im Frühling, wenn die Menschen nach draußen strömen, um in ein zartrosa Meer aus Kirschblüten einzutauchen. Parks, Tempelwege und ruhige Wohnstraßen werden kurz zu gemeinsamen Orten des Staunens, an denen man langsamer wird, unter blühenden Bäumen sitzt und einfach den Moment vorbeiziehen lässt. Vielleicht ist es der Sommer, wenn die Tage länger werden und sich der Rhythmus des Lebens Richtung Küste verlagert. Nur die Spitze des ikonischen Vulkankegels des Fuji ist noch schneebedeckt, während Badegäste in die warmen Gewässer der Präfektur Okinawa eintauchen und der dichten Hitze der Städte entkommen. Feste füllen die Abende mit Laternen, Musik und Bewegung. Oder es ist der Herbst, wenn leuchtend rote und goldene Ahornwälder die Wanderwege durch das historische Kiso-Tal begleiten. Die Luft wird klar und kühl, Bergpfade wirken ruhiger, und lange Spaziergänge werden zu Momenten der Reflexion — eingerahmt von wechselnden Farben und alten Orten. Vielleicht ist es sogar der Winter, wenn man in heißen Onsen-Bädern verweilt, während Dampf in die kalte Luft steigt, Schneeaffen in natürlichen Quellen in Hokkaido baden und das Land in eine seltene, fast meditative Stille fällt. Straßen werden ruhiger, Routinen weicher, und Zeit fühlt sich weniger dringend an. Wir wissen es nicht. Japan bedeutet nicht, die perfekte Jahreszeit zu wählen — sondern bei jeder Ankunft eine andere Version des Landes zu entdecken.",
+      "foodAndLifeStyle": "Essen in Japan ist schlicht und präzise. Ramen, Reisgerichte und frischer Fisch gehören zum Alltag — und selbst kleine Mahlzeiten wirken sorgfältig zubereitet.",
+      "places": {
+        "kyoto": "Kyoto",
+        "mount_fuji": "Berg Fuji",
+        "tokyo_streets": "Straßen von Tokio",
+        "geisha_culture": "Geisha-Kultur",
+        "tea_ceremony": "Teezeremonie",
+        "onsen_experience": "Onsen-Erlebnis"
+      }
+    },
+
+    "uae": {
+      "name": "Vereinigte Arabische Emirate",
+      "subtitle": "",
+      "description": "Alles hier wirkt geplant und selbstbewusst. Städte wachsen aus der Wüste — groß, zielgerichtet — und Komfort gehört zum Alltag.",
+      "imageText": "Die Vereinigten Arabischen Emirate wirken bewusst konstruiert, als wäre jedes Detail sorgfältig überlegt, bevor es erscheint. Städte entstehen aus der Wüste mit Selbstvertrauen, geprägt von klaren Linien, Glasflächen und offenen Räumen, die auf Komfort statt Chaos ausgelegt sind. Die Hitze formt den Tagesrhythmus — morgens beginnt alles früh, nachmittags wird es langsamer, abends erwacht das Leben wieder. Jenseits der Skyline erstreckt sich die Wüste endlos, still und ruhig — ein starker Kontrast zu den polierten Städten. Das Leben bewegt sich zwischen Innovation und Tradition: futuristische Architektur steht nahe bei Moscheen, während lang gelebte Bräuche den Alltag leise mitprägen. Die VAE stehen nicht für Spontaneität — sondern für Präzision, Maßstab und das Gefühl, dass alles genau dort ist, wo es sein soll.",
+      "foodAndLifeStyle": "Essen ist international und leicht zu finden. Nahöstliche Gerichte mischen sich ganz selbstverständlich mit Küchen aus aller Welt — oft in sorgfältig gestalteten Locations serviert.",
+      "places": {
+        "dubai_skyline": "Dubai Skyline",
+        "burj_khalifa": "Burj Khalifa",
+        "desert_safari": "Wüstensafari",
+        "sheikh_zayed_mosque": "Scheich-Zayid-Moschee",
+        "palm_jumeirah": "Palm Jumeirah",
+        "burj_al_arab": "Burj Al Arab"
+      }
+    },
+
+    "maldives": {
+      "name": "Malediven",
+      "subtitle": "",
+      "description": "Die Malediven wirken vom ersten Moment an ruhig. Die Tage werden ohne Anstrengung langsamer, und nichts konkurriert mit dem Ozean und dem offenen Himmel.",
+      "imageText": "Die Malediven verlangen keine Aufmerksamkeit — sie entfernen Ablenkungen. Tage entfalten sich langsam, geführt von Sonnenlicht, Gezeiten und der leisen Bewegung des Wassers unter hölzernen Stegen. Der Horizont bleibt ununterbrochen, und das Rauschen der Wellen ersetzt Termine und Dringlichkeit. Das Leben hier ist bewusst minimal. Räume sind offen, Farben weich, und alles dreht sich um das Meer. Selbst Aktivität wirkt sanft — schwimmen, treiben, den Himmel beobachten. Die Malediven bedeuten nicht Entdeckung durch Bewegung, sondern durch Stille.",
+      "foodAndLifeStyle": "Mahlzeiten sind leicht und unkompliziert. Frischer Fisch, Reis und einfache Aromen dominieren und unterstützen das Erlebnis, ohne sich in den Vordergrund zu drängen.",
+      "places": {
+        "overwater_villas": "Villen über dem Wasser",
+        "turquoise_lagoons": "Türkisfarbene Lagunen",
+        "snorkeling_reefs": "Schnorchelriffe",
+        "sunset_beaches": "Strände bei Sonnenuntergang",
+        "palm-fringed_islands": "Palmeninseln",
+        "indian_ocean_views": "Blicke auf den Indischen Ozean"
+      }
+    },
+
+    "spain": {
+      "name": "Spanien",
+      "subtitle": "",
+      "description": "Spanien lebt vor allem draußen. Abende beginnen spät, Gespräche dauern an, und der Alltag fühlt sich offen und gesellig an.",
+      "imageText": "Spanien bewegt sich nach außen. Das Leben fließt in Straßen, Cafés und Plätze, wo Gespräche länger dauern als geplant und sich Zeitpläne ganz natürlich anpassen. Der Tag baut sich langsam auf und erreicht seinen Höhepunkt am Abend, wenn die Hitze nachlässt und Städte wirklich wach werden. Tradition wird hier nicht hinter Glas bewahrt — sie lebt in den täglichen Routinen. Mahlzeiten ziehen sich, Stimmen überlappen, und das soziale Leben wirkt mühelos. Spanien hetzt Erfahrungen nicht — es lässt sie wachsen.",
+      "foodAndLifeStyle": "Essen ist zum Teilen da. Einfache Zutaten, kräftige Aromen und lange Mahlzeiten machen das Essen zu einem natürlichen Teil des sozialen Lebens.",
+      "places": {
+        "park_güell": "Park Güell",
+        "sagrada_familia": "Sagrada Família",
+        "seville_old_town": "Altstadt von Sevilla",
+        "costa_brava": "Costa Brava",
+        "flamenco_&_traditions": "Flamenco & Traditionen",
+        "ibiza_&_mediterranean_coast": "Ibiza & Mittelmeerküste"
+      }
+    },
+
+    "greece": {
+      "name": "Griechenland",
+      "subtitle": "",
+      "description": "Griechenland wirkt sonnengeprägt und ruhig. Nichts versucht, neu auszusehen, und die Tage bewegen sich in einem unaufgeregten, angenehmen Tempo.",
+      "imageText": "Griechenland fühlt sich von Sonnenlicht und Alter geformt an. Oberflächen sind glatt abgenutzt, Farben durch die Zeit weicher geworden, und nichts wirkt gehetzt oder künstlich poliert. Tage folgen einem vertrauten Muster — langsame Morgen, warme Nachmittage, lange Abende. Das Leben dreht sich um Einfachheit. Essen, Gespräche und Ruhe sind gleich wichtig, und Zeit fühlt sich flexibel an. Griechenland beeindruckt nicht — es beruhigt.",
+      "foodAndLifeStyle": "Mahlzeiten sind vertraut und schlicht. Gemüse, Olivenöl, Fisch und Käse tauchen immer wieder auf — ohne unnötige Komplexität.",
+      "places": {
+        "santorini_cliffs": "Klippen von Santorini",
+        "acropolis_of_athens": "Akropolis von Athen",
+        "navagio_beach": "Navagio-Strand",
+        "white_villages": "Weiße Dörfer",
+        "aegean_sea": "Ägäisches Meer",
+        "greek_cuisine": "Griechische Küche"
+      }
+    },
+
+    "italy": {
+      "name": "Italien",
+      "subtitle": "",
+      "description": "Italien unterbricht leise dein Zeitgefühl. Pläne dehnen sich, Mahlzeiten werden länger, und Schönheit erscheint, wenn du aufhörst, den Tag kontrollieren zu wollen.",
+      "imageText": "Italien verändert dein Zeitgefühl. Pläne werden lockerer, Mahlzeiten dauern länger, und alltägliche Momente gewinnen still an Bedeutung. Schönheit kündigt sich nicht an — sie zeigt sich im Licht auf Steinwänden, in kleinen Gesten, in ungeplanten Umwegen. Das Leben ist expressiv und zugleich geerdet. Tradition ist stark regional, persönlich und emotional. Italien belohnt Geduld und Aufmerksamkeit.",
+      "foodAndLifeStyle": "Essen ist emotional und meinungsstark. Einfache Zutaten, starke Traditionen und regionale Gewohnheiten prägen jede Mahlzeit.",
+      "places": {
+        "amalfi_coast": "Amalfiküste",
+        "colosseum": "Kolosseum",
+        "venice_canals": "Kanäle von Venedig",
+        "tuscany_hills": "Hügel der Toskana",
+        "italian_cuisine": "Italienische Küche",
+        "florenz": "Florenz"
+      }
+    },
+
+    "france": {
+      "name": "Frankreich",
+      "subtitle": "",
+      "description": "Frankreich erklärt sich nicht. Es erwartet Beobachtung und Geduld und bietet Tiefe statt schneller Eindrücke.",
+      "imageText": "Frankreich bietet keine sofortige Klarheit. Es fordert Beobachtung — von Gesten, Timing und Atmosphäre. Das Leben entfaltet sich mit Absicht, geprägt von Routine und Details statt Spektakel. Mahlzeiten sind Momente, keine Unterbrechungen. Räume wirken kuratiert, ohne künstlich zu sein. Frankreich zeigt sich nach und nach und belohnt Aufmerksamkeit statt Geschwindigkeit.",
+      "foodAndLifeStyle": "Mahlzeiten sind Momente, keine Aufgaben. Qualität, Timing und Atmosphäre zählen ebenso wie der Geschmack.",
+      "places": {
+        "eiffel_tower": "Eiffelturm",
+        "provence_lavender_fields": "Lavendelfelder der Provence",
+        "french_riviera": "Französische Riviera",
+        "louvre_museum": "Louvre",
+        "local_bakeries": "Lokale Bäckereien",
+        "café_culture": "Café-Kultur"
+      }
+    },
+
+    "turkey": {
+      "name": "Türkei",
+      "subtitle": "",
+      "description": "Die Türkei wirkt einladend, ohne sich anzustrengen. Geschichte, Alltag und Tradition existieren nebeneinander — ohne klare Grenzen.",
+      "imageText": "Die Türkei wirkt gelebter Alltag. Geschichte, Religion und Routinen existieren nebeneinander, ohne getrennt zu sein. Städte sind lebendig, ausdrucksstark und warm, während ruhigere Regionen Raum und Gelassenheit bieten. Gastfreundschaft ist instinktiv. Mahlzeiten sind großzügig, Morgen sind langsam, und Gespräche fühlen sich ungezwungen an. Die Türkei trennt Vergangenheit und Gegenwart nicht — sie lässt sie zusammen bestehen.",
+      "foodAndLifeStyle": "Essen ist großzügig und wohltuend. Brot, Gemüse, Gegrilltes und lange Frühstücke gehören zum täglichen Rhythmus.",
+      "places": {
+        "istanbul_old_city": "Altstadt von Istanbul",
+        "cappadocia_balloons": "Ballons in Kappadokien",
+        "blue_mosque": "Blaue Moschee",
+        "turkish_coast": "Türkische Küste",
+        "bazaar_streets": "Basar-Gassen",
+        "aegean_coast": "Ägäisküste"
+      }
+    },
+
+    "mexico": {
+      "name": "Mexiko",
+      "subtitle": "",
+      "description": "Mexiko wirkt lebendig und ausdrucksstark. Farben, Geräusche und Gespräche überlappen und erzeugen ein Gefühl ständiger Bewegung.",
+      "imageText": "Mexiko fühlt sich ausdrucksstark und lebendig an. Der Alltag entfaltet sich laut, visuell und emotional. Farben dominieren die Straßen, Stimmen überlappen, und Traditionen wirken ganz natürlich in die Gegenwart eingewoben. Essen ist Erinnerung, Identität und Verbindung. Bewegung prägt die Städte, während alte Bauwerke an die Tiefe der Zeit erinnern. Mexiko versteckt seine Energie nicht — es teilt sie offen.",
+      "foodAndLifeStyle": "Essen ist kräftig und stark regional geprägt. Streetfood, lokale Gewürze und Familienrezepte definieren das Erlebnis mehr als Restaurants.",
+      "places": {
+        "mexico_city": "Mexiko-Stadt",
+        "chichen_itza": "Chichén Itzá",
+        "tulum_ruins": "Ruinen von Tulum",
+        "cenotes_of_yucatán": "Cenoten von Yucatán",
+        "día_de_los_muerto": "Día de los Muerto",
+        "caribbean_coast,_cancún": "Karibikküste, Cancún"
+      }
+    }
   }
 }
+

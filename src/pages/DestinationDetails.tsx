@@ -6,12 +6,13 @@ import { useTranslation } from "react-i18next";
 const DestinationDetails: React.FC = () => {
   // Получение ключа страны из URL
   const { key } = useParams<{ key: string }>();
+  const normalizedKey = (key || "").toLowerCase();
 
   // Хук для работы с переводами
   const { t } = useTranslation();
 
   // Список отелей для выбранной страны
-  const rawHotels = hotelsData[key || ""] || [];
+  const rawHotels = hotelsData[normalizedKey] || [];
 
   /* ================= СОСТОЯНИЕ UI ================= */
 
@@ -87,7 +88,7 @@ const DestinationDetails: React.FC = () => {
       {/* Кнопка "Подробнее о стране" */}
       <div className="mb-4">
         <Link
-          to={`/countries/${key}`}
+          to={`/countries/${normalizedKey}`}
           className="
       inline-flex items-center justify-center
       px-5 py-2 rounded-lg

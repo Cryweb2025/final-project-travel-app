@@ -211,6 +211,196 @@
     "anna": "Amazing service! Everything was perfectly organized.",
     "marco": "Best travel experience I’ve had so far.",
     "emily": "Great destinations and very friendly support."
-  }
+  },
 
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Our advisor team is a tight-knit group with one goal: making travelers happy! No matter how unusual your travel wishes are or how tight your schedule is, we work out the perfect solution for you.",
+    "description": "Each of our advisors visits their destinations 2–3 times a year, as well as other interesting travel countries, to explore new regions and check the quality of hotels offered there for you.",
+
+    "badges": {
+      "teamlead": "Team Lead"
+    },
+
+    "members": {
+      "yuriy": {
+        "role": "Contact Form",
+        "description": "Responsible for developing the contact form."
+      },
+      "vladimir": {
+        "role": "Login & Registration",
+        "description": "Responsible for login, registration, and account panel."
+      },
+      "ilyana": {
+        "role": "Weather & Routes",
+        "description": "Responsible for weather and route features."
+      },
+      "yulianna": {
+        "role": "Team Section",
+        "description": "Responsible for the team section of the website."
+      },
+      "alexander": {
+        "role": "Homepage & Languages",
+        "description": "Responsible for the homepage and language switching."
+      },
+      "yulia": {
+        "role": "Hot Tours",
+        "description": "Responsible for hot tours, descriptions, prices, and countries."
+      },
+      "andrey": {
+        "role": "Reviews",
+        "description": "Responsible for the reviews section."
+      }
+    }
+  },
+  "countries": {
+    "not_found": "Country not found",
+    "food_title": "Food & Lifestyle",
+    "highlights_title": "Highlights",
+
+    "japan": {
+      "name": "Japan",
+      "subtitle": "A country where ancient traditions meet futuristic cities",
+      "description": "Japan doesn’t feel dramatic at first. It feels calm, controlled, almost distant. And then — without noticing when — you relax and stop rushing.",
+      "imageText": "When is the best time to travel to Japan? Perhaps in spring, when the Japanese flock outdoors to immerse themselves in a pale pink sea of cherry blossoms. Parks, temple paths and quiet residential streets briefly turn into shared spaces of wonder, where people slow down, sit beneath blooming trees, and simply observe the passing moment. Perhaps it’s summer, when the days grow longer and the rhythm of life shifts toward the coast. Only the tip of Mount Fuji’s iconic volcanic cone remains snow-capped, while beachgoers plunge into the warm waters of Okinawa Prefecture, escaping the dense heat of the cities. Festivals fill the evenings with lanterns, music and movement. Or it’s autumn, when fiery red and golden maple forests accompany trekking routes through the historic Kiso Valley. The air becomes crisp and clear, mountain paths feel quieter, and long walks turn into moments of reflection framed by changing colors and ancient towns. Perhaps it’s even winter, when people linger in hot onsen baths as steam rises into the cold air, snow monkeys bask in natural hot springs in Hokkaido, and the country settles into a rare, almost meditative stillness. Streets grow calmer, routines soften, and time feels less urgent. We don’t know. Japan isn’t about choosing the perfect season — it’s about discovering a different version of the country each time you arrive.",
+      "foodAndLifeStyle": "Food in Japan is simple and precise. Ramen, rice dishes and fresh fish are part of everyday life, and even small meals feel carefully prepared.",
+      "places": {
+        "kyoto": "Kyoto",
+        "mount_fuji": "Mount Fuji",
+        "tokyo_streets": "Tokyo Streets",
+        "geisha_culture": "Geisha Culture",
+        "tea_ceremony": "Tea Ceremony",
+        "onsen_experience": "Onsen Experience"
+      }
+    },
+
+    "uae": {
+      "name": "United Arab Emirates",
+      "subtitle": "",
+      "description": "Everything here feels planned and confident. Cities rise from the desert with scale and intention, and comfort is part of everyday life.",
+      "imageText": "The United Arab Emirates feels deliberately constructed, as if every detail has been carefully considered before it appeared. Cities emerge from the desert with confidence, defined by clean lines, glass surfaces and open spaces designed for comfort rather than chaos. The heat shapes daily rhythms — mornings start early, afternoons slow down, evenings come alive again. Beyond the skyline, the desert stretches endlessly, quiet and still, offering a striking contrast to the polished cities. Life here moves between innovation and tradition: futuristic architecture stands close to mosques, while long-standing customs quietly guide everyday interactions. The UAE isn’t about spontaneity — it’s about precision, scale and the feeling that everything is exactly where it is meant to be.",
+      "foodAndLifeStyle": "Food is international and easy to find. Middle Eastern dishes mix naturally with cuisines from around the world, often served in carefully designed spaces.",
+      "places": {
+        "dubai_skyline": "Dubai Skyline",
+        "burj_khalifa": "Burj Khalifa",
+        "desert_safari": "Desert Safari",
+        "sheikh_zayed_mosque": "Sheikh Zayed Mosque",
+        "palm_jumeirah": "Palm Jumeirah",
+        "burj_al_arab": "Burj Al Arab"
+      }
+    },
+
+    "maldives": {
+      "name": "Maldives",
+      "subtitle": "",
+      "description": "The Maldives feels quiet from the first moment. Days slow down without effort, and nothing competes with the ocean and open sky.",
+      "imageText": "The Maldives doesn’t ask for attention — it removes distractions. Days unfold slowly, guided by sunlight, tides and the quiet movement of water beneath wooden walkways. The horizon remains uninterrupted, and the sound of waves replaces schedules and urgency. Life here is intentionally minimal. Spaces are open, colors are soft, and everything revolves around the ocean. Even activity feels gentle — swimming, floating, watching the sky change. The Maldives isn’t about discovery through movement, but through stillness.",
+      "foodAndLifeStyle": "Meals are light and uncomplicated. Fresh fish, rice and simple flavors dominate, supporting the experience without drawing attention to themselves.",
+      "places": {
+        "overwater_villas": "Overwater Villas",
+        "turquoise_lagoons": "Turquoise Lagoons",
+        "snorkeling_reefs": "Snorkeling Reefs",
+        "sunset_beaches": "Sunset Beaches",
+        "palm-fringed_islands": "Palm-Fringed Islands",
+        "indian_ocean_views": "Indian Ocean Views"
+      }
+    },
+
+    "spain": {
+      "name": "Spain",
+      "subtitle": "",
+      "description": "Spain lives mostly outside. Evenings start late, conversations stretch, and daily life feels open and social.",
+      "imageText": "Spain moves outward. Life spills into streets, cafés and plazas, where conversations last longer than planned and schedules adjust naturally. The day builds slowly, reaching its peak in the evening when the heat softens and cities truly wake up. Tradition here isn’t preserved behind glass — it lives in daily routines. Meals stretch, voices overlap, and social life feels effortless. Spain doesn’t rush experiences; it lets them expand.",
+      "foodAndLifeStyle": "Food is meant to be shared. Simple ingredients, strong flavors and long meals turn eating into a natural part of social life.",
+      "places": {
+        "park_güell": "Park Güell",
+        "sagrada_familia": "Sagrada Familia",
+        "seville_old_town": "Seville Old Town",
+        "costa_brava": "Costa Brava",
+        "flamenco_&_traditions": "Flamenco & Traditions",
+        "ibiza_&_mediterranean_coast": "Ibiza & Mediterranean Coast"
+      }
+    },
+
+    "greece": {
+      "name": "Greece",
+      "subtitle": "",
+      "description": "Greece feels sun-worn and calm. Nothing tries to look new, and days move at an unhurried, comfortable pace.",
+      "imageText": "Greece feels shaped by sunlight and age. Surfaces are worn smooth, colors softened by time, and nothing appears rushed or polished for effect. Days follow a familiar pattern — slow mornings, warm afternoons, long evenings. Life revolves around simplicity. Food, conversation and rest hold equal importance, and time feels flexible. Greece doesn’t impress — it comforts.",
+      "foodAndLifeStyle": "Meals are familiar and simple. Vegetables, olive oil, fish and cheese appear again and again, without unnecessary complexity.",
+      "places": {
+        "santorini_cliffs": "Santorini Cliffs",
+        "acropolis_of_athens": "Acropolis of Athens",
+        "navagio_beach": "Navagio Beach",
+        "white_villages": "White Villages",
+        "aegean_sea": "Aegean Sea",
+        "greek_cuisine": "Greek Cuisine"
+      }
+    },
+
+    "italy": {
+      "name": "Italy",
+      "subtitle": "",
+      "description": "Italy quietly interrupts your sense of time. Plans stretch, meals get longer, and beauty appears when you stop trying to control the day.",
+      "imageText": "Italy changes your sense of time. Plans loosen, meals extend, and everyday moments quietly take on importance. Beauty appears without announcement — in light on stone walls, in small gestures, in unplanned detours. Life here is expressive yet grounded. Tradition is deeply regional, personal and emotional. Italy rewards patience and attention.",
+      "foodAndLifeStyle": "Food is emotional and opinionated. Simple ingredients, strong traditions and regional habits shape every meal.",
+      "places": {
+        "amalfi_coast": "Amalfi Coast",
+        "colosseum": "Colosseum",
+        "venice_canals": "Venice Canals",
+        "tuscany_hills": "Tuscany Hills",
+        "italian_cuisine": "Italian Cuisine",
+        "florenz": "Florenz"
+      }
+    },
+
+    "france": {
+      "name": "France",
+      "subtitle": "",
+      "description": "France doesn’t explain itself. It expects observation and patience, offering depth rather than instant impressions.",
+      "imageText": "France doesn’t offer immediate clarity. It asks for observation — of gestures, timing and atmosphere. Life unfolds with intention, shaped by routine and detail rather than spectacle. Meals are moments, not interruptions. Spaces are curated without feeling artificial. France reveals itself gradually, rewarding attention rather than speed.",
+      "foodAndLifeStyle": "Meals are treated as moments, not tasks. Quality, timing and atmosphere matter as much as taste.",
+      "places": {
+        "eiffel_tower": "Eiffel Tower",
+        "provence_lavender_fields": "Provence Lavender Fields",
+        "french_riviera": "French Riviera",
+        "louvre_museum": "Louvre Museum",
+        "local_bakeries": "Local Bakeries",
+        "café_culture": "Café Culture"
+      }
+    },
+
+    "turkey": {
+      "name": "Turkey",
+      "subtitle": "",
+      "description": "Turkey feels welcoming without trying. History, daily life and tradition exist side by side, without clear boundaries.",
+      "imageText": "Turkey feels lived-in. History, religion and daily routines exist side by side, without separation. Cities are busy, expressive and warm, while quieter regions offer space and calm. Hospitality is instinctive. Meals are generous, mornings are slow, and conversation feels unforced. Turkey doesn’t divide past and present — it lets them coexist.",
+      "foodAndLifeStyle": "Food is generous and comforting. Bread, vegetables, grilled dishes and long breakfasts are part of everyday rhythm.",
+      "places": {
+        "istanbul_old_city": "Istanbul Old City",
+        "cappadocia_balloons": "Cappadocia Balloons",
+        "blue_mosque": "Blue Mosque",
+        "turkish_coast": "Turkish Coast",
+        "bazaar_streets": "Bazaar Streets",
+        "aegean_coast": "Aegean Coast"
+      }
+    },
+
+    "mexico": {
+      "name": "Mexico",
+      "subtitle": "",
+      "description": "Mexico feels alive and expressive. Colors, sounds and conversations overlap, creating a sense of constant movement.",
+      "imageText": "Mexico feels expressive and alive. Daily life unfolds loudly, visually and emotionally. Colors dominate streets, voices overlap, and traditions appear naturally woven into the present. Food is memory, identity and connection. Movement defines the cities, while ancient structures remind you of time’s depth. Mexico doesn’t hide its energy — it shares it openly.",
+      "foodAndLifeStyle": "Food is bold and deeply regional. Street meals, local spices and family recipes define the experience more than restaurants.",
+      "places": {
+        "mexico_city": "Mexico City",
+        "chichen_itza": "Chichen Itza",
+        "tulum_ruins": "Tulum Ruins",
+        "cenotes_of_yucatán": "Cenotes of Yucatán",
+        "día_de_los_muerto": "Día de los Muerto",
+        "caribbean_coast,_cancún": "Caribbean Coast, Cancún"
+      }
+    }
+  }
 }
+

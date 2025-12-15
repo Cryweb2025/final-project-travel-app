@@ -1,6 +1,9 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 
+// Картинке для формы
+import headerImage from "../../assets/images/contact.jpg";
+
 /*
   Типы данных формы
 */
@@ -117,173 +120,193 @@ const ContactForm: React.FC = () => {
       ====================================================== */}
       <div
         className="
+          overflow-hidden
           bg-white dark:bg-slate-900
           border border-slate-100 dark:border-slate-800
           rounded-2xl
           shadow-xl
-          p-6 sm:p-8
         "
       >
-        {/* Заголовок */}
-        <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-            {t("contact_form.title")}
-          </h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            {t("contact_form.subtitle")}
-          </p>
+        {/* ✅ Картинка над формой */}
+        <div className="relative h-40 sm:h-52">
+          <img
+            src={headerImage}
+            alt="Contact header"
+            className="w-full h-full object-cover"
+            draggable={false}
+          />
+          {/* затемнение + мягкий градиент */}
+          <div className="absolute inset-0 bg-black/25 dark:bg-black/45" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/35 to-transparent" />
         </div>
 
-        {/* Успешная отправка */}
-        {submitSuccess && (
-          <div className="mb-4 rounded-lg border border-emerald-200 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-2 text-sm text-emerald-700 dark:text-emerald-400">
-            {t("contact_form.success")}
-          </div>
-        )}
-
-        {/* ======================================================
-           Форма
-        ====================================================== */}
-        <form onSubmit={handleSubmit} className="grid gap-4">
-          {/* Name */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-              {t("contact_form.fields.name")} *
-            </label>
-            <input
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder={t("contact_form.placeholders.name")}
-              className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                ${
-                  errors.name
-                    ? "border-red-400 focus:ring-red-200"
-                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
-                }
-                bg-white dark:bg-slate-800
-                text-slate-900 dark:text-white
-              `}
-            />
-            {errors.name && (
-              <p className="mt-1 text-xs text-red-600">{errors.name}</p>
-            )}
+        {/* Внутренние отступы карточки */}
+        <div className="p-6 sm:p-8">
+          {/* Заголовок */}
+          <div className="text-center mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+              {t("contact_form.title")}
+            </h2>
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              {t("contact_form.subtitle")}
+            </p>
           </div>
 
-          {/* Email */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-              {t("contact_form.fields.email")} *
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder={t("contact_form.placeholders.email")}
-              className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                ${
-                  errors.email
-                    ? "border-red-400 focus:ring-red-200"
-                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
-                }
-                bg-white dark:bg-slate-800
-                text-slate-900 dark:text-white
-              `}
-            />
-            {errors.email && (
-              <p className="mt-1 text-xs text-red-600">{errors.email}</p>
-            )}
-          </div>
+          {/* Успешная отправка */}
+          {submitSuccess && (
+            <div className="mb-4 rounded-lg border border-emerald-200 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-2 text-sm text-emerald-700 dark:text-emerald-400">
+              {t("contact_form.success")}
+            </div>
+          )}
 
-          {/* Phone */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-              {t("contact_form.fields.phone")}
-            </label>
-            <input
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder={t("contact_form.placeholders.phone")}
-              className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm text-slate-900 dark:text-white outline-none focus:border-sky-400 focus:ring-sky-100 transition"
-            />
-          </div>
+          {/* ======================================================
+             Форма
+          ====================================================== */}
+          <form onSubmit={handleSubmit} className="grid gap-4">
+            {/* Name */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                {t("contact_form.fields.name")} *
+              </label>
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder={t("contact_form.placeholders.name")}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
+                  ${
+                    errors.name
+                      ? "border-red-400 focus:ring-red-200"
+                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  }
+                  bg-white dark:bg-slate-800
+                  text-slate-900 dark:text-white
+                `}
+              />
+              {errors.name && (
+                <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+              )}
+            </div>
 
-          {/* Subject */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-              {t("contact_form.fields.subject")}
-            </label>
-            <select
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm text-slate-900 dark:text-white outline-none focus:border-sky-400 focus:ring-sky-100 transition"
+            {/* Email */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                {t("contact_form.fields.email")} *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder={t("contact_form.placeholders.email")}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
+                  ${
+                    errors.email
+                      ? "border-red-400 focus:ring-red-200"
+                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  }
+                  bg-white dark:bg-slate-800
+                  text-slate-900 dark:text-white
+                `}
+              />
+              {errors.email && (
+                <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+              )}
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                {t("contact_form.fields.phone")}
+              </label>
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder={t("contact_form.placeholders.phone")}
+                className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm text-slate-900 dark:text-white outline-none focus:border-sky-400 focus:ring-sky-100 transition"
+              />
+            </div>
+
+            {/* Subject */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                {t("contact_form.fields.subject")}
+              </label>
+              <select
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-sm text-slate-900 dark:text-white outline-none focus:border-sky-400 focus:ring-sky-100 transition"
+              >
+                <option value="">
+                  {t("contact_form.subjects.placeholder")}
+                </option>
+                <option value="booking">
+                  {t("contact_form.subjects.booking")}
+                </option>
+                <option value="info">{t("contact_form.subjects.info")}</option>
+                <option value="support">
+                  {t("contact_form.subjects.support")}
+                </option>
+                <option value="partnership">
+                  {t("contact_form.subjects.partnership")}
+                </option>
+                <option value="other">
+                  {t("contact_form.subjects.other")}
+                </option>
+              </select>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+                {t("contact_form.fields.message")} *
+              </label>
+              <textarea
+                name="message"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                placeholder={t("contact_form.placeholders.message")}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
+                  ${
+                    errors.message
+                      ? "border-red-400 focus:ring-red-200"
+                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  }
+                  bg-white dark:bg-slate-800
+                  text-slate-900 dark:text-white
+                `}
+              />
+              {errors.message && (
+                <p className="mt-1 text-xs text-red-600">{errors.message}</p>
+              )}
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="
+                mt-2
+                inline-flex items-center justify-center
+                rounded-lg
+                bg-gradient-to-r from-sky-500 to-emerald-500
+                px-4 py-2.5
+                text-sm font-semibold text-white
+                shadow-md
+                hover:from-sky-600 hover:to-emerald-600
+                disabled:opacity-60 disabled:cursor-not-allowed
+                transition
+              "
             >
-              <option value="">{t("contact_form.subjects.placeholder")}</option>
-              <option value="booking">
-                {t("contact_form.subjects.booking")}
-              </option>
-              <option value="info">{t("contact_form.subjects.info")}</option>
-              <option value="support">
-                {t("contact_form.subjects.support")}
-              </option>
-              <option value="partnership">
-                {t("contact_form.subjects.partnership")}
-              </option>
-              <option value="other">{t("contact_form.subjects.other")}</option>
-            </select>
-          </div>
-
-          {/* Message */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
-              {t("contact_form.fields.message")} *
-            </label>
-            <textarea
-              name="message"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              placeholder={t("contact_form.placeholders.message")}
-              className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                ${
-                  errors.message
-                    ? "border-red-400 focus:ring-red-200"
-                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
-                }
-                bg-white dark:bg-slate-800
-                text-slate-900 dark:text-white
-              `}
-            />
-            {errors.message && (
-              <p className="mt-1 text-xs text-red-600">{errors.message}</p>
-            )}
-          </div>
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="
-              mt-2
-              inline-flex items-center justify-center
-              rounded-lg
-              bg-gradient-to-r from-sky-500 to-emerald-500
-              px-4 py-2.5
-              text-sm font-semibold text-white
-              shadow-md
-              hover:from-sky-600 hover:to-emerald-600
-              disabled:opacity-60 disabled:cursor-not-allowed
-              transition
-            "
-          >
-            {isSubmitting
-              ? t("contact_form.sending")
-              : t("contact_form.submit")}
-          </button>
-        </form>
+              {isSubmitting
+                ? t("contact_form.sending")
+                : t("contact_form.submit")}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
