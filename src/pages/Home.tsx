@@ -125,7 +125,7 @@ const Home: React.FC = () => {
       <div
         className="
           absolute
-          bottom-12 sm:bottom-4  /* На мобилке — выше, на desktop — ниже */
+          bottom-2 sm:bottom-4  /* На мобилке — выше, на desktop — ниже */
           left-1/2 -translate-x-1/2
           w-full max-w-lg px-4
           z-20 pointer-events-auto
