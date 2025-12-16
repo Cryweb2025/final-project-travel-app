@@ -148,6 +148,87 @@ final-project-travel-app/
 └── vite.config.ts
 
 ```
+## 🧭 Overall Flow: Registration, Login, Logout
+
+```txt
+                 ┌────────────────────────────┐
+                 │   User opens AuthTravel    │
+                 │        component           │
+                 └─────────────┬──────────────┘
+                               │
+               ┌─────────────── Mode Selection ───────────────┐
+               │                                               │
+        ┌──────▼──────┐                                 ┌──────▼───────┐
+        │ REGISTER    │                                 │   LOGIN      │
+        └──────┬──────┘                                 └──────┬────────┘
+               │                                                │
+     ┌─────────▼──────────┐                          ┌──────────▼──────────┐
+     │ Registration form  │                          │ Login form          │
+     │ (Formik + Yup)     │                          │ (Formik + Yup)      │
+     └─────────┬──────────┘                          └──────────┬──────────┘
+               │                                                │
+ ┌─────────────▼─────────────┐                    ┌─────────────▼─────────────┐
+ │ onSubmit → handleRegister │                    │ onSubmit → handleLogin    │
+ └─────────────┬─────────────┘                    └─────────────┬─────────────┘
+               │                                                │
+ ┌─────────────▼─────────────────────┐         ┌────────────────▼────────────────────┐
+ │ Read users from localStorage      │         │ Read users from localStorage        │
+ │ → getUsersFromStorage()           │         │ → getUsersFromStorage()             │
+ └─────────────┬─────────────────────┘         └────────────────┬────────────────────┘
+               │                                                │
+   ┌───────────▼─────────────┐                     ┌────────────▼────────────────────┐
+   │ Email already in use?   │ Yes ──────────────▶ │ Match email + password?         │
+   └───────────┬─────────────┘                     └────────────┬────────────────────┘
+               │ No                                           │ Yes
+               │                                              │
+   ┌───────────▼─────────────┐                    ┌────────────▼────────────────────┐
+   │ Create new user object  │                    │ Save to localStorage:           │
+   │ Push to users array     │                    │ → "logged_user"                 │
+   └───────────┬─────────────┘                    │ Dispatch Redux login()          │
+               │                                  └──────────────────────────────────┘
+   ┌───────────▼─────────────┐
+   │ saveUsersToStorage()    │
+   └───────────┬─────────────┘
+               │
+   ┌───────────▼─────────────┐
+   │ Show success message    │
+   │ Switch mode → LOGIN     │
+   └─────────────────────────┘
+
+```
+
+## 🚪 Logout Flow
+
+```txt
+              ┌───────────────────────────────────────────────┐
+              │ User on Account screen clicks "Log Out" button │
+              └─────────────────────┬──────────────────────────┘
+                                    │
+                   ┌───────────────▼───────────────┐
+                   │ handleLogout() is executed    │
+                   └───────────────┬───────────────┘
+                                   │
+ ┌─────────────────────────────────▼────────────────────────────────┐
+ │ - Remove "logged_user" from localStorage                        │
+ │ - Dispatch Redux logout() → clear auth state                   │
+ │ - Redirect user to "/" using navigate("/", { replace: true })  │
+ └─────────────────────────────────────────────────────────────────┘
+
+```
+
+## 📦 LocalStorage Keys Overview
+
+```txt
+localStorage:
+  ├── "travel_users"     → Array of all registered users
+  └── "logged_user"      → Current logged-in user session
+
+Redux:
+  └── Auth state (email only, synced on login/logout)
+
+```
+
+
 
 ### ▶️ Getting Started
 
