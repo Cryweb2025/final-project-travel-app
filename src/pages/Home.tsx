@@ -1,19 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ReviewsCarousel from "../components/ReviewsCarousel/ReviewsCarousel";
 
 const Home: React.FC = () => {
-  // Компонент получает функцию переводов из i18n.
   const { t } = useTranslation();
-
-  // Компонент хранит состояние поискового запроса.
   const [query, setQuery] = useState("");
-
-  // Компонент получает функцию навигации между страницами.
   const navigate = useNavigate();
 
-  // Компонент выполняет переход на страницу направлений с параметром поиска.
   const handleSearch = () => {
     if (query.trim() !== "") {
       navigate(`/destinations?search=${encodeURIComponent(query)}`);
@@ -21,123 +14,73 @@ const Home: React.FC = () => {
   };
 
   return (
-    /**
-     * Компонент занимает 100% высоты main-контейнера,
-     * который уже “учёл” Navbar и Footer на уровне App.tsx.
-     */
     <section
-      className="
-        relative
-        w-full h-full
-        flex items-center justify-center
-        text-center
-        overflow-hidden
-        text-white
-      "
       style={{
+        position: "relative",
         backgroundImage:
           "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        textAlign: "center",
       }}
     >
-      {/* Компонент рисует затемняющий слой поверх фонового изображения. */}
-      <div className="absolute inset-0 bg-black/30 dark:bg-black/50 z-0" />
+      {/* Overlay für bessere Lesbarkeit */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0,0,0,0.5)",
+        }}
+      ></div>
 
-      {/* Компонент отображает основной hero-контент по центру. */}
-      <div className="relative z-10 max-w-3xl px-4">
-        {/* Компонент выводит главный слоган. */}
-        <h1 className="text-2xl sm:text-3xl font-bold drop-shadow-md">
-          {t("slogan")}
-        </h1>
-
-        {/* Компонент выводит подзаголовок hero-секции. */}
-        <p className="mt-4 text-base sm:text-lg text-white/90 drop-shadow">
+      {/* Inhalt */}
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "800px" }}>
+        <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>{t("slogan")}</h1>
+        <p style={{ fontSize: "1.5rem", marginTop: "1rem" }}>
           {t("hero_text")}
         </p>
 
-        {/* Компонент отображает поиск: input + кнопка. */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Suchfeld */}
+        <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
           <input
             type="text"
             placeholder={t("search_placeholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="
-              w-full sm:w-[60%]
-              px-4 py-3
-              rounded-xl
-              bg-white/20 dark:bg-slate-900/40
-              border border-white/30 dark:border-slate-600
-              backdrop-blur-md
-              text-white placeholder-white/70
-              focus:ring-2 focus:ring-sky-400
-              transition
-            "
+            style={{
+              padding: "0.8rem",
+              width: "60%",
+              borderRadius: "8px",
+              border: "none",
+              outline: "none",
+              fontSize: "1rem",
+            }}
           />
-
           <button
             onClick={handleSearch}
-            className="
-    group relative inline-flex items-center justify-center
-    px-7 py-3
-    rounded-xl
-    font-semibold tracking-wide
-    transition-all duration-300 ease-out
-
-    /* LIGHT THEME */
-    bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600
-    text-white
-    shadow-lg shadow-sky-500/30
-    hover:from-sky-600 hover:via-cyan-600 hover:to-blue-700
-    hover:shadow-xl hover:shadow-sky-600/40
-
-    /* DARK THEME */
-    dark:bg-gradient-to-r dark:from-sky-400 dark:via-cyan-400 dark:to-blue-500
-    dark:text-slate-900
-    dark:shadow-cyan-400/30
-    dark:hover:from-sky-300 dark:hover:via-cyan-300 dark:hover:to-blue-400
-    dark:hover:shadow-cyan-300/40
-
-    hover:-translate-y-0.5
-    active:translate-y-0 active:shadow-md
-
-    focus:outline-none
-    focus:ring-2 focus:ring-sky-400
-    focus:ring-offset-2
-    focus:ring-offset-transparent
-  "
+            style={{
+              marginLeft: "1rem",
+              padding: "0.8rem 1.5rem",
+              background: "#0077b6",
+              color: "white",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "1rem",
+              fontWeight: "bold",
+            }}
           >
-            {/* Glow / glass слой */}
-            <span
-              className="
-      pointer-events-none
-      absolute inset-0 rounded-xl
-      bg-white/30 dark:bg-white/20
-      opacity-0 blur-md
-      transition-opacity duration-300
-      group-hover:opacity-100
-    "
-            />
-
-            {/* Текст */}
-            <span className="relative z-10">{t("search_button")}</span>
+            {t("search_button")}
           </button>
         </div>
-      </div>
-
-      {/* Компонент размещает отзывы поверх картинки у нижнего края hero. */}
-      <div
-        className="
-          absolute
-          bottom-14 sm:bottom-16 lg:bottom-4
-          left-1/2 -translate-x-1/2
-          w-full px-4
-          z-20
-          pointer-events-auto
-        "
-      >
-        <ReviewsCarousel />
       </div>
     </section>
   );

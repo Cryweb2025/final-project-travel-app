@@ -3,10 +3,9 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { reviews } from "../../services/data/reviews";
 
-/**
- * Компонент ReviewsCarousel.
- * Отображает карусель отзывов (с авто-переключением и ручными кнопками).
- * Поддерживает i18n и светлую/тёмную тему (через dark: классы Tailwind).
+/**Компонент ReviewsCarousel.
+        * Отображает карусель отзывов (с авто-переключением и ручными кнопками).
+        * Поддерживает i18n и светлую/тёмную тему (через dark: классы Tailwind).
  */
 const ReviewsCarousel: React.FC = () => {
   // Компонент получает функцию перевода из i18n.
