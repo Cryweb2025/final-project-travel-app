@@ -165,19 +165,22 @@ const ContactForm: React.FC = () => {
           <form onSubmit={handleSubmit} className="grid gap-4">
             {/* Name */}
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              <label
+                className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1"
+                htmlFor="contact-name"
+              >
                 {t("contact_form.fields.name")} *
               </label>
               <input
+                id="contact-name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder={t("contact_form.placeholders.name")}
                 className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                  ${
-                    errors.name
-                      ? "border-red-400 focus:ring-red-200"
-                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  ${errors.name
+                    ? "border-red-400 focus:ring-red-200"
+                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
                   }
                   bg-white dark:bg-slate-800
                   text-slate-900 dark:text-white
@@ -190,20 +193,23 @@ const ContactForm: React.FC = () => {
 
             {/* Email */}
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              <label
+                className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1"
+                htmlFor="contact-email"
+              >
                 {t("contact_form.fields.email")} *
               </label>
               <input
+                id="contact-email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={t("contact_form.placeholders.email")}
                 className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                  ${
-                    errors.email
-                      ? "border-red-400 focus:ring-red-200"
-                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  ${errors.email
+                    ? "border-red-400 focus:ring-red-200"
+                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
                   }
                   bg-white dark:bg-slate-800
                   text-slate-900 dark:text-white
@@ -216,10 +222,14 @@ const ContactForm: React.FC = () => {
 
             {/* Phone */}
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              <label
+                className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1"
+                htmlFor="contact-phone"
+              >
                 {t("contact_form.fields.phone")}
               </label>
               <input
+                id="contact-phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
@@ -230,10 +240,14 @@ const ContactForm: React.FC = () => {
 
             {/* Subject */}
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              <label
+                className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1"
+                htmlFor="contact-subject"
+              >
                 {t("contact_form.fields.subject")}
               </label>
               <select
+                id="contact-subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -260,20 +274,23 @@ const ContactForm: React.FC = () => {
 
             {/* Message */}
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1">
+              <label
+                className="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-1"
+                htmlFor="contact-message"
+              >
                 {t("contact_form.fields.message")} *
               </label>
               <textarea
+                id="contact-message"
                 name="message"
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 placeholder={t("contact_form.placeholders.message")}
                 className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition
-                  ${
-                    errors.message
-                      ? "border-red-400 focus:ring-red-200"
-                      : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
+                  ${errors.message
+                    ? "border-red-400 focus:ring-red-200"
+                    : "border-slate-200 dark:border-slate-700 focus:border-sky-400 focus:ring-sky-100"
                   }
                   bg-white dark:bg-slate-800
                   text-slate-900 dark:text-white

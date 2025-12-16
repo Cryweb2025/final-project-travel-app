@@ -451,44 +451,40 @@ const Account: React.FC = () => {
             {/* Tabs */}
             <div className="flex flex-wrap gap-2 border-b mb-4 pb-2 text-xs sm:text-sm border-slate-100 dark:border-slate-800">
               <button
-                className={`px-3 py-1.5 rounded-full border transition ${
-                  activeTab === "overview"
+                className={`px-3 py-1.5 rounded-full border transition ${activeTab === "overview"
                     ? "bg-sky-500 text-white border-sky-500"
                     : "border-slate-200 text-slate-600 hover:border-sky-400 dark:border-slate-700 dark:text-slate-300 dark:hover:border-sky-500"
-                }`}
+                  }`}
                 onClick={() => setActiveTab("overview")}
               >
                 {t("account.tabs.profile")}
               </button>
 
               <button
-                className={`px-3 py-1.5 rounded-full border transition ${
-                  activeTab === "trips"
+                className={`px-3 py-1.5 rounded-full border transition ${activeTab === "trips"
                     ? "bg-sky-500 text-white border-sky-500"
                     : "border-slate-200 text-slate-600 hover:border-sky-400 dark:border-slate-700 dark:text-slate-300 dark:hover:border-sky-500"
-                }`}
+                  }`}
                 onClick={() => setActiveTab("trips")}
               >
                 {t("account.tabs.trips")}
               </button>
 
               <button
-                className={`px-3 py-1.5 rounded-full border transition ${
-                  activeTab === "security"
+                className={`px-3 py-1.5 rounded-full border transition ${activeTab === "security"
                     ? "bg-sky-500 text-white border-sky-500"
                     : "border-slate-200 text-slate-600 hover:border-sky-400 dark:border-slate-700 dark:text-slate-300 dark:hover:border-sky-500"
-                }`}
+                  }`}
                 onClick={() => setActiveTab("security")}
               >
                 {t("account.tabs.security")}
               </button>
 
               <button
-                className={`px-3 py-1.5 rounded-full border transition ${
-                  activeTab === "settings"
+                className={`px-3 py-1.5 rounded-full border transition ${activeTab === "settings"
                     ? "bg-sky-500 text-white border-sky-500"
                     : "border-slate-200 text-slate-600 hover:border-sky-400 dark:border-slate-700 dark:text-slate-300 dark:hover:border-sky-500"
-                }`}
+                  }`}
                 onClick={() => setActiveTab("settings")}
               >
                 {t("account.tabs.settings")}
@@ -537,10 +533,14 @@ const Account: React.FC = () => {
                   ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                       <div>
-                        <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                        <label
+                          className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                          htmlFor="account-first-name"
+                        >
                           {t("account.edit.first_name")}
                         </label>
                         <input
+                          id="account-first-name"
                           className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                      border-slate-200 bg-white text-slate-900
                                      focus:border-sky-400 focus:ring-2 focus:ring-sky-100
@@ -552,10 +552,14 @@ const Account: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                        <label
+                          className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                          htmlFor="account-last-name"
+                        >
                           {t("account.edit.last_name")}
                         </label>
                         <input
+                          id="account-last-name"
                           className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                      border-slate-200 bg-white text-slate-900
                                      focus:border-sky-400 focus:ring-2 focus:ring-sky-100
@@ -567,10 +571,14 @@ const Account: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                        <label
+                          className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                          htmlFor="account-email"
+                        >
                           {t("account.labels.email")}
                         </label>
                         <input
+                          id="account-email"
                           className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                      border-slate-200 bg-white text-slate-900
                                      focus:border-sky-400 focus:ring-2 focus:ring-sky-100
@@ -582,10 +590,14 @@ const Account: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                        <label
+                          className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                          htmlFor="account-phone"
+                        >
                           {t("account.labels.phone")}
                         </label>
                         <input
+                          id="account-phone"
                           className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                      border-slate-200 bg-white text-slate-900
                                      focus:border-sky-400 focus:ring-2 focus:ring-sky-100
@@ -661,19 +673,18 @@ const Account: React.FC = () => {
                         </div>
 
                         <span
-                          className={`px-2 py-1 rounded-full text-[11px] font-semibold border ${
-                            trip.status === "Booked"
+                          className={`px-2 py-1 rounded-full text-[11px] font-semibold border ${trip.status === "Booked"
                               ? "bg-sky-50 text-sky-700 border-sky-100 dark:bg-sky-950/30 dark:text-sky-200 dark:border-sky-900/50"
                               : trip.status === "Completed"
-                              ? "bg-emerald-50 text-emerald-700 border-emerald-100 dark:bg-emerald-950/25 dark:text-emerald-200 dark:border-emerald-900/50"
-                              : "bg-red-50 text-red-600 border-red-100 dark:bg-red-950/25 dark:text-red-200 dark:border-red-900/50"
-                          }`}
+                                ? "bg-emerald-50 text-emerald-700 border-emerald-100 dark:bg-emerald-950/25 dark:text-emerald-200 dark:border-emerald-900/50"
+                                : "bg-red-50 text-red-600 border-red-100 dark:bg-red-950/25 dark:text-red-200 dark:border-red-900/50"
+                            }`}
                         >
                           {trip.status === "Booked"
                             ? t("account.trips.status.booked")
                             : trip.status === "Completed"
-                            ? t("account.trips.status.completed")
-                            : trip.status}
+                              ? t("account.trips.status.completed")
+                              : trip.status}
                         </span>
                       </div>
                     ))}
@@ -714,10 +725,14 @@ const Account: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                     <div>
-                      <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                      <label
+                        className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                        htmlFor="account-current-password"
+                      >
                         {t("account.security.current_password")}
                       </label>
                       <input
+                        id="account-current-password"
                         type="password"
                         className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                    border-slate-200 bg-white text-slate-900
@@ -730,10 +745,14 @@ const Account: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                      <label
+                        className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                        htmlFor="account-new-password"
+                      >
                         {t("account.security.new_password")}
                       </label>
                       <input
+                        id="account-new-password"
                         type="password"
                         className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                    border-slate-200 bg-white text-slate-900
@@ -746,10 +765,14 @@ const Account: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300">
+                      <label
+                        className="block text-xs font-semibold mb-1 text-slate-600 dark:text-slate-300"
+                        htmlFor="account-confirm-password"
+                      >
                         {t("account.security.confirm_new_password")}
                       </label>
                       <input
+                        id="account-confirm-password"
                         type="password"
                         className="w-full rounded-lg border px-3 py-2 text-sm outline-none transition
                                    border-slate-200 bg-white text-slate-900
