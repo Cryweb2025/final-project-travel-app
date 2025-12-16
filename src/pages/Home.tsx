@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ReviewsCarousel from "../components/ReviewsCarousel/ReviewsCarousel";
+import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
   // Компонент получает функцию переводов из i18n.
@@ -26,20 +27,15 @@ const Home: React.FC = () => {
      * который уже “учёл” Navbar и Footer на уровне App.tsx.
      */
     <section
-      className="
+      className={`
         relative
         w-full h-full
         flex items-center justify-center
         text-center
         overflow-hidden
         text-white
-      "
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+        ${styles.heroSection}
+      `}
     >
       {/* Компонент рисует затемняющий слой поверх фонового изображения. */}
       <div className="absolute inset-0 bg-black/30 dark:bg-black/50 z-0" />

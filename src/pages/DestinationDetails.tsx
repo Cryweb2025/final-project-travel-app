@@ -12,7 +12,7 @@ const DestinationDetails: React.FC = () => {
   const { t } = useTranslation();
 
   // Список отелей для выбранной страны
-  const rawHotels = hotelsData[normalizedKey] || [];
+  const rawHotels = useMemo(() => hotelsData[normalizedKey] || [], [normalizedKey]);
 
   /* ================= СОСТОЯНИЕ UI ================= */
 
@@ -204,10 +204,11 @@ const DestinationDetails: React.FC = () => {
         </div>
 
         <div className="ml-auto flex items-center gap-2">
-          <label className="text-sm">{t("hotels.sort_by_stars")}</label>
+          <label htmlFor="sort-select" className="text-sm">{t("hotels.sort_by_stars")}</label>
           <select
+            id="sort-select"
             value={sort}
-            onChange={(e) => setSort(e.target.value as any)}
+            onChange={(e) => setSort(e.target.value as "stars_desc" | "stars_asc")}
             className="p-2 rounded border dark:bg-slate-900 dark:border-slate-700"
           >
             <option value="stars_desc">{t("hotels.sort_high")}</option>

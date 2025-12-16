@@ -417,7 +417,7 @@ const AuthTravel: React.FC = () => {
                     </label>
 
                     <Field name="password">
-                      {({ field }: any) => (
+                      {({ field }: { field: { name: string; value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; onBlur: (e: React.FocusEvent<HTMLInputElement>) => void } }) => (
                         <div className="relative">
                           <input
                             {...field}
