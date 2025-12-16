@@ -30,7 +30,7 @@ const Team: React.FC = () => {
       photo: photoVladimir,
     },
     {
-      name: "Yuriy",
+      name: "Juri",
       role: t("team.members.yuriy.role"),
       description: t("team.members.yuriy.description"),
       photo: photoYuri,
