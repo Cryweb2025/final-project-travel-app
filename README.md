@@ -149,6 +149,85 @@ final-project-travel-app/
 
 ```
 
+## 🧭 Overall Flow: Registration, Login, Logout
+
+```txt
+                 ┌────────────────────────────┐
+                 │   User opens AuthTravel    │
+                 │        component           │
+                 └─────────────┬──────────────┘
+                               │
+               ┌─────────────── Mode Selection ───────────────┐
+               │                                               │
+        ┌──────▼──────┐                                 ┌──────▼───────┐
+        │ 📝 REGISTER │                                 │ 🔐 LOGIN      │
+        └──────┬──────┘                                 └──────┬────────┘
+               │                                                │
+     ┌─────────▼──────────┐                          ┌──────────▼──────────┐
+     │ Registration form  │                          │ Login form          │
+     │ (Formik + Yup)     │                          │ (Formik + Yup)      │
+     └─────────┬──────────┘                          └──────────┬──────────┘
+               │                                                │
+ ┌─────────────▼─────────────┐                    ┌─────────────▼─────────────┐
+ │ onSubmit → handleRegister │                    │ onSubmit → handleLogin    │
+ └─────────────┬─────────────┘                    └─────────────┬─────────────┘
+               │                                                │
+ ┌─────────────▼─────────────────────┐         ┌────────────────▼────────────────────┐
+ │ 📂 Read users from localStorage   │         │ 📂 Read users from localStorage      │
+ │ → getUsersFromStorage()           │         │ → getUsersFromStorage()             │
+ └─────────────┬─────────────────────┘         └────────────────┬────────────────────┘
+               │                                                │
+   ┌───────────▼─────────────┐                     ┌────────────▼────────────────────┐
+   │ ⚠️ Email already in use? │ Yes ──────────────▶ │ Match email + password?         │
+   └───────────┬─────────────┘                     └────────────┬────────────────────┘
+               │ No                                           │ Yes
+               │                                              │
+   ┌───────────▼─────────────┐                    ┌────────────▼────────────────────┐
+   │ ➕ Create new user       │                    │ 💾 Save session in              │
+   │ Add to users array      │                    │ localStorage → "logged_user"   │
+   └───────────┬─────────────┘                    │ Dispatch Redux login()         │
+               │                                  └──────────────────────────────────┘
+   ┌───────────▼─────────────┐
+   │ 💽 saveUsersToStorage() │
+   └───────────┬─────────────┘
+               │
+   ┌───────────▼─────────────┐
+   │ ✅ Show success message  │
+   │ 🔁 Switch to login mode  │
+   └─────────────────────────┘
+
+```
+
+## 🚪 Logout Flow
+
+```txt
+              ┌───────────────────────────────────────────────┐
+              │ 👤 User on Account screen clicks "Log Out"     │
+              └─────────────────────┬──────────────────────────┘
+                                    │
+                   ┌───────────────▼───────────────┐
+                   │ 🔓 handleLogout() is executed │
+                   └───────────────┬───────────────┘
+                                   │
+ ┌─────────────────────────────────▼────────────────────────────────┐
+ │ 🗑️ Remove "logged_user" from localStorage                       │
+ │ 🔄 Dispatch Redux logout() → clear auth state                   │
+ │ 🌐 Redirect user to "/" (SPA navigation)                        │
+ └─────────────────────────────────────────────────────────────────┘
+
+```
+## 📦 LocalStorage Keys Overview
+
+```txt
+localStorage:
+  📁 "travel_users"     → Array of registered users
+  🔐 "logged_user"      → Logged-in user session
+
+Redux:
+  ⚙️  Auth slice → login/logout state
+
+```
+
 ### ▶️ Getting Started
 
 npm install  
