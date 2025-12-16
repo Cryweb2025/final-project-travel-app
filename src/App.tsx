@@ -7,14 +7,14 @@ import Footer from "./components/Footer/Footer";
 // Страницы приложения
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
-import Account from "./pages/Account";
-import DestinationDetails from "./pages/DestinationDetails";
-
-// Компоненты
 import AuthTravel from "./components/AuthTravel/AuthTravel";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Team from "./components/Team/Team";
+
+
 import { CountryInfoPage } from "./components/CountryInfoPage/CountryInfoPage";
+import Account from "./pages/Account";
+import DestinationDetails from "./pages/DestinationDetails";
 
 // Корневой компонент приложения
 function App() {
@@ -28,11 +28,13 @@ function App() {
       {/* Компонент рендерит верхнюю навигацию. */}
       <Navbar />
 
-      {/* Компонент занимает всё пространство между Navbar и Footer. */}
-      <main className="flex-1 overflow-auto">
-        <Routes>
-          {/* Компонент показывает главную страницу. */}
-          <Route path="/" element={<Home />} />
+      {/* Средняя зона между Navbar и Footer */}
+      <main className="flex-grow flex overflow-y-auto">
+        {/* ВАЖНО: эта обёртка получает всю оставшуюся высоту */}
+        <div className="flex-grow">
+          <Routes>
+            {/* Home на всю доступную ширину/высоту */}
+            <Route path="/" element={<Home />} />
 
           {/* Компонент показывает страницу деталей направления. */}
           <Route path="/destination/:key" element={<DestinationDetails />} />
@@ -87,9 +89,10 @@ function App() {
             }
           />
 
-          <Route path="/countries/:key" element={<CountryInfoPage />} />
+          <Route path="/countries/:id" element={<CountryInfoPage />} />
 
         </Routes>
+         </div> 
       </main>
 
       {/* Компонент рендерит нижний футер. */}
